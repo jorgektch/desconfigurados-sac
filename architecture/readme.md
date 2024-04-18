@@ -27,3 +27,9 @@
 ## Mobile application
 - Android Studio (Kotlin)
 - XCode (Swift)
+
+## Deployment
+- DigitalOcean (backend)
+- Netify (frontend)
+- Google Play Store (Android app)
+- App Store (IOS app)
