@@ -1,6 +1,6 @@
 # Sketches
 ## Carrito de compras
-<img scr="./carrito de compras 1.jpeg">
+<img scr="./carrito-de-compras-1.jpeg">
 <img scr="./carrito de compras 2.jpeg">
 
 ## Catalogo de productos
