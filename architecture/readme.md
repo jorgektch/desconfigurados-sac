@@ -1,5 +1,10 @@
+# Diagrams
 ## HDL (High Level Diagram)
 <img src="./HLD-architecture.png" alt="HLD">
+
+## Components Diagrams
+### Bussiness
+<img src="./components-diagram-bussiness.png" alt="components diagram 1">
 
 # Technologies for this project
 ## CVS (Control version System)
