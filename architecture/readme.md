@@ -1,5 +1,5 @@
 ## HDL (High Level Diagram)
-<img src="./HDL-architecture.png" alt="HDL">
+<img src="./HLD-architecture.png" alt="HLD">
 
 # Technologies for this project
 ## CVS (Control version System)
