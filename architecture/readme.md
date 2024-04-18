@@ -1,3 +1,6 @@
+## HDL (High Level Diagram)
+<img src="./HDL-architecture.png" alt="HDL">
+
 # Technologies for this project
 ## CVS (Control version System)
 - Git
