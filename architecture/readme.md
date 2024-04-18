@@ -31,6 +31,10 @@
 - Android Studio (Kotlin)
 - XCode (Swift)
 
+## SQA & QA
+- Postman
+- Selenium
+
 ## Deployment
 - DigitalOcean (backend)
 - Netify (frontend)
