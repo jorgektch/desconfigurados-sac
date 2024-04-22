@@ -9,6 +9,7 @@
 # Technologies for this project
 ## CVS (Control version System)
 - Git - v2.44.0
+- - videos:
 - Github - v3.12.2
 
 ## DBMS (Data Base Management System)
