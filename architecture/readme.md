@@ -30,7 +30,7 @@
         - [Página oficial](https://www.youtube.com/watch?v=Smp-u-8ynbE)
 - Bootstrap - v5.2.x
     - Videos
-        - [Diona PC (127 videos) - 100% recomendado por Luis La Torre](https://www.youtube.com/watch?v=rK_WwhUDpoo&list=PLUW3XAK9O3HFfc7KryNaE9jsqhmCpbBQi)
+        - [Diona PC (127 videos)](https://www.youtube.com/watch?v=rK_WwhUDpoo&list=PLUW3XAK9O3HFfc7KryNaE9jsqhmCpbBQi) - 100% recomendado por Luis La Torre
     - Páginas
         - [Página oficial](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
 - AngularJS - v16.0.x
@@ -44,10 +44,31 @@
         - [Página oficial](https://nodejs.org/en)
 
 ## Backend
+- Python - v3.12.3
+    - Páginas
+        - [Página oficial](https://www.python.org/)
 - Django - v5.0.4
+    - Videos
+        - [Píldorasinformaticas (70 videos)](https://www.youtube.com/watch?v=7XO1AzwkPPE&list=PLU8oAlHdN5BmfvwxFO7HdPciOCmmYneAB)
+        - [Fatz](https://www.youtube.com/watch?v=T1intZyhXDU)
+    - Páginas
+        - [Página oficial](https://www.djangoproject.com/)
+        - [Documentación](https://docs.djangoproject.com/en/5.0/)
 - Django Rest Framework - v3.15.1
+    - Videos
+        - [Fatz code](https://www.youtube.com/watch?v=38XWpyEK8IY&t=0s)
+        - [Fatz](https://www.youtube.com/watch?v=GE0Q8YNKNgs)
+    - Páginas
+        - [Página oficial](https://www.django-rest-framework.org/)
 - Django jazzmin - v3.0.0
-- Django cors headers - v4.3.1
+    - Videos
+        - [Cloud With Django](https://www.youtube.com/watch?v=zx4LSW0QBq0)
+    - Paginas
+        - [Página oficial](https://django-jazzmin.readthedocs.io/)
+        - [Solución error logout](https://forum.djangoproject.com/t/django-jazzmin-logout/26110)
+- Django cors headers - v4.3.1 (Necesario para que funcione Django Rest Framework)
+    - Páginas
+        - [Página oficial](https://pypi.org/project/django-cors-headers/)
 
 ## SQA & QA
 - Postman
