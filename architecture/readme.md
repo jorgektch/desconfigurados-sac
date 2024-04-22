@@ -30,7 +30,7 @@
         - [Página oficial](https://www.youtube.com/watch?v=Smp-u-8ynbE)
 - Bootstrap - v5.2.x
     - Videos
-        - [Diona PC (127 videos)](https://www.youtube.com/watch?v=rK_WwhUDpoo&list=PLUW3XAK9O3HFfc7KryNaE9jsqhmCpbBQi) - 100% recomendado por Luis La Torre
+        - [Diona PC (127 videos)](https://www.youtube.com/watch?v=rK_WwhUDpoo&list=PLUW3XAK9O3HFfc7KryNaE9jsqhmCpbBQi)
     - Páginas
         - [Página oficial](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
 - AngularJS - v17.0.x
