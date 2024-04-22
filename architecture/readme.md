@@ -8,8 +8,8 @@
 
 # Technologies for this project
 ## CVS (Control version System)
-- Git
-- Github
+- Git - v2.44.0
+- Github - v3.12.2
 
 ## DBMS (Data Base Management System)
 - MySQL
@@ -17,24 +17,14 @@
 
 ## Frontend
 - Figma (UX / UI)
-- Bootstrap
-- AngularJS
+- Bootstrap - v5.2.x
+- AngularJS - v16.0.x
 
 ## Backend
-- Django
-- Django Rest Framework
-
-## IoT (Hardware Internet of Things development)
-- ESP32
-- Arduino
-
-## AI & ML (Artificial Inteligence & Machine Learning)
-- Tensorflow
-- OpenCV
-
-## Mobile application
-- Android Studio (Kotlin)
-- XCode (Swift)
+- Django - v5.0.4
+- Django Rest Framework - v3.15.1
+- Django jazzmin - v3.0.0
+- Django cors headers - v4.3.1
 
 ## SQA & QA
 - Postman
