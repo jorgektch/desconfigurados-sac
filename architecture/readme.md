@@ -33,7 +33,7 @@
         - [Diona PC (127 videos)](https://www.youtube.com/watch?v=rK_WwhUDpoo&list=PLUW3XAK9O3HFfc7KryNaE9jsqhmCpbBQi) - 100% recomendado por Luis La Torre
     - Páginas
         - [Página oficial](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
-- AngularJS - v16.0.x
+- AngularJS - v17.0.x
     - Videos
         - [LaParadoxHD](https://www.youtube.com/watch?v=SZtxwDAqEok&list=PLezsbUDiwcpmhNiMzVPYJXV0Rqn71G4PU)
         - [midulive](https://www.youtube.com/watch?v=f7unUpshmpA)
