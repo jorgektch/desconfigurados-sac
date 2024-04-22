@@ -12,12 +12,12 @@
 - Github - v3.12.2
     - Videos
         - [Pildoras informaticas (11 videos)](https://www.youtube.com/watch?v=ANF1X42_ae4&list=PLU8oAlHdN5BlyaPFiNQcV0xDqy0eR35aU)
-        - [FreeCodeCamp] (https://www.youtube.com/watch?v=h2ZzlNVl-nI)
+        - [FreeCodeCamp](https://www.youtube.com/watch?v=h2ZzlNVl-nI)
     - Páginas
         - [Página oficial](https://git-scm.com/)
         - [Documentación oficial](https://git-scm.com/docs)
 
-## DBMS (Data Base Management System)
+## Base de datos
 - MySQL
 - MongoDB
 
