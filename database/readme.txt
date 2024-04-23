@@ -1,2 +1,2 @@
 
-![Modelo conceptual](conceptual_page-0001.jpg)
+![Modelo conceptual](/conceptual_page-0001.jpg)
