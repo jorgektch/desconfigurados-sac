@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './carrito.component.html',
   styleUrl: './carrito.component.css'
 })
-export class CarritoComponent {
 
+export class CarritoComponent {
 }
