@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Producto } from './producto.class';
 
 @Component({
   selector: 'app-producto',
@@ -8,14 +9,18 @@ import { Component, Input } from '@angular/core';
   styleUrl: './producto.component.css'
 })
 export class ProductoComponent {
-  @Input() producto: any;
+  @Input() producto: Producto;
   cantidad: number = 1;
 
-  agregarAlCarrito() {
-
+  constructor(prodc: Producto) {
+    this.producto = prodc;
   }
 
-  verDetaller() {
+  agregarAlCarrito() {
+    
+  }
+
+  verDetalles() {
 
   }
 
