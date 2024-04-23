@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-producto',
@@ -8,5 +8,22 @@ import { Component } from '@angular/core';
   styleUrl: './producto.component.css'
 })
 export class ProductoComponent {
+  @Input() producto: any;
+  cantidad: number = 1;
 
+  agregarAlCarrito() {
+
+  }
+
+  verDetaller() {
+
+  }
+
+  calcularSubtotal(): number {
+    return this.producto.precio * this.cantidad;
+  }
+
+  obtenerProducto(): any {
+    return this.producto;
+  }
 }
