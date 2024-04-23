@@ -1,1 +1,1 @@
-[Modelo Conceptual][./conceptual.pdf]
+[Modelo Conceptual][database/conceptual.pdf]
