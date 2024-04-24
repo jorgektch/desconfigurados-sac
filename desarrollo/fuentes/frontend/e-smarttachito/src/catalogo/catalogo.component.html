@@ -1,5 +1,5 @@
 <div *ngFor="let producto of productos" class="contenedor-producto">
-    <h3>{{producto.nombre}}</h3>
+    <h3 class="nombre">{{producto.nombre}}</h3>
     <p>{{producto.descripcionCorta}}</p>
     <p>{{producto.precio}}</p>
     <button (click)="agregarAlCarrito()">

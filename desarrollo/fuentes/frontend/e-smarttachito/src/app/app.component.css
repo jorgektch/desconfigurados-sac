@@ -1,0 +1,17 @@
+
+app-catalogo {
+    display: inline-block;
+    justify-content: center;
+    gap: 20px;
+
+    width: 100%;
+}
+
+app-header {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    background-color: #3d789f;
+    color: white;
+    box-shadow: 0px 0px 10px 2px #095486;
+}
