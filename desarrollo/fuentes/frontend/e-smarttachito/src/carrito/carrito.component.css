@@ -40,9 +40,10 @@
     border-radius: 20px;
 
     top: 175px;
-    left: 59.26%;
+    right: 10px;
     width: 40%;
-
+    
+    min-width: 450px;
     min-height: 200px;
 }
 

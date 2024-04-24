@@ -23,9 +23,17 @@ export class CatalogoComponent implements OnInit {
 
   obtenerProductos(): void {
     // metodo para actualizar lista de productos
+    
+    // Simulación de la obtención de productos
+    const producto1 = new Producto(1, 'Producto 1', 'Descripción del Producto 1', 'Corta Descripción 1', 'Col1', 'Col2', 100, ['imagen1.jpg'], 1);
+    const producto2 = new Producto(2, 'Producto 2', 'Descripción del Producto 2', 'Corta Descripción 2', 'Col1', 'Col2', 200, ['imagen2.jpg'], 2);
+    
+    // Agregar los productos a la lista
+    this.productos.push(producto1, producto2);
+    
   }
 
-  agregarAlCarrito(producto: Producto) {
+  agregarAlCarrito() {
     // código para agregar producto al carrito
   }
 
