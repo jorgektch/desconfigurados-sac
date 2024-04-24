@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import *
+
+class CategoriaAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Categoria._meta.fields]
+    ordering = ('nombre',)
