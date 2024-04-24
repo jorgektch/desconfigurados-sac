@@ -1,5 +1,31 @@
-#visualizador-carrito {
+
+#carrito {
+    position: relative;
+    top: 30%;
+}
+
+#carrito div {
     display: inline-flex;
+    margin: 2px;
+}
+
+#cantidad-productos {
+    display: flex;
+    background-color: aqua;
+    border: none;
+    border-radius: 50%;
+    min-width: 15px;
+    aspect-ratio: 1/1;
+    justify-content: center;
+    align-items: center;
+}   
+
+.logo-carrito i {
+    font-size: 20px
+}
+
+#visualizador-carrito {
+    display: none;
     position: absolute;
 
     background-color: black;
@@ -11,5 +37,8 @@
     width: 40%;
 
     min-height: 200px;
+}
 
+#visualizador-carrito {
+    display: inline-flex;
 }

@@ -6,18 +6,17 @@
     en el carrito y además aumentar y disminuir la cantidad por producto.
     
     El total de la compra se actualiza también de forma reactiva. -->
+<div (click)="toggleVisualizacionCarrito()" id="carrito">
+    <div class="logo-carrito">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </div>
 
-<div class="logo">
-    <i class="fa-solid fa-cart-shopping"></i>
+    <div id="cantidad-productos">
+        0
+    </div>
 </div>
 
-<div id="cantidad-productos">
-    <p>
-        0   
-    </p>
-</div>
-
-<div id="visualizador-carrito">
+<div id="visualizador-carrito" *ngIf="seVisualiza">
     <div>
         
     </div>

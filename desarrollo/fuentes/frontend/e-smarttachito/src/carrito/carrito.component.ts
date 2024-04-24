@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import { Producto } from '../producto/producto.class';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'carrito',
   standalone: true,
-  imports: [],
+  imports: [NgIf],
   templateUrl: './carrito.component.html',
   styleUrl: './carrito.component.css'
 })
 export class CarritoComponent {
   productosEnCarrito: Producto[] = [];
+  seVisualiza: Boolean = false;
 
   agregarProductoAlCarrito(idProducto: Producto) {
     this.productosEnCarrito.push(idProducto);
@@ -29,5 +31,9 @@ export class CarritoComponent {
   obtenerElTotal(): number {
     // lógica para implementar el cálculo total a pagar
     return 0;
+  }
+
+  toggleVisualizacionCarrito() {
+    this.seVisualiza = !this.seVisualiza;
   }
 }
