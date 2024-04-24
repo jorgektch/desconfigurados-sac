@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Producto } from '../producto/producto.class';
 
 @Component({
   selector: 'carrito',
@@ -8,13 +9,13 @@ import { Component } from '@angular/core';
   styleUrl: './carrito.component.css'
 })
 export class CarritoComponent {
-  productosEnCarrito: number[] = [];
+  productosEnCarrito: Producto[] = [];
 
-  agregarProductoAlCarrito(idProducto: number) {
+  agregarProductoAlCarrito(idProducto: Producto) {
     this.productosEnCarrito.push(idProducto);
   }
 
-  eliminarProductoDelCarrito(idProducto: number) {
+  eliminarProductoDelCarrito(idProducto: Producto) {
     const indexProductoEliminar = this.productosEnCarrito.indexOf(idProducto);
     if(indexProductoEliminar != -1) {
       this.productosEnCarrito.splice(indexProductoEliminar, 1);

@@ -1,0 +1,15 @@
+#visualizador-carrito {
+    display: inline-flex;
+    position: absolute;
+
+    background-color: black;
+    border: solid 1px gray;
+    border-radius: 20px;
+
+    top: 175px;
+    left: 59.26%;
+    width: 40%;
+
+    min-height: 200px;
+
+}
