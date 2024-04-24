@@ -28,6 +28,10 @@ export class CarritoComponent {
     this.productosEnCarrito = [];
   }
 
+  obtenerCantidadProductos(): number {
+    return this.productosEnCarrito.length;
+  }
+
   obtenerElTotal(): number {
     // lógica para implementar el cálculo total a pagar
     return 0;
