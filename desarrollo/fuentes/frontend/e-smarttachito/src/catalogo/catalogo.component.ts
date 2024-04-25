@@ -11,6 +11,7 @@ import { NgFor } from '@angular/common';
 })
 export class CatalogoComponent implements OnInit {
   
+  // esta lista almacenará los productos en el catálogo
   productos: Producto[] = [];
   
   constructor() {

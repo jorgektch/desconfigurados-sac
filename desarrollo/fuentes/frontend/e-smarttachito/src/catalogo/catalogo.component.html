@@ -1,9 +1,11 @@
-<h2>CATÁLOGO</h2>
-<div *ngFor="let producto of productos" class="contenedor-producto">
-    <h3 class="nombre">{{producto.nombre}}</h3>
-    <p>{{producto.descripcionCorta}}</p>
-    <p>{{producto.precio}}</p>
-    <button (click)="agregarAlCarrito()">
-        <i class="fa-solid fa-cart-plus"></i>
-    </button>
+<h2 class="titulo">CATÁLOGO</h2>
+<div class="contenedor-catalogo-productos">
+    <div *ngFor="let producto of productos" class="contenedor-producto">
+        <h3 class="nombre">{{producto.nombre}}</h3>
+        <p>{{producto.descripcionCorta}}</p>
+        <p>{{producto.precio}}</p>
+        <button (click)="agregarAlCarrito()">
+            <i class="fa-solid fa-cart-plus"></i>
+        </button>
+    </div>
 </div>

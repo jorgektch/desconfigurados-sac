@@ -1,11 +1,5 @@
 
-app-catalogo {
-    display: inline-block;
-    justify-content: center;
-    gap: 20px;
 
-    width: 100%;
-}
 
 app-header {
     display: flex;
