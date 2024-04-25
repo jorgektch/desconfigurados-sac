@@ -20,6 +20,7 @@ class Producto(models.Model):
     imagenSecundaria2 = models.ImageField("Imagen secundaria 2", upload_to="imagen/")
     imagenSecundaria3 = models.ImageField("Imagen secundaria 3", upload_to="imagen/")
     imagen3D = models.ImageField("Imagen 3D", upload_to="imagen/")
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, verbose_name="Categoría")
     def __str__(self):
         return self.name
     class Meta:
