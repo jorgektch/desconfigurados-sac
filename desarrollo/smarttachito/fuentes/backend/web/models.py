@@ -104,3 +104,10 @@ class Pago(models.Model):
     class Meta:
         verbose_name = "Pago"
         verbose_name_plural = "Pagos"
+
+class Pedido(models.Model):
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = "Pedido"
+        verbose_name_plural = "Pedidos"
