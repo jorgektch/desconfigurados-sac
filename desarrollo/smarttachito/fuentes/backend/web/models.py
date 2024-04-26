@@ -26,3 +26,10 @@ class Producto(models.Model):
     class Meta:
         verbose_name = "Producto"
         verbose_name_plural = "Productos"
+
+class Usuario(models.Model):
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = "Usuario"
+        verbose_name_plural = "Usuarios"
