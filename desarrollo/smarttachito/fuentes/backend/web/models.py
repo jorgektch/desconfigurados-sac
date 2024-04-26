@@ -83,3 +83,10 @@ class Ciudad(models.Model):
     class Meta:
         verbose_name = "Ciudad"
         verbose_name_plural = "Ciudades"
+
+class Direccion(models.Model):
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = "Direccion"
+        verbose_name_plural = "Direcciones"
