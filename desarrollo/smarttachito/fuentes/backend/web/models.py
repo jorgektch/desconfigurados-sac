@@ -68,3 +68,10 @@ class ProductoServicio(models.Model):
     class Meta:
         verbose_name = "ProductoServicio"
         verbose_name_plural = "ProductoServicios"
+
+class Pais(models.Model):
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = "Pais"
+        verbose_name_plural = "Paises"
