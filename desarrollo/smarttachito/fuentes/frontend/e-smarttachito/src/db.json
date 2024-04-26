@@ -1,0 +1,41 @@
+{
+  "usuarios": [
+    {
+      "id": "123",
+      "usuario": "Laura",
+      "contraseña": "Laura123"
+    },
+    {
+      "id": "456",
+      "usuario": "Asthri",
+      "contraseña": "Asthri456"
+    },
+    {
+      "id": "eda9",
+      "usuario": "Laura",
+      "contrasena": "Laura123"
+    },
+    {
+      "id": "9c9d",
+      "usuario": "Laura",
+      "contrasena": "asdfasdfasdf"
+    }
+  ],
+  "productos": [
+    {
+      "id": "111",
+      "nombre": "tacho pequeño",
+      "precio": 25
+    },
+    {
+      "id": "222",
+      "nombre": "tacho mediano",
+      "precio": 55
+    },
+    {
+      "id": "333",
+      "nombre": "tacho frande",
+      "precio": 105
+    }
+  ]
+}
