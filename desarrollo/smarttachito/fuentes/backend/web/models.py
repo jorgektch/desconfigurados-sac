@@ -47,3 +47,11 @@ class Cargo(models.Model):
     class Meta:
         verbose_name = "Cargo"
         verbose_name_plural = "Cargos"
+
+class CargoEmpleado(models.Model):
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = "CargoEmpleado"
+        verbose_name_plural = "CargoEmpleados"
+
