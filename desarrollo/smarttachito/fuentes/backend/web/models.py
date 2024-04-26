@@ -75,3 +75,10 @@ class Pais(models.Model):
     class Meta:
         verbose_name = "Pais"
         verbose_name_plural = "Paises"
+
+class Ciudad(models.Model):
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = "Ciudad"
+        verbose_name_plural = "Ciudades"
