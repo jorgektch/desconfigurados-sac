@@ -15,19 +15,28 @@
     {
       "id": "111",
       "nombre": "tacho pequeño",
-      "imagen": "https://oechsle.vteximg.com.br/arquivos/ids/16330196/image-372076a535924d90ac23a2d4f4f5546d.jpg",
+      "imagen": {
+        "path": "https://oechsle.vteximg.com.br/arquivos/ids/16330196/image-372076a535924d90ac23a2d4f4f5546d",
+        "extension": "jpg"
+      },
       "precio": 25
     },
     {
       "id": "222",
       "nombre": "tacho mediano",
-      "imagen": "https://elcomercio.pe/resizer/a3xDrJlnBVCU7UZ41evBWSk3O2Y=/1200x900/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/BUZIJCJLQ5ERVFPMXETP6L3KLY.jpeg",
+      "imagen":{
+        "path": "https://oechsle.vteximg.com.br/arquivos/ids/16330196/image-372076a535924d90ac23a2d4f4f5546d",
+        "extension": "jpg"
+      },
       "precio": 55
     },
     {
       "id": "333",
       "nombre": "tacho grande",
-      "imagen": "https://resizer.iproimg.com/unsafe/1280x720/filters:format(webp)/https://economiasustentable.com/wp-content/uploads/2020/01/tachos-inteligentes.jpg",
+      "imagen":{
+        "path": "https://resizer.iproimg.com/unsafe/1280x720/filters:format(webp)/https://economiasustentable.com/wp-content/uploads/2020/01/tachos-inteligentes",
+        "extension": "jpg"
+      },
       "precio": 105
     }
   ]
