@@ -97,3 +97,10 @@ class Entrega(models.Model):
     class Meta:
         verbose_name = "Entrega"
         verbose_name_plural = "Entregas"
+
+class Pago(models.Model):
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = "Pago"
+        verbose_name_plural = "Pagos"
