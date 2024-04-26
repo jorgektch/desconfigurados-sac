@@ -70,6 +70,7 @@ class ProductoServicio(models.Model):
         verbose_name_plural = "ProductoServicios"
 
 class Pais(models.Model):
+    nombre = models.CharField("Nombre", max_length=100)
     def __str__(self):
         return self.name
     class Meta:
