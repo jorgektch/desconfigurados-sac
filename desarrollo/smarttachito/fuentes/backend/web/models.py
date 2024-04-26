@@ -40,3 +40,10 @@ class Cliente(models.Model):
     class Meta:
         verbose_name = "Cliente"
         verbose_name_plural = "Clientes"
+
+class Cargo(models.Model):
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = "Cargo"
+        verbose_name_plural = "Cargos"
