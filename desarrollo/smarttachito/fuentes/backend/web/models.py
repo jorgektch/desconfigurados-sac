@@ -61,3 +61,10 @@ class Residuo(models.Model):
     class Meta:
         verbose_name = "Residuo"
         verbose_name_plural = "Residuos"
+
+class ProductoServicio(models.Model):
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = "ProductoServicio"
+        verbose_name_plural = "ProductoServicios"
