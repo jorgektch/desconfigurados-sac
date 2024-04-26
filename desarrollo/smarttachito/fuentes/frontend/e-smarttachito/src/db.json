@@ -9,32 +9,25 @@
       "id": "456",
       "usuario": "Asthri",
       "contraseña": "Asthri456"
-    },
-    {
-      "id": "eda9",
-      "usuario": "Laura",
-      "contrasena": "Laura123"
-    },
-    {
-      "id": "9c9d",
-      "usuario": "Laura",
-      "contrasena": "asdfasdfasdf"
     }
   ],
   "productos": [
     {
       "id": "111",
       "nombre": "tacho pequeño",
+      "imagen": "",
       "precio": 25
     },
     {
       "id": "222",
       "nombre": "tacho mediano",
+      "imagen": "",
       "precio": 55
     },
     {
       "id": "333",
       "nombre": "tacho frande",
+      "imagen": "",
       "precio": 105
     }
   ]
