@@ -10,3 +10,8 @@
 
 ## versión de angular
 Angular CLI: 17.3.5
+
+## Para la db de prueba
+- Comando para instalar: npm install json-server
+- Crear el json con los datos para probar: type nul > db.json
+- Comando para levantar la db y poder usar los endpoints: npx json-server db.json
