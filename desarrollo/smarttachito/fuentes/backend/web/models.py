@@ -111,3 +111,10 @@ class Pedido(models.Model):
     class Meta:
         verbose_name = "Pedido"
         verbose_name_plural = "Pedidos"
+
+class DetallePedido(models.Model):
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = "DetallePedido"
+        verbose_name_plural = "DetallePedidos"
