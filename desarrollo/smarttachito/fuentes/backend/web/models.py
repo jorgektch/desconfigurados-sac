@@ -55,3 +55,9 @@ class CargoEmpleado(models.Model):
         verbose_name = "CargoEmpleado"
         verbose_name_plural = "CargoEmpleados"
 
+class Residuo(models.Model):
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = "Residuo"
+        verbose_name_plural = "Residuos"
