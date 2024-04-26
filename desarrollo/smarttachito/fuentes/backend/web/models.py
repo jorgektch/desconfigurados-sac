@@ -90,3 +90,10 @@ class Direccion(models.Model):
     class Meta:
         verbose_name = "Direccion"
         verbose_name_plural = "Direcciones"
+
+class Entrega(models.Model):
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = "Entrega"
+        verbose_name_plural = "Entregas"
