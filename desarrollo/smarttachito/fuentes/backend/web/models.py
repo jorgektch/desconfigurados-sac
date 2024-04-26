@@ -33,3 +33,10 @@ class Usuario(models.Model):
     class Meta:
         verbose_name = "Usuario"
         verbose_name_plural = "Usuarios"
+
+class Cliente(models.Model):
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = "Cliente"
+        verbose_name_plural = "Clientes"
