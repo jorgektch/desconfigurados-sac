@@ -12,11 +12,9 @@ export interface Usuarios{
 export interface Productos{
     id: string;
     nombre: string;
-    imagen: imgTacho;
+    imagen: {
+        path: string;
+        extension: string;
+    };
     precio: number;
-}
-
-export interface imgTacho{
-    path: string;
-    extension: string;
 }

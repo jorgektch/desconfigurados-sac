@@ -1,26 +1,15 @@
-<h2 class="titulo">CATÁLOGO</h2>
-<div class="contenedor-catalogo-productos">
-    <!-- <div *ngFor="let producto of productos" class="contenedor-producto">
-        <h3 class="nombre">{{producto.nombre}}</h3>
-        <p>{{producto.descripcionCorta}}</p>
-        <p>{{producto.precio}}</p>
-        <button (click)="agregarAlCarrito()">
-            <i class="fa-solid fa-cart-plus"></i>
-        </button>
-    </div> -->
-    <div class="contenedor-producto">
-        @if (interface$ | async; as resultObject) {
-            <ul>
-                @for (item of resultObject.productos; track item.nombre) {
-                    <li>
-                        <img [src]="getImagen(item.imagen)" alt="">
-                        <p>{{item.nombre}}</p>
-                        <button (click)="agregarAlCarrito()">
-                            <i class="fa-solid fa-cart-plus"></i>
-                        </button>
-                    </li>
-                }
-            </ul>
-        }
-    </div>
-</div>
+<section class="catalogo">
+    <h2>Catálogo de Productos</h2>
+    <ul class="productos-lista">
+      <li *ngFor="let producto of productos$ | async">
+        <div class="producto-imagen">
+          <img [src]="getImagen(producto.imagen)">
+        </div>
+        <div class="producto-detalles">
+          <h3>{{ producto.nombre }}</h3>
+          <p *ngIf="producto.id">{{ producto.id }}</p>
+          <span class="precio">{{ producto.precio }}</span>
+        </div>
+      </li>
+    </ul>
+  </section>

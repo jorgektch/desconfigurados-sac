@@ -1,28 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { NgFor, AsyncPipe } from '@angular/common';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { imgTacho, Interface } from '../interfaces/interface';
+import { Productos } from '../interfaces/interface';
 import { Observable } from 'rxjs';
 import { ApiPruebaService } from '../services/api-prueba.service';
 
 @Component({
   selector: 'app-catalogo',
   standalone: true,
-  imports: [NgFor, RouterModule, AsyncPipe],
+  imports: [NgIf, NgFor, RouterModule, AsyncPipe],
   templateUrl: './catalogo.component.html',
   styleUrl: './catalogo.component.css'
 })
 export class CatalogoComponent implements OnInit {
-  public interface$!: Observable<Interface>;
-  
+
+  //Define productos$ de tipo Observable<Productos[]> para recuperar la data del producto
+  public productos$!: Observable<Productos[]>; 
+
+  //Inyectar el ApiPrueba Service en el constructor
   constructor(private service: ApiPruebaService) { }
   
   ngOnInit(): void {
-    this.interface$ = this.service.getApi();
-    console.log(this.interface$);
+    this.productos$ = this.service.getApiProductos();
   }
 
-  getImagen(img: imgTacho): string{
+  getImagen(img: { path: string; extension: string }): string {
     return `${img.path}.${img.extension}`;
   }
 

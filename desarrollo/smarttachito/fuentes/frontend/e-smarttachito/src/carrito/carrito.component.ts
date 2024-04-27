@@ -3,11 +3,11 @@ import { Producto } from '../producto/producto.class';
 import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'carrito',
-  standalone: true,
-  imports: [NgIf],
-  templateUrl: './carrito.component.html',
-  styleUrl: './carrito.component.css'
+    selector: 'carrito',
+    standalone: true,
+    templateUrl: './carrito.component.html',
+    styleUrl: './carrito.component.css',
+    imports: [NgIf]
 })
 export class CarritoComponent {
   productosEnCarrito: Producto[] = [];
