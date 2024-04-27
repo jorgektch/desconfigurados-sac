@@ -14,48 +14,46 @@ export const routes: Routes = [
         path:'',
         component: LandingComponent,
         title: 'Smart Tachito',
+    },
+    {
+        path:'login',
+        component: LoginComponent,
+        title: 'login'
+    },
+    {
+        path:'catalogo',
+        component: CatalogoComponent,
+        title: 'catalogo'
+    },
+    {
+        path:'detalle-compra',
+        component: DetalleCompraComponent,
+        title: 'detalle-compra'
+    },
+    {
+        path:'pago',
+        component: PagoComponent,
+        title: 'pago'
+    },
+    {
+        path:'producto',
+        component: ProductoComponent,
+        title: 'producto'
+    },
+    {
+        path:'registro',
+        component: RegistroComponent,
+        title: 'registro'
+    },
+    {
+        path:'usuario',
+        component: UsuarioComponent,
+        title: 'usuario',
         children: [
             {
-                path:'login',
-                component: LoginComponent,
-                title: 'login'
-            },
-            {
-                path:'catalogo',
-                component: CatalogoComponent,
-                title: 'catalogo'
-            },
-            {
-                path:'detalle-compra',
-                component: DetalleCompraComponent,
-                title: 'detalle-compra'
-            },
-            {
-                path:'pago',
-                component: PagoComponent,
-                title: 'pago'
-            },
-            {
-                path:'producto',
-                component: ProductoComponent,
-                title: 'producto'
-            },
-            {
-                path:'registro',
-                component: RegistroComponent,
-                title: 'registro'
-            },
-            {
-                path:'usuario',
-                component: UsuarioComponent,
-                title: 'usuario',
-                children: [
-                    {
-                        path:'lista-compras',
-                        component: ListaComprasComponent,
-                        title: 'lista-compras'
-                    }
-                ]
+                path:'lista-compras',
+                component: ListaComprasComponent,
+                title: 'lista-compras'
             }
         ]
     } 

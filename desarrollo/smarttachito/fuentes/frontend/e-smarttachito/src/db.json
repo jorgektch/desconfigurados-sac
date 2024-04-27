@@ -1,14 +1,14 @@
 {
   "usuarios": [
     {
-      "id": "123",
-      "usuario": "Laura",
-      "contraseña": "Laura123"
+      "id": "1",
+      "usuario": "Laura@gmail.com",
+      "contrasenia": "Laura1"
     },
     {
-      "id": "456",
-      "usuario": "Asthri",
-      "contraseña": "Asthri456"
+      "id": "2",
+      "usuario": "Asthri@gmail.com",
+      "contrasenia": "Asthri2"
     }
   ],
   "productos": [

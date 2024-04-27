@@ -6,7 +6,7 @@ export interface Interface {
 export interface Usuarios{
     id:string;
     usuario: string;
-    contraseña: string;
+    contrasenia: string;
 }
 
 export interface Productos{
