@@ -35,6 +35,9 @@ export class CatalogoComponent implements OnInit {
     // código para agregar producto al carrito
     this.carritoComponent.agregarProductoAlCarrito(producto);
     this.carritoComponent.obtenerElTotal();
+
+    
+    
   }
 
 }
