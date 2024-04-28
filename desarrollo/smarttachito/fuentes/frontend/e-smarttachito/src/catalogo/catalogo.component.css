@@ -2,12 +2,12 @@
     width: 30%;
 }
 
-<<<<<<< HEAD
+
 .btn{
     background-color: aqua;
     margin: 5px;
 }
-=======
+
 .contenedor-catalogo-productos {
     display: flex;
     flex-wrap: wrap;
@@ -70,5 +70,3 @@ li {
     list-style: none;
     border-color: black;
 }
-
->>>>>>> b648458e40d27b7841d5f780da19199ec8463de6
