@@ -3,5 +3,5 @@
 # Modelo Logico
 ![Modelo Conceptual](./logico/ModeloLogico.jpg)
 # Modelo Físico
-![Modelo Conceptual](./logico/ModeloFisico.png)
+![Modelo Conceptual](./fisico/ModeloFisico.png)
 
