@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { Producto } from '../producto/producto.class';
-import { NgIf } from '@angular/common';
-import { BehaviorSubject, Observable, from, map } from 'rxjs';
+import { Producto } from '../producto/producto.class'; // Importar la defincion de la clase Producto
+import { NgIf } from '@angular/common'; // Importa la directiva NgIf para renderizado condicional
+import { BehaviorSubject, Observable, from, map } from 'rxjs';  // Importa operadores RxJS
+
 
 @Component({
     selector: 'carrito',
-    standalone: true,
+    standalone: true, // modo independiente para el componente
     templateUrl: './carrito.component.html',
     styleUrl: './carrito.component.css',
     imports: [NgIf]
 })
 export class CarritoComponent implements OnInit {
-  productosEnCarrito: Producto[] = [];
-  seVisualiza: Boolean = false;
+  productosEnCarrito: Producto[] = []; // Arreglo para almacenar productos en el carrito
+  seVisualiza: Boolean = false; // Bandera para controlar la visibilidad del div desplegable 
+                                // que mostrara los productos aniadidos al carrito
 
   totalCarrito$ = new BehaviorSubject<number>(0) // Observable para la cantidad total
 
@@ -20,17 +22,18 @@ export class CarritoComponent implements OnInit {
 
   ngOnInit(): void {
     from(this.productosEnCarrito).subscribe(() => this.recalcularTotal());
+    // Se suscribe a los cambios en productosEnCarrito para activar el recálculo
   }
 
   agregarProductoAlCarrito(idProducto: Producto) {
-    this.productosEnCarrito.push(idProducto);
-    this.recalcularTotal();
+    this.productosEnCarrito.push(idProducto);// Agrega producto al carrito
+    this.recalcularTotal(); // Recalcula el total después de agregar un producto
   }
 
   eliminarProductoDelCarrito(idProducto: Producto) {
     const indexProductoEliminar = this.productosEnCarrito.indexOf(idProducto);
     if(indexProductoEliminar != -1) {
-      this.productosEnCarrito.splice(indexProductoEliminar, 1);
+      this.productosEnCarrito.splice(indexProductoEliminar, 1); // Elimina producto del carrito
       this.recalcularTotal()
     }
   }
@@ -45,17 +48,17 @@ export class CarritoComponent implements OnInit {
   }
 
   obtenerElTotal(): Observable<number> {
-    // lógica para implementar el cálculo total a pagar
+    // Calcula el monto total de todos los productos en el carrito.
     const total = this.productosEnCarrito.reduce((acc, producto) => acc + producto.precio, 0);
-    this.totalCarrito$.next(total);
-    return this.totalCarrito$.asObservable();
+    this.totalCarrito$.next(total);// Actualiza el BehaviorSubject con el nuevo total
+    return this.totalCarrito$.asObservable();// Devuelve el observable del monto total
   }
 
   private recalcularTotal() {
-    this.obtenerElTotal();
+    this.obtenerElTotal(); // Activa el recálculo y actualiza el observable
   }
 
   toggleVisualizacionCarrito() {
-    this.seVisualiza = !this.seVisualiza;
+    this.seVisualiza = !this.seVisualiza; // Cambia la visibilidad del div del carrito 
   }
 }
