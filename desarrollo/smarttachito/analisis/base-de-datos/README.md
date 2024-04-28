@@ -1,5 +1,5 @@
 # Modelo Conceptual
-![Modelo Conceptual](conceptual_page-0001.jpg)
+![Modelo Conceptual](./conceptual/ModeloConceptual.jpg)
 # Modelo Logico
 <image src="./logico_page-0001.jpg" alt="Modelo Logico">
 
