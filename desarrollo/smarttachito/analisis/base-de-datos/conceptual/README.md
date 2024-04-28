@@ -42,4 +42,27 @@ Cada empleado tiene uno o mas cargos, por lo que es necesaria una entidad Cargo.
 | -------- | ------------ | ----------- |
 | idCargo | integer | Identificador del cargo |
 | Nombre | varchar(100) | Nombre del cargo |
-| Descripcion | varchar(500) | Descripcion del cargo |
+| Descripcion | varchar(500) | Descripción del cargo |
+
+### Producto:
+El cliente podrá seleccionar productos del e-commerce, además que la administración y gestión de productos se hará desde el panel de administración, por lo que es necesaria una entidad Producto
+#### Atributos
+| Atributo | Tipo de dato | Descripcion |
+| -------- | ------------ | ----------- |
+| idProducto | integer | Identificador del producto |
+| Nombre | varchar(100) | Nombre del cargo |
+| DescripcionCorta | varchar(100) | Descripción corta del producto, que será mostrada en la vista rápida del producto |
+| Descripcion | varchar(500) | Descripción larga del producto, que será mostrada en la vista de detalle del producto |
+| Imagen | image | Imagen del producto |
+| Categoria | Categoría del producto |
+
+### Residuo
+Los productos, que son los SmartTachitos, seleccionan los residuos. Y cada SmartTachito puede seleccionar 3 o más tipos de residuos, por lo que es necesaria una entidad Residuo para realizar los filtros respectivos en el Frontend
+#### Atributos
+| Atributo | Tipo de dato | Descripcion |
+| -------- | ------------ | ----------- |
+| idResiduo | integer | Identificador primario del residuo |
+| Nombre | varchar(100) | Nombre del residuo |
+| Descripcion | varchar(500) | Descripción del residuo |
+| Imagen | image | Imagen del residuo |
+
