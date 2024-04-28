@@ -44,3 +44,12 @@ Cada empleado tiene uno o mas cargos, por lo que es necesaria una entidad Cargo.
 | idCargo | integer | Identificador del cargo |
 | Nombre | varchar(100) | Nombre del cargo |
 | Descripcion | varchar(500) | Descripción del cargo |
+
+### EmpleadoCargo
+Tabla intermedia entre Empleado y Cargo
+#### Atributos
+| Atributo | Tipo de dato | Descripcion |
+| -------- | ------------ | ----------- |
+| idCargo | integer | Identificador del cargo |
+| idEmpleado | integer | Identificador del empleado |
+
