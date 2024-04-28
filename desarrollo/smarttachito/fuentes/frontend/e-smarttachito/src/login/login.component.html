@@ -9,35 +9,30 @@
 
 <body>
 
-    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+    <form (ngSubmit)="onSubmit()" method="post">
+        <div class="imgcontainer">
+            <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> -->
+            <img src="../assets/img/login-avatar.svg" alt="Avatar" class="avatar">
+        </div>
 
-    <div id="id01" class="modal">
+        <div class="container">
+            <label for="usuario"><b>Username</b></label>
+            <input type="email" placeholder="Enter Username" formControlName = "usuario" id = "usuario" name="usuario" required>
 
-        <form (ngSubmit)="onSubmit()" method="post">
-            <div class="imgcontainer">
-                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <img src="../assets/img/login-avatar.svg" alt="Avatar" class="avatar">
-            </div>
+            <label for="contrasenia"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" FormControlName="contrasenia" id="contrasenia" name="contrasenia" required>
 
-            <div class="container">
-                <label for="usuario"><b>Username</b></label>
-                <input type="email" placeholder="Enter Username" formControlName = "usuario" id = "usuario" name="usuario" required>
+            <button type="submit" [routerLink]="['/']">Login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
 
-                <label for="contrasenia"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" FormControlName="contrasenia" id="contrasenia" name="contrasenia" required>
-
-                <button type="submit">Login</button>
-                <label>
-                    <input type="checkbox" checked="checked" name="remember"> Remember me
-                </label>
-            </div>
-
-            <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('id01').style.display='none'"
-                    class="cancelbtn">Cancel</button>
-            </div>
-        </form>
-    </div>
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" [routerLink]="['/']" onclick="document.getElementById('id01').style.display='none'"
+                class="cancelbtn">Cancel</button>
+        </div>
+    </form>
 
     <script>
         var modal = document.getElementById('id01');

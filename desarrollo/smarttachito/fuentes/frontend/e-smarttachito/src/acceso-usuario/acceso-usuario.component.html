@@ -10,7 +10,7 @@
 <body>
 
     <div>
-        <button onclick="document.getElementById('id01').style.display='block'">Acceso</button>
+        <button onclick="document.getElementById('id01').style.display='block'"> <i class="fa-solid fa-user"></i> </button>
         <div id="id01" class="modal">
             <div class="modal-content">
                 <header>
@@ -18,8 +18,9 @@
                     <h2>Acceso de usuarios</h2>
                 </header>
                 <div>
-                    <app-login></app-login>
-                    <app-registro></app-registro>
+                    <button [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</button>
+                    <p></p>
+                    <button [routerLink]="['/registro']" routerLinkActive="router-link-active" >Registro</button>
                 </div>
                 <footer>
                     <p>Gracias por elegirnos</p>

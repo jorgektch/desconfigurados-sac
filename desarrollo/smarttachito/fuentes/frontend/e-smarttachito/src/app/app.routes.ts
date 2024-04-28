@@ -10,7 +10,6 @@ import { RegistroComponent } from '../registro/registro.component';
 import { UsuarioComponent } from '../usuario/usuario.component';
 import { AuthGuard } from '../auth.guard';
 import { NgModule } from '@angular/core';
-import { AccesoUsuarioComponent } from '../acceso-usuario/acceso-usuario.component';
 
 export const routes: Routes = [
     {
@@ -59,12 +58,7 @@ export const routes: Routes = [
         component: ListaComprasComponent,
         title: 'Lista de Compras',
         canActivate: [AuthGuard],
-    },
-    {
-        path: 'acceso-usuarios',
-        component: AccesoUsuarioComponent,
-        title: 'Acceso-usuarios'
-    } 
+    }
 ];
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
