@@ -163,3 +163,11 @@ Los empleados pueden realizar pedidos, y cada pedido puede contener uno o más p
 | idPago | integer | Identificador foráneo primario del pago |
 | FechaPedido | date | Fecha del pedido |
 | Estado | integer | Estado del pedido, el cual puede ser: (1 - En proceso) / (2 - Pagado) / (3 - Entregado) / (4 - Cancelado) |
+
+### DetallePedido
+Tabla intermedia entre Producto y Pedido, nos permitirá incluir varios productos dentro de un mismo pedido
+#### Atributos
+| Atributo | Tipo de dato | Descripcion |
+| -------- | ------------ | ----------- |
+| idPedido | integer | Identificador foráneo del pedido |
+| idProducto | integer | Identificador foráneo del producto |
