@@ -70,6 +70,14 @@ El cliente podrá seleccionar productos del e-commerce, además que la administr
 | Atributo | Tipo de dato | Descripcion |
 | -------- | ------------ | ----------- |
 | idProducto | integer | Identificador del producto |
+| idCategoria | integer | Identificador foráneo de la categoría |
 | Nombre | varchar(100) | Nombre del producto |
 | DescripcionCorta | varchar(100) | Descripción corta del producto, que será mostrada en la vista rápida del producto |
 | Descripcion | varchar(500) | Descripción larga del producto, que será mostrada en la vista de detalle del producto |
+| Precio | decimal(8,2) | Precio unitario del artículo |
+| Stock | integer | Stock disponible del artiulo, debe ser entero positivo |
+| Imagen 1 | image | Imagen de perspectiva del producto |
+| Imagen 2 | image | Imagen superior del producto |
+| Imagen 3 | image | Imagen lateral del producto |
+| Imagen 4 | image | Imagen frontal del producto |
+| Imagen 3D | image | Imagen en 3D del producto |
