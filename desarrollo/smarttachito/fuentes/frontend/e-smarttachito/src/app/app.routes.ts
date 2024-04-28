@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from '../landing/landing.component';
 import { LoginComponent } from '../login/login.component';
 import { CatalogoComponent } from '../catalogo/catalogo.component';
@@ -8,6 +8,8 @@ import { PagoComponent } from '../pago/pago.component';
 import { ProductoComponent } from '../producto/producto.component';
 import { RegistroComponent } from '../registro/registro.component';
 import { UsuarioComponent } from '../usuario/usuario.component';
+import { AuthGuard } from '../auth.guard';
+import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
     {
@@ -49,12 +51,17 @@ export const routes: Routes = [
         path:'usuario',
         component: UsuarioComponent,
         title: 'usuario',
-        children: [
-            {
-                path:'lista-compras',
-                component: ListaComprasComponent,
-                title: 'lista-compras'
-            }
-        ]
+        canActivate: [AuthGuard],
+    },
+    {
+        path: 'lista-compras',
+        component: ListaComprasComponent,
+        title: 'Lista de Compras',
+        canActivate: [AuthGuard],
     } 
 ];
+@NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+  })
+  export class AppRoutingModule { }
