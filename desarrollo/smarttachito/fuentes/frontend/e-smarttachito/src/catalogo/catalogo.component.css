@@ -54,5 +54,18 @@ button {
     /*quiero centrar el boton */
 }
 
+.producto-imagen img {
+    width: 200px;
+    height: auto;
+}
 
+ul {
+    margin: 10px;
+}
+
+li {
+    margin: 10px auto;
+    list-style: none;
+    border-color: black;
+}
 
