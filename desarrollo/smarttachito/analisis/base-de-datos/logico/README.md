@@ -81,3 +81,22 @@ El cliente podrá seleccionar productos del e-commerce, además que la administr
 | Imagen 3 | image | Imagen lateral del producto |
 | Imagen 4 | image | Imagen frontal del producto |
 | Imagen 3D | image | Imagen en 3D del producto |
+
+### Residuo
+Los productos, que son los SmartTachitos, seleccionan los residuos. Y cada SmartTachito puede seleccionar 3 o más tipos de residuos, por lo que es necesaria una entidad Residuo para realizar los filtros respectivos en el Frontend
+#### Atributos
+| Atributo | Tipo de dato | Descripcion |
+| -------- | ------------ | ----------- |
+| idResiduo | integer | Identificador primario del residuo |
+| Nombre | varchar(100) | Nombre del residuo |
+| Descripcion | varchar(500) | Descripción del residuo |
+| Imagen | image | Imagen del residuo |
+| Icono | image | Icono o Thumbnail del residuo |
+
+### ProductoResiduo
+Tabla intermedia entre Producto y Residuo
+#### Atributos
+| Atributo | Tipo de dato | Descripcion |
+| -------- | ------------ | ----------- |
+| idResiduo | integer | Identificador del residuo |
+| idProducto | integer | Identificador del producto |
