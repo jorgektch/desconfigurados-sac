@@ -66,3 +66,31 @@ Los productos, que son los SmartTachitos, seleccionan los residuos. Y cada Smart
 | Descripcion | varchar(500) | Descripción del residuo |
 | Imagen | image | Imagen del residuo |
 
+### Pedido
+Los empleados pueden realizar pedidos, y cada pedido puede contener uno o más productos, por lo que es necesaria una entidad Pedido
+#### Atributos
+| Atributo | Tipo de dato | Descripcion |
+| -------- | ------------ | ----------- |
+| idPedido | integer | Identificador primario del pedido |
+| FechaPedido | date | Fecha del pedido |
+| Estado | integer | Estado del pedido, el cual puede ser: (1 - En proceso) / (2 - Pagado) / (3 - Entregado) / (4 - Cancelado) |
+
+### Pago
+Cada pedido puede ser pagado, por lo que es necesaria una entidad Pago
+#### Atributos
+| Atributo | Tipo de dato | Descripcion |
+| -------- | ------------ | ----------- |
+| idPago | integer | Identificador primario del pago |
+| FechaPago | date | Fecha del pago |
+| Estado | integer | Estado del pago, el cual puede ser: (1 - Pagado) / (2 - Cancelado) |
+
+### Entrega
+Cada pedido puede ser entregado, por lo que es necesaria una entidad Entrega
+#### Atributos
+| Atributo | Tipo de dato | Descripcion |
+| -------- | ------------ | ----------- |
+| idEntrega | integer | Identificador primario de la entrega |
+| FechaEntrega | date | Fecha de la entrega |
+| Estado | integer | Estado de la entrega, el cual puede ser: (1 - En proceso) / (2 - Entregado) |
+| Direccion | varchar(200) | Direccion de la entrega |
+
