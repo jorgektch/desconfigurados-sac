@@ -46,4 +46,21 @@ export class ApiPruebaService {
       })
     )
   }
+
+  setApiUsuarios(u: string, c: string){
+    return this.http.get(`http://localhost:3000/usuarios`).pipe(
+      map((data: any)=>{
+        const usuarios: Usuarios[] = [];
+        for (const item of data) {
+          const usser: Usuarios = {
+            //this.id: item.id + 1,
+            usuario: u,
+            contrasenia: c,
+            id: ''
+          };
+          usuarios.push(usser)
+        }
+      })
+    )
+  }
 }
