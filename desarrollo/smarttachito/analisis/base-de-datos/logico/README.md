@@ -118,3 +118,15 @@ Cada entrega tiene una direccion, la cual se hace a una determinada ciudad
 | idPais | integer | Identificador foráneo del país |
 | Nombre | varchar(100) | Nombre de la ciudad |
 
+### Direccion
+Cada entrega tiene una dirección, donde será entregada en una determinada ciudad y pais
+#### Atributos
+| Atributo | Tipo de dato | Descripcion |
+| -------- | ------------ | ----------- |
+| idDireccion | integer | Identificador de la direccion |
+| idCiudad | integer | Identificador foráneo de la ciudad |
+| Direccion | varchar(200) | Dirección exacta de la entrega |
+| CodPostal | varchar(50) | Código postal de la dirección |
+| Referencia | varchar(100) | Una referencia para encontrar la dirección |
+| Longitud | integer | Longitud de las coordenadas de la dirección, serán seleccionadas desde el mapa de la interfaz de la aplicación |
+| Latitud | integer | Latitud de las coordenadas de la dirección, serán seleccionadas desde el mapa de la interfaz de la aplicación |
