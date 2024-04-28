@@ -25,4 +25,13 @@ El panel de administración permitirá gestionar información de los empleados, 
 | -------- | ------------ | ----------- |
 | idEmpleado | integer | Identificador del empleado |
 | FechaContratacion | date | Fecha de contratación del empleado |
-| idUsuario | integer | Identificador foráneo del usuario del empleado
+| idUsuario | integer | Identificador foráneo del usuario del empleado |
+
+### Cliente
+El panel de administración permitirá gestionar información de los cliente, por lo que es necesaria una entidad Cliente. A su vez, en la página del e-commerce se podrán registrar los clientes para realizar las respectivas compras.
+#### Atributos
+| Atributo | Tipo de dato | Descripcion |
+| -------- | ------------ | ----------- |
+| idCliente | integer | Identificador del cliente |
+| FechaCreacion | date | Fecha de creacion del usuario del cliente |
+| idUsuario | integer | Identificador foráneo del usuario del cliente |
