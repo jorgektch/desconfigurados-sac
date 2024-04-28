@@ -23,6 +23,24 @@
     },
     {
       "id": "222",
+      "nombre": "Tacho pequeño",
+      "imagen": {
+        "path": "https://oechsle.vteximg.com.br/arquivos/ids/16330196/image-372076a535924d90ac23a2d4f4f5546d",
+        "extension": "jpg"
+      },
+      "precio": 25
+    },
+    {
+      "id": "333",
+      "nombre": "Tacho pequeño",
+      "imagen": {
+        "path": "https://oechsle.vteximg.com.br/arquivos/ids/16330196/image-372076a535924d90ac23a2d4f4f5546d",
+        "extension": "jpg"
+      },
+      "precio": 25
+    },
+    {
+      "id": "444",
       "nombre": "Tacho mediano",
       "imagen":{
         "path": "https://oechsle.vteximg.com.br/arquivos/ids/16330196/image-372076a535924d90ac23a2d4f4f5546d",
@@ -31,7 +49,34 @@
       "precio": 55
     },
     {
-      "id": "333",
+      "id": "555",
+      "nombre": "Tacho mediano",
+      "imagen":{
+        "path": "https://oechsle.vteximg.com.br/arquivos/ids/16330196/image-372076a535924d90ac23a2d4f4f5546d",
+        "extension": "jpg"
+      },
+      "precio": 55
+    },
+    {
+      "id": "666",
+      "nombre": "Tacho mediano",
+      "imagen":{
+        "path": "https://oechsle.vteximg.com.br/arquivos/ids/16330196/image-372076a535924d90ac23a2d4f4f5546d",
+        "extension": "jpg"
+      },
+      "precio": 55
+    },
+    {
+      "id": "777",
+      "nombre": "Tacho mediano",
+      "imagen":{
+        "path": "https://oechsle.vteximg.com.br/arquivos/ids/16330196/image-372076a535924d90ac23a2d4f4f5546d",
+        "extension": "jpg"
+      },
+      "precio": 55
+    },
+    {
+      "id": "888",
       "nombre": "Tacho grande",
       "imagen":{
         "path": "https://resizer.iproimg.com/unsafe/1280x720/filters:format(webp)/https://economiasustentable.com/wp-content/uploads/2020/01/tachos-inteligentes",
