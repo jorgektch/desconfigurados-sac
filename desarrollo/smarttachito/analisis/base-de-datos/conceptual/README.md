@@ -50,7 +50,7 @@ El cliente podrá seleccionar productos del e-commerce, además que la administr
 | Atributo | Tipo de dato | Descripcion |
 | -------- | ------------ | ----------- |
 | idProducto | integer | Identificador del producto |
-| Nombre | varchar(100) | Nombre del cargo |
+| Nombre | varchar(100) | Nombre del producto |
 | DescripcionCorta | varchar(100) | Descripción corta del producto, que será mostrada en la vista rápida del producto |
 | Descripcion | varchar(500) | Descripción larga del producto, que será mostrada en la vista de detalle del producto |
 | Imagen | image | Imagen del producto |

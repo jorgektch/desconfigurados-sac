@@ -53,3 +53,23 @@ Tabla intermedia entre Empleado y Cargo
 | idCargo | integer | Identificador del cargo |
 | idEmpleado | integer | Identificador del empleado |
 
+### Categoria
+Cada producto puede tener una categoria, por lo que es necesaria una entidad Categoria
+#### Atributos
+| Atributo | Tipo de dato | Descripcion |
+| -------- | ------------ | ----------- |
+| idCategoria | integer | Identificador del categoría |
+| Nombre | varchar(100) | Nombre de la categoría |
+| Descripcion | varchar(500) | Descripción de la categoría |
+| Imagen | image | Imagen de la categoría |
+| Icono | image | Icono o Thumbnail de la categoría |
+
+### Producto:
+El cliente podrá seleccionar productos del e-commerce, además que la administración y gestión de productos se hará desde el panel de administración, por lo que es necesaria una entidad Producto
+#### Atributos
+| Atributo | Tipo de dato | Descripcion |
+| -------- | ------------ | ----------- |
+| idProducto | integer | Identificador del producto |
+| Nombre | varchar(100) | Nombre del producto |
+| DescripcionCorta | varchar(100) | Descripción corta del producto, que será mostrada en la vista rápida del producto |
+| Descripcion | varchar(500) | Descripción larga del producto, que será mostrada en la vista de detalle del producto |
