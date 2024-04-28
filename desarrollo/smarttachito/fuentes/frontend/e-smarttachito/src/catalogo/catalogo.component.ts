@@ -1,9 +1,10 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Productos } from '../interfaces/interface';
 import { Observable } from 'rxjs';
 import { ApiPruebaService } from '../services/api-prueba.service';
+import { CarritoComponent } from '../carrito/carrito.component';
 
 @Component({
   selector: 'app-catalogo',
@@ -18,7 +19,7 @@ export class CatalogoComponent implements OnInit {
   public productos$!: Observable<Productos[]>; 
 
   //Inyectar el ApiPrueba Service en el constructor
-  constructor(private service: ApiPruebaService){}
+  constructor(private service: ApiPruebaService, private carritoComponent: CarritoComponent){}
   
   //Siempre al iniciar se va a realizar getApiProductos
   ngOnInit(): void {
@@ -32,6 +33,8 @@ export class CatalogoComponent implements OnInit {
 
   agregarAlCarrito(producto: Productos) {
     // código para agregar producto al carrito
+    this.carritoComponent.agregarProductoAlCarrito(producto);
+    this.carritoComponent.obtenerElTotal();
   }
 
 }

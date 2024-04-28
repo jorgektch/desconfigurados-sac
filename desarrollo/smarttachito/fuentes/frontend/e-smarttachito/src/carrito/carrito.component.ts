@@ -1,7 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { Productos } from '../interfaces/interface';
 import { NgIf } from '@angular/common'; // Importa la directiva NgIf para renderizado condicional
-import { BehaviorSubject, Observable, from, map } from 'rxjs';  // Importa operadores RxJS
+import { BehaviorSubject, Observable, from} from 'rxjs';  // Importa operadores RxJS
 
 @Injectable({
   providedIn: 'root'
