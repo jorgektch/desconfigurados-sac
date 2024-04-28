@@ -1,22 +1,20 @@
 # Sketches
-## Carrito de compras
-<img src="./carrito-de-compras-1.jpeg" alt="carrito"/>
-<img src="./carrito de compras 2.jpeg">
+## Inicio
+<img src="./inicio.jpeg"/>
 
 ## Catalogo de productos
-<img src="./catalogo de producto 1.jpeg">
-<img src="./catalogo de producto 2.jpeg">
-<img src="./catalogo de producto 3.jpeg">
+<img src="./productos.jpeg">
 
 ## Detalle de producto
-<img src="./detalle del producto 1.jpeg">
-<img src="./detalle del producto 2.jpeg">
-<img src="./detalle del producto 3.jpeg">
+<img src="./detalleorden.jpeg">
 
 ## Metodo de pago
-<img src="./metodo de pago 1.jpeg">
-<img src="./metodo de pago 2.jpeg">
+<img src="./comprar.jpeg">
 
-## Perfil de cliente
-<img src="./perfil de cliente 1.jpeg">
-<img src="./perfil de cliente 2.jpeg">
+## Carrito
+<img src="./carrito.jpeg">
+<img src="./carrito vacio.jpeg">
+
+## Inicio Sesion
+<img src="./inicio sesion.jpeg">
+<img src="./recuperar contraseña.jpeg">
