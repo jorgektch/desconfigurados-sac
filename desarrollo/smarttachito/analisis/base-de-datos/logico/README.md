@@ -100,3 +100,21 @@ Tabla intermedia entre Producto y Residuo
 | -------- | ------------ | ----------- |
 | idResiduo | integer | Identificador del residuo |
 | idProducto | integer | Identificador del producto |
+
+### Pais
+Cada entrega tiene una direccion, la cual se hace a un determinado país
+#### Atributos
+| Atributo | Tipo de dato | Descripcion |
+| -------- | ------------ | ----------- |
+| idPais | integer | Identificador del país |
+| Nombre | varchar(100) | Nombre del país |
+
+### Ciudad
+Cada entrega tiene una direccion, la cual se hace a una determinada ciudad
+#### Atributos
+| Atributo | Tipo de dato | Descripcion |
+| -------- | ------------ | ----------- |
+| idCiudad | integer | Identificador de la ciudad |
+| idPais | integer | Identificador foráneo del país |
+| Nombre | varchar(100) | Nombre de la ciudad |
+
