@@ -9,8 +9,8 @@ import { ApiPruebaService } from '../services/api-prueba.service';
   selector: 'app-catalogo',
   standalone: true,
   imports: [NgIf, NgFor, RouterModule, AsyncPipe],
-  templateUrl: './catalogo.component.html',
-  styleUrl: './catalogo.component.css'
+  templateUrl: 'catalogo.component.html',
+  styleUrl: 'catalogo.component.css'
 })
 export class CatalogoComponent implements OnInit {
 

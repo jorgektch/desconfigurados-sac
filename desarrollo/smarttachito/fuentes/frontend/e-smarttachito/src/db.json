@@ -14,7 +14,7 @@
   "productos": [
     {
       "id": "111",
-      "nombre": "tacho pequeño",
+      "nombre": "Tacho pequeño",
       "imagen": {
         "path": "https://oechsle.vteximg.com.br/arquivos/ids/16330196/image-372076a535924d90ac23a2d4f4f5546d",
         "extension": "jpg"
@@ -23,7 +23,7 @@
     },
     {
       "id": "222",
-      "nombre": "tacho mediano",
+      "nombre": "Tacho mediano",
       "imagen":{
         "path": "https://oechsle.vteximg.com.br/arquivos/ids/16330196/image-372076a535924d90ac23a2d4f4f5546d",
         "extension": "jpg"
@@ -32,7 +32,7 @@
     },
     {
       "id": "333",
-      "nombre": "tacho grande",
+      "nombre": "Tacho grande",
       "imagen":{
         "path": "https://resizer.iproimg.com/unsafe/1280x720/filters:format(webp)/https://economiasustentable.com/wp-content/uploads/2020/01/tachos-inteligentes",
         "extension": "jpg"
