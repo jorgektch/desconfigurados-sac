@@ -12,7 +12,7 @@
           <p *ngIf="producto.id">{{ producto.id }}</p>
           <span class="precio">{{ producto.precio }}</span>
         </div>
-        <button (click)="agregarAlCarrito()" class="btn">Agregar al Carrito</button>
+        <button (click)="agregarAlCarrito(producto)" class="btn">Agregar al Carrito</button>
       </li>
     </ul>
 </section>

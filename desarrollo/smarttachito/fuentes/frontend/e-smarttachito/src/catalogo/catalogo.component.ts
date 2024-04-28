@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Productos } from '../interfaces/interface';
@@ -18,7 +18,7 @@ export class CatalogoComponent implements OnInit {
   public productos$!: Observable<Productos[]>; 
 
   //Inyectar el ApiPrueba Service en el constructor
-  constructor(private service: ApiPruebaService) { }
+  constructor(private service: ApiPruebaService){}
   
   //Siempre al iniciar se va a realizar getApiProductos
   ngOnInit(): void {
@@ -27,10 +27,10 @@ export class CatalogoComponent implements OnInit {
 
   //Obtener la imagen compuesta del path y la extension
   getImagen(img: { path: string; extension: string }): string {
-    return `${img.path}.${img.extension}`;
+    return `${img.path}.${img.extension}`;  
   }
 
-  agregarAlCarrito() {
+  agregarAlCarrito(producto: Productos) {
     // código para agregar producto al carrito
   }
 

@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { Producto } from '../producto/producto.class'; // Importar la defincion de la clase Producto
+import { Component, OnInit, Injectable } from '@angular/core';
+import { Productos } from '../interfaces/interface';
 import { NgIf } from '@angular/common'; // Importa la directiva NgIf para renderizado condicional
 import { BehaviorSubject, Observable, from, map } from 'rxjs';  // Importa operadores RxJS
 
+@Injectable({
+  providedIn: 'root'
+})
 
 @Component({
     selector: 'carrito',
@@ -12,7 +15,7 @@ import { BehaviorSubject, Observable, from, map } from 'rxjs';  // Importa opera
     imports: [NgIf]
 })
 export class CarritoComponent implements OnInit {
-  productosEnCarrito: Producto[] = []; // Arreglo para almacenar productos en el carrito
+  productosEnCarrito: Productos[] = []; // Arreglo para almacenar productos en el carrito
   seVisualiza: Boolean = false; // Bandera para controlar la visibilidad del div desplegable 
                                 // que mostrara los productos aniadidos al carrito
 
@@ -25,12 +28,12 @@ export class CarritoComponent implements OnInit {
     // Se suscribe a los cambios en productosEnCarrito para activar el recálculo
   }
 
-  agregarProductoAlCarrito(idProducto: Producto) {
-    this.productosEnCarrito.push(idProducto);// Agrega producto al carrito
+  agregarProductoAlCarrito(producto: Productos) {
+    this.productosEnCarrito.push(producto);// Agrega producto al carrito
     this.recalcularTotal(); // Recalcula el total después de agregar un producto
   }
 
-  eliminarProductoDelCarrito(idProducto: Producto) {
+  eliminarProductoDelCarrito(idProducto: Productos) {
     const indexProductoEliminar = this.productosEnCarrito.indexOf(idProducto);
     if(indexProductoEliminar != -1) {
       this.productosEnCarrito.splice(indexProductoEliminar, 1); // Elimina producto del carrito
