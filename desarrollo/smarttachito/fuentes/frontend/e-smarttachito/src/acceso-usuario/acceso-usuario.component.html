@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <button onclick="document.getElementById('id01').style.display='block'">Acceso</button>
+        <div id="id01" class="modal">
+            <div>
+                <header>
+                    <span onclick="document.getElementById('id01').style.display='none'">&times;</span>
+                    <h2>Acceso de usuarios</h2>
+                </header>
+                <div>
+                    <app-login></app-login>
+                    <app-registro></app-registro>
+                </div>
+                <footer>
+                    <p>Gracias por elegirnos</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
