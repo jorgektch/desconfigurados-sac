@@ -29,8 +29,15 @@ img {
 
 .navbar-logo {
     font-size: 30px;
+    padding-right: 4px;
 }
 
 .login-icon {
     font-size: 30px;
+    padding-left: 4px;
+}
+
+.buttons {
+    display: flex;
+    padding: 4px;
 }
