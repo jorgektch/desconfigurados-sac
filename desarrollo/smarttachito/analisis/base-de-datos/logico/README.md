@@ -130,3 +130,36 @@ Cada entrega tiene una dirección, donde será entregada en una determinada ciud
 | Referencia | varchar(100) | Una referencia para encontrar la dirección |
 | Longitud | integer | Longitud de las coordenadas de la dirección, serán seleccionadas desde el mapa de la interfaz de la aplicación |
 | Latitud | integer | Latitud de las coordenadas de la dirección, serán seleccionadas desde el mapa de la interfaz de la aplicación |
+
+### Pago
+Cada pedido puede ser pagado, por lo que es necesaria una entidad Pago
+#### Atributos
+| Atributo | Tipo de dato | Descripcion |
+| -------- | ------------ | ----------- |
+| idPago | integer | Identificador primario del pago |
+| FechaPago | date | Fecha del pago |
+| Estado | integer | Estado del pago, el cual puede ser: (1 - Pagado) / (2 - Cancelado) |
+| Total | decimal(10, 2) | Dinero total pagado |
+
+### Entrega
+Cada pedido puede ser entregado, por lo que es necesaria una entidad Entrega
+#### Atributos
+| Atributo | Tipo de dato | Descripcion |
+| -------- | ------------ | ----------- |
+| idEntrega | integer | Identificador primario de la entrega |
+| idEmpleado | integer | Identificador foráneo del empleado |
+| idDireccion | integer | Identificador foráneo de la dirección |
+| FechaEntrega | date | Fecha de la entrega |
+| Estado | integer | Estado de la entrega, el cual puede ser: (1 - En proceso) / (2 - Entregado) |
+
+### Pedido
+Los empleados pueden realizar pedidos, y cada pedido puede contener uno o más productos, por lo que es necesaria una entidad Pedido
+#### Atributos
+| Atributo | Tipo de dato | Descripcion |
+| -------- | ------------ | ----------- |
+| idPedido | integer | Identificador primario del pedido |
+| idCliente | integer | Identificador foráneo del cliente |
+| idEntrega | integer | Identificador foráneo primario de la entrega |
+| idPago | integer | Identificador foráneo primario del pago |
+| FechaPedido | date | Fecha del pedido |
+| Estado | integer | Estado del pedido, el cual puede ser: (1 - En proceso) / (2 - Pagado) / (3 - Entregado) / (4 - Cancelado) |
