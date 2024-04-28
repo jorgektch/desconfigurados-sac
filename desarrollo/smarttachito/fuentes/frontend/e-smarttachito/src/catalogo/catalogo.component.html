@@ -2,9 +2,11 @@
     <h2>Catálogo de Productos</h2>
     <ul class="productos-lista">
       <li *ngFor="let producto of productos$ | async">
+
         <div class="producto-imagen">
           <img [src]="getImagen(producto.imagen)" class="img-producto">
         </div>
+
         <div class="producto-detalles">
           <h3>{{ producto.nombre }}</h3>
           <p *ngIf="producto.id">{{ producto.id }}</p>
@@ -13,4 +15,4 @@
         <button (click)="agregarAlCarrito()" class="btn">Agregar al Carrito</button>
       </li>
     </ul>
-  </section>
+</section>
