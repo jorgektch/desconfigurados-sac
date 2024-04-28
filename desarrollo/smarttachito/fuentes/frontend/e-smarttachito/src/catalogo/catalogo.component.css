@@ -46,12 +46,9 @@ p {
     padding-left: 20px;
 }
 
-button {
-    width: 40%;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 30% ;
-    /*quiero centrar el boton */
+.boton-carrito {
+    display: block;
+    
 }
 
 .producto-imagen img {
