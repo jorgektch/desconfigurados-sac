@@ -43,3 +43,14 @@ A continuación se presenta el diccionario de datos de las tablas del modelo fí
 | ----- | ------------ | ------ | ------- | --- | --- | --- | --- | --- | ------- | ----------- |
 | idCargo | INT | - | - | - | SI | SI | - | - | - | Identificador foráneo del cargo |
 | idEmpleado | INT | - | - | - | SI | SI | - | - | - | Identificador foráneo del empleado |
+
+### Categoria
+| Campo | Tipo de dato | Tamaño | Formato | PK | FK | NN | AI | U | Default | Descripción |
+| ----- | ------------ | ------ | ------- | --- | --- | --- | --- | --- | ------- | ----------- |
+| idCategoria | INT | - | - | SI | - | SI | SI | SI | - | Identificador primario de la categoría |
+| Nombre | VARCHAR | 100 | - | - | - | SI | - | SI | - | Nombre de la categoría |
+| Descripcion | VARCHAR | 500 | - | - | - | - | - | - | - | Descipción de la categoría |
+| Imagen | VARCHAR | 500 | - | - | - | - | - | - | - | Descipción de la categoría |
+
+
+
