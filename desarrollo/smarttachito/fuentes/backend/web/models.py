@@ -95,6 +95,7 @@ class Pais(models.Model):
         verbose_name_plural = "Paises"
 
 class Ciudad(models.Model):
+    nombre = models.CharField("Nombre", max_length=100)
     def __str__(self):
         return self.nombre
     class Meta:
