@@ -29,15 +29,18 @@ Este repositorio contiene el código fuente de un proyecto Django para un Ecomme
 - sqlparse: 0.5.0
 - tzdata: 2024.1
 
-## Creación de un entorno virtual y activarlo:
+## Creación de un entorno virtual y activarlo
 ```
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-## Instalación de dependencias:
+## Instalación de dependencias
 ```
 pip install -r requirements.txt
 ```
 
-
+# Ejecución del servidor de desarrollo
+```
+python manage.py runserver 0.0.0.0:8000
+```
