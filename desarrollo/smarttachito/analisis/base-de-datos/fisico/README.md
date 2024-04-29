@@ -50,7 +50,15 @@ A continuación se presenta el diccionario de datos de las tablas del modelo fí
 | idCategoria | INT | - | - | SI | - | SI | SI | SI | - | Identificador primario de la categoría |
 | Nombre | VARCHAR | 100 | - | - | - | SI | - | SI | - | Nombre de la categoría |
 | Descripcion | VARCHAR | 500 | - | - | - | - | - | - | - | Descipción de la categoría |
-| Imagen | VARCHAR | 500 | - | - | - | - | - | - | - | Descipción de la categoría |
+| Imagen | VARCHAR | 500 | - | - | - | - | - | - | - | URL de la imagen de la categoría |
+
+### Residuo
+| Campo | Tipo de dato | Tamaño | Formato | PK | FK | NN | AI | U | Default | Descripción |
+| ----- | ------------ | ------ | ------- | --- | --- | --- | --- | --- | ------- | ----------- |
+| idResiduo | INT | - | - | SI | - | SI | SI | SI | - | Identificador primario de la residuo |
+| Nombre | VARCHAR | 100 | - | - | - | SI | - | SI | - | Nombre del residuo |
+| Descripcion | VARCHAR | 500 | - | - | - | - | - | - | - | Descipción del residuo |
+| Imagen | VARCHAR | 500 | - | - | - | - | - | - | - | URL de la imagen del residuo |
 
 
 
