@@ -17,3 +17,4 @@ Este repositorio contiene el código fuente de un proyecto Django para un Ecomme
 - Pillow: Biblioteca para el procesamiento de imágenes en Python. (https://pillow.readthedocs.io/en/latest/installation.html)
 - sqlparse: Biblioteca para analizar y manipular código SQL. (https://sqlparse.readthedocs.io/)
 - asgiref: Library para la implementación de ASGI, el protocolo de comunicación entre servidores web y aplicaciones Python. (https://pypi.org/project/asgiref/)
+- tzdata: Biblioteca para acceder a la información de zonas horarias. (https://docs.readthedocs.io/en/stable/config-file/v2.html)
