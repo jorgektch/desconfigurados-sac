@@ -60,5 +60,24 @@ A continuación se presenta el diccionario de datos de las tablas del modelo fí
 | Descripcion | VARCHAR | 500 | - | - | - | - | - | - | - | Descipción del residuo |
 | Imagen | VARCHAR | 500 | - | - | - | - | - | - | - | URL de la imagen del residuo |
 
+### Producto
+| Campo | Tipo de dato | Tamaño | Formato | PK | FK | NN | AI | U | Default | Descripción |
+| ----- | ------------ | ------ | ------- | --- | --- | --- | --- | --- | ------- | ----------- |
+| idProducto | INT | - | - | SI | - | SI | SI | SI | - | Identificador primario del producto |
+| Nombre | VARCHAR | 100 | - | - | - | SI | - | SI | - | Nombre del producto |
+| Descripcion | VARCHAR | 500 | - | - | - | - | - | - | - | Descipción larga del producto |
+| DescripcionCorta | VARCHAR | 100 | - | - | - | - | - | - | - | Descipción corta del producto |
+| Precio | DOUBLE | - | - | - | - | SI | - | - | 0 | Precio unitario del producto |
+| Imagen1 | VARCHAR | 500 | - | - | - | - | - | - | - | URL de la imagen en perpectiva del producto |
+| Imagen2 | VARCHAR | 500 | - | - | - | - | - | - | - | URL de la imagen frontal del producto |
+| Imagen3 | VARCHAR | 500 | - | - | - | - | - | - | - | URL de la imagen superior del producto |
+| Imagen4 | VARCHAR | 500 | - | - | - | - | - | - | - | URL de la imagen lateral del producto |
+| Imagen3D | VARCHAR | 500 | - | - | - | - | - | - | - | URL de la imagen en 3D del producto |
+| idCategoria | INT | - | - | - | SI | SI | - | - | - | Identificador foráneo de la categoría |
 
 
+### ProductoResiduo
+| Campo | Tipo de dato | Tamaño | Formato | PK | FK | NN | AI | U | Default | Descripción |
+| ----- | ------------ | ------ | ------- | --- | --- | --- | --- | --- | ------- | ----------- |
+| idProducto | INT | - | - | - | SI | SI | - | - | - | Identificador foráneo del producto |
+| idResiduo | INT | - | - | - | SI | SI | - | - | - | Identificador foráneo del residuo |
