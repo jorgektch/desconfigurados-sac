@@ -54,6 +54,8 @@ class Cliente(models.Model):
         verbose_name_plural = "Clientes"
 
 class Cargo(models.Model):
+    nombre = models.CharField("Nombre", max_length=100)
+    descripcion = models.CharField("Descripción", max_length=500)
     def __str__(self):
         return self.nombre
     class Meta:
