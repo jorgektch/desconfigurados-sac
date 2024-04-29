@@ -23,3 +23,11 @@ A continuación se presenta el diccionario de datos de las tablas del modelo fí
 | idEmpleado | INT | - | - | SI | - | SI | SI | - | Identificador primario del empleado |
 | FechaContrato | DATE | - | dd/mm/aaaa | - | - | SI | - | - | Fecha de contrato del empleado |
 | idUsuario | INT | - | - | - | SI | SI | - | - | Identificador primario del usuario |
+
+### Cliente
+| Campo | Tipo de dato | Tamaño | Formato | PK | FK | NN | AI | Default | Descripción |
+| ----- | ------------ | ------ | ------- | --- | --- | --- | --- | ------- | ----------- |
+| idCliente | INT | - | - | SI | - | SI | SI | - | Identificador primario del cliente |
+| FechaCreacion | DATE | - | dd/mm/aaaa | - | - | SI | - | - | Fecha de creación del usuario del cliente |
+| idUsuario | INT | - | - | - | SI | SI | - | - | Identificador primario del usuario |
+
