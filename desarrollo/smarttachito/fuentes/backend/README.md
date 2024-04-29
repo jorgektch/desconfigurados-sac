@@ -53,4 +53,8 @@ pip install -r requirements.txt
 python manage.py runserver 0.0.0.0:8000
 ```
 
-## 
+## Acceso a la aplicación
+
+La aplicación estará disponible en http://localhost:8000. 
+
+Además, se puede acceder a la administración de Django en http://localhost:8000/admin.
