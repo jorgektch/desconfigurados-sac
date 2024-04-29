@@ -17,3 +17,9 @@ A continuación se presenta el diccionario de datos de las tablas del modelo fí
 | Documento | VARCHAR | 50 | - | - | - | SI | - | - | Nº de documento del usuario |
 | Telefono | VARCHAR | 50 | - | - | - | SI | - | - | Nº de teléfono del usuario |
 
+### Empleado
+| Campo | Tipo de dato | Tamaño | Formato | PK | FK | NN | AI | Default | Descripción |
+| ----- | ------------ | ------ | ------- | --- | --- | --- | --- | ------- | ----------- |
+| idEmpleado | INT | - | - | SI | - | SI | SI | - | Identificador primario del empleado |
+| FechaContrato | DATE | - | dd/mm/aaaa | - | - | SI | - | - | Fecha de contrato del empleado |
+| idUsuario | INT | - | - | - | SI | SI | - | - | Identificador primario del usuario |
