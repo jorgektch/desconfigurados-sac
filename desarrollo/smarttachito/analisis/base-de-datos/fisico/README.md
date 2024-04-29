@@ -31,3 +31,9 @@ A continuación se presenta el diccionario de datos de las tablas del modelo fí
 | FechaCreacion | DATE | - | dd/mm/aaaa | - | - | SI | - | - | Fecha de creación del usuario del cliente |
 | idUsuario | INT | - | - | - | SI | SI | - | - | Identificador primario del usuario |
 
+### Cargo
+| Campo | Tipo de dato | Tamaño | Formato | PK | FK | NN | AI | Default | Descripción |
+| ----- | ------------ | ------ | ------- | --- | --- | --- | --- | ------- | ----------- |
+| idCargo | INT | - | - | SI | - | SI | SI | - | Identificador primario del cargo |
+| Nombre | VARCHAR | 100 | - | - | - | SI | - | - | Nombre del cargo |
+| Descripcion | VARCHAR | 500 | - | - | - | - | - | - | Descipción del cargo |
