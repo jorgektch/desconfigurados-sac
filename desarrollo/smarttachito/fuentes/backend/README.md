@@ -40,7 +40,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-# Ejecución del servidor de desarrollo
+## Ejecución del servidor de desarrollo
 ```
 python manage.py runserver 0.0.0.0:8000
 ```
