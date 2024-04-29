@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CarritoComponent } from '../../../customer/buyer/carrito/carrito.component';
-import { AccesoUsuarioComponent } from "../../../acceso-usuario/acceso-usuario.component";
+import { AccesoUsuarioComponent } from "../acceso-usuario/acceso-usuario.component";
 
 @Component({
     selector: 'app-header',
