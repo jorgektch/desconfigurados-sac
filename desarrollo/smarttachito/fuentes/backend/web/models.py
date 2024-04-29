@@ -70,6 +70,9 @@ class CargoEmpleado(models.Model):
         verbose_name_plural = "CargoEmpleados"
 
 class Residuo(models.Model):
+    nombre = models.CharField("Nombre", max_length=100)
+    descripcion = models.CharField("Descripción", max_length=500)
+    imagen = models.ImageField("Imagen", upload_to="imagen/")
     def __str__(self):
         return self.nombre
     class Meta:
