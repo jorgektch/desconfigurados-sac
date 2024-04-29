@@ -34,3 +34,10 @@ Este repositorio contiene el código fuente de un proyecto Django para un Ecomme
 python3 -m venv .venv
 source .venv/bin/activate
 ```
+
+## Instalación de dependencias:
+```
+pip install -r requirements.txt
+```
+
+
