@@ -11,35 +11,35 @@ A continuación se presenta el diccionario de datos de las tablas del modelo fí
 | Nombres | VARCHAR | 100 | - | - | - | SI | - | - | - | Nombres del usuario |
 | ApellidoP | VARCHAR | 100 | - | - | - | SI | - | - | - | Apellido paterno del usuario |
 | ApellidoM | VARCHAR | 100 | - | - | - | SI | - | - | - | Apellido materno del usuario |
-| Email | VARCHAR | 100 | example@domain.com | - | SI | - | SI | - | - | Email del usuario |
+| Email | VARCHAR | 100 | example@domain.com | - | SI | - | - | SI | - | Email del usuario |
 | Contrasenha | VARCHAR | 100 | - | - | - | SI | - | - | - | Contraseña del usuario |
 | TipoDocumento | INT | - | - | - | - | SI | - | - | 1 | Tipo de documento: (1 - DNI) / (2 - Carnet de extranjería) |
 | Documento | VARCHAR | 50 | - | - | - | SI | - | SI | - | Nº de documento del usuario |
 | Telefono | VARCHAR | 50 | - | - | - | SI | - | SI | - | Nº de teléfono del usuario |
 
 ### Empleado
-| Campo | Tipo de dato | Tamaño | Formato | PK | FK | NN | AI | Default | Descripción |
-| ----- | ------------ | ------ | ------- | --- | --- | --- | --- | ------- | ----------- |
-| idEmpleado | INT | - | - | SI | - | SI | SI | - | Identificador primario del empleado |
-| FechaContrato | DATE | - | dd/mm/aaaa | - | - | SI | - | - | Fecha de contrato del empleado |
-| idUsuario | INT | - | - | - | SI | SI | - | - | Identificador primario del usuario |
+| Campo | Tipo de dato | Tamaño | Formato | PK | FK | NN | AI | U | Default | Descripción |
+| ----- | ------------ | ------ | ------- | --- | --- | --- | --- | --- | ------- | ----------- |
+| idEmpleado | INT | - | - | SI | - | SI | SI | SI | - | Identificador primario del empleado |
+| FechaContrato | DATE | - | dd/mm/aaaa | - | - | SI | - | - | - | Fecha de contrato del empleado |
+| idUsuario | INT | - | - | - | SI | SI | - | SI | - | Identificador primario del usuario |
 
 ### Cliente
-| Campo | Tipo de dato | Tamaño | Formato | PK | FK | NN | AI | Default | Descripción |
-| ----- | ------------ | ------ | ------- | --- | --- | --- | --- | ------- | ----------- |
-| idCliente | INT | - | - | SI | - | SI | SI | - | Identificador primario del cliente |
-| FechaCreacion | DATE | - | dd/mm/aaaa | - | - | SI | - | - | Fecha de creación del usuario del cliente |
-| idUsuario | INT | - | - | - | SI | SI | - | - | Identificador primario del usuario |
+| Campo | Tipo de dato | Tamaño | Formato | PK | FK | NN | AI | U | Default | Descripción |
+| ----- | ------------ | ------ | ------- | --- | --- | --- | --- | --- | ------- | ----------- |
+| idCliente | INT | - | - | SI | - | SI | SI | SI | - | Identificador primario del cliente |
+| FechaCreacion | DATE | - | dd/mm/aaaa | - | - | SI | - | - | - | Fecha de creación del usuario del cliente |
+| idUsuario | INT | - | - | - | SI | SI | - | SI | - | Identificador primario del usuario |
 
 ### Cargo
-| Campo | Tipo de dato | Tamaño | Formato | PK | FK | NN | AI | Default | Descripción |
-| ----- | ------------ | ------ | ------- | --- | --- | --- | --- | ------- | ----------- |
-| idCargo | INT | - | - | SI | - | SI | SI | - | Identificador primario del cargo |
-| Nombre | VARCHAR | 100 | - | - | - | SI | - | - | Nombre del cargo |
-| Descripcion | VARCHAR | 500 | - | - | - | - | - | - | Descipción del cargo |
+| Campo | Tipo de dato | Tamaño | Formato | PK | FK | NN | AI | U | Default | Descripción |
+| ----- | ------------ | ------ | ------- | --- | --- | --- | --- | --- | ------- | ----------- |
+| idCargo | INT | - | - | SI | - | SI | SI | SI | - | Identificador primario del cargo |
+| Nombre | VARCHAR | 100 | - | - | - | SI | - | SI | - | Nombre del cargo |
+| Descripcion | VARCHAR | 500 | - | - | - | - | - | - | - | Descipción del cargo |
 
 ### EmpleadoCargo
-| Campo | Tipo de dato | Tamaño | Formato | PK | FK | NN | AI | Default | Descripción |
-| ----- | ------------ | ------ | ------- | --- | --- | --- | --- | ------- | ----------- |
-| idCargo | INT | - | - | - | SI | SI | - | - | Identificador foráneo del cargo |
-| idEmpleado | INT | - | - | - | SI | SI | - | - | Identificador foráneo del empleado |
+| Campo | Tipo de dato | Tamaño | Formato | PK | FK | NN | AI | U | Default | Descripción |
+| ----- | ------------ | ------ | ------- | --- | --- | --- | --- | --- | ------- | ----------- |
+| idCargo | INT | - | - | - | SI | SI | - | - | - | Identificador foráneo del cargo |
+| idEmpleado | INT | - | - | - | SI | SI | - | - | - | Identificador foráneo del empleado |
