@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from '../header/header.component';
-import { CatalogoComponent } from '../catalogo/catalogo.component';
+import { HeaderComponent } from '../shared/layouts/header/header.component';
+import { CatalogoComponent } from '../customer/vista-catalogo/catalogo/catalogo.component';
 
 @Component({
   selector: 'app-root',
