@@ -18,3 +18,13 @@ Este repositorio contiene el código fuente de un proyecto Django para un Ecomme
 - sqlparse: Biblioteca para analizar y manipular código SQL. (https://sqlparse.readthedocs.io/)
 - asgiref: Library para la implementación de ASGI, el protocolo de comunicación entre servidores web y aplicaciones Python. (https://pypi.org/project/asgiref/)
 - tzdata: Biblioteca para acceder a la información de zonas horarias. (https://docs.readthedocs.io/en/stable/config-file/v2.html)
+
+## Versiones de las Tecnologías
+
+- asgiref: 3.8.1
+- Django: 5.0.4
+- django-cors-headers: 4.3.1
+- djangorestframework: 3.15.1
+- Pillow: 10.3.0
+- sqlparse: 0.5.0
+- tzdata: 2024.1
