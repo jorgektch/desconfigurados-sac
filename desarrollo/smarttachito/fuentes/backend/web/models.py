@@ -95,6 +95,7 @@ class Pais(models.Model):
         verbose_name_plural = "Paises"
 
 class Ciudad(models.Model):
+    pais = models.ForeignKey(Pais, on_delete=models.CASCADE, verbose_name="País")
     nombre = models.CharField("Nombre", max_length=100)
     def __str__(self):
         return self.nombre
