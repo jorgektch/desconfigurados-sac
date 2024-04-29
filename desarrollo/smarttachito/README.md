@@ -12,3 +12,4 @@ Este repositorio contiene el código fuente de un proyecto Django para un Ecomme
 ## Tecnologías Utilizadas
 
 - Django: Framework de desarrollo web Python para crear aplicaciones web dinámicas. (https://www.djangoproject.com/)
+- djangorestframework: Framework de desarrollo RESTful para crear APIs con Django. (https://readthedocs.org/projects/django-rest-framework/)
