@@ -1,5 +1,5 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-import { Productos } from '../interfaces/interface'; // Importa la interfaz de productos
+import { Productos } from '../../../shared/interfaces/interface'; // Importa la interfaz de productos
 import { NgFor, NgIf } from '@angular/common'; // Importa directivas necesarias
 
 @Injectable({

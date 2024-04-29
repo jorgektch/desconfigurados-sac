@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from "../header/header.component";
-import { CatalogoComponent } from "../catalogo/catalogo.component";
+import { HeaderComponent } from "../../shared/layouts/header/header.component";
+import { CatalogoComponent } from "../../customer/vista-catalogo/catalogo/catalogo.component";
 
 @Component({
     selector: 'app-landing',

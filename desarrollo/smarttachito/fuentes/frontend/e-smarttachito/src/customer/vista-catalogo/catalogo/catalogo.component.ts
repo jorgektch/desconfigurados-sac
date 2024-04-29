@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Productos } from '../interfaces/interface';
+import { Productos } from '../../../shared/interfaces/interface';
 import { Observable } from 'rxjs';
-import { ApiPruebaService } from '../services/api-prueba.service';
-import { CarritoComponent } from '../carrito/carrito.component';
+import { ApiPruebaService } from '../../../shared/services/api-prueba.service';
+import { CarritoComponent } from '../../buyer/carrito/carrito.component';
 
 @Component({
   selector: 'app-catalogo',
