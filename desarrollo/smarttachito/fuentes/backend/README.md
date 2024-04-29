@@ -31,18 +31,24 @@ Este repositorio contiene el código fuente de un proyecto Django para un Ecomme
 
 ## Instrucciones para instalación y ejecución
 
-### Creación de un entorno virtual y activarlo
+1. Cambiar al directorio del proyecto
+```
+python3 -m venv .venv
+cd backend
+```
+
+2. Crear de un entorno virtual y activarlo
 ```
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-### Instalación de dependencias
+3. Instalar dependencias
 ```
 pip install -r requirements.txt
 ```
 
-### Ejecución del servidor de desarrollo
+4. Ejecutar el servidor de desarrollo
 ```
 python manage.py runserver 0.0.0.0:8000
 ```
