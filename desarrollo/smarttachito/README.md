@@ -28,3 +28,9 @@ Este repositorio contiene el código fuente de un proyecto Django para un Ecomme
 - Pillow: 10.3.0
 - sqlparse: 0.5.0
 - tzdata: 2024.1
+
+## Creación de un entorno virtual y activarlo:
+´´´
+python3 -m venv .venv
+source .venv/bin/activate
+´´´
