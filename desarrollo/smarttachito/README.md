@@ -14,9 +14,5 @@ Este repositorio contiene el código fuente de un proyecto Django para un Ecomme
 - Django: Framework de desarrollo web Python para crear aplicaciones web dinámicas. (https://www.djangoproject.com/)
 - djangorestframework: Framework de desarrollo RESTful para crear APIs con Django. (https://readthedocs.org/projects/django-rest-framework/)
 - django-cors-headers: Middleware para permitir solicitudes CORS (Cross-Origin Resource Sharing) en aplicaciones Django. (https://pypi.org/project/django-cors-headers/)
-- asgiref: Library para la implementación de ASGI, el protocolo de comunicación entre servidores web y aplicaciones Python. (https://pypi.org/project/asgiref/)
-
-
 - Pillow: Biblioteca para el procesamiento de imágenes en Python. (https://pillow.readthedocs.io/en/latest/installation.html)
 - sqlparse: Biblioteca para analizar y manipular código SQL. (https://sqlparse.readthedocs.io/)
-- tzdata: Biblioteca para acceder a la información de zonas horarias. (https://docs.readthedocs.io/en/stable/config-file/v2.html)
