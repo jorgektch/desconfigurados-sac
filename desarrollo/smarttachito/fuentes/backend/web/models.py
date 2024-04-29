@@ -27,7 +27,17 @@ class Producto(models.Model):
         verbose_name = "Producto"
         verbose_name_plural = "Productos"
 
+class TipoDocumento(models.Model):
+    nombre = models.CharField("Nombre", max_length=100)
+    descripcion = models.CharField("Descripción", max_length=500)
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = "Tipo de documento"
+        verbose_name_plural = "Tipos de documento"
+
 class Usuario(models.Model):
+
     def __str__(self):
         return self.name
     class Meta:
