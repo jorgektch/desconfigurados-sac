@@ -5,17 +5,17 @@
 A continuación se presenta el diccionario de datos de las tablas del modelo físico de la BBDD
 
 ### Usuario
-| Campo | Tipo de dato | Tamaño | Formato | PK | FK | NN | AI | Default | Descripción |
-| ----- | ------------ | ------ | ------- | --- | --- | --- | --- | ------- | ----------- |
-| idUsuario | INT | - | - | SI | - | SI | SI | - | Identificador primario del usuario |
-| Nombres | VARCHAR | 100 | - | - | - | SI | - | - | Nombres del usuario |
-| ApellidoP | VARCHAR | 100 | - | - | - | SI | - | - | Apellido paterno del usuario |
-| ApellidoM | VARCHAR | 100 | - | - | - | SI | - | - | Apellido materno del usuario |
-| Email | VARCHAR | 100 | example@domain.com | - | - | SI | - | - | Email del usuario |
-| Contrasenha | VARCHAR | 100 | - | - | - | SI | - | - | Contraseña del usuario |
-| TipoDocumento | INT | - | - | - | - | SI | - | 1 | Tipo de documento: (1 - DNI) / (2 - Carnet de extranjería) |
-| Documento | VARCHAR | 50 | - | - | - | SI | - | - | Nº de documento del usuario |
-| Telefono | VARCHAR | 50 | - | - | - | SI | - | - | Nº de teléfono del usuario |
+| Campo | Tipo de dato | Tamaño | Formato | PK | FK | NN | AI | U | Default | Descripción |
+| ----- | ------------ | ------ | ------- | --- | --- | --- | --- | --- | ------- | ----------- |
+| idUsuario | INT | - | - | SI | - | SI | SI | SI | - | Identificador primario del usuario |
+| Nombres | VARCHAR | 100 | - | - | - | SI | - | - | - | Nombres del usuario |
+| ApellidoP | VARCHAR | 100 | - | - | - | SI | - | - | - | Apellido paterno del usuario |
+| ApellidoM | VARCHAR | 100 | - | - | - | SI | - | - | - | Apellido materno del usuario |
+| Email | VARCHAR | 100 | example@domain.com | - | SI | - | SI | - | - | Email del usuario |
+| Contrasenha | VARCHAR | 100 | - | - | - | SI | - | - | - | Contraseña del usuario |
+| TipoDocumento | INT | - | - | - | - | SI | - | - | 1 | Tipo de documento: (1 - DNI) / (2 - Carnet de extranjería) |
+| Documento | VARCHAR | 50 | - | - | - | SI | - | SI | - | Nº de documento del usuario |
+| Telefono | VARCHAR | 50 | - | - | - | SI | - | SI | - | Nº de teléfono del usuario |
 
 ### Empleado
 | Campo | Tipo de dato | Tamaño | Formato | PK | FK | NN | AI | Default | Descripción |
@@ -37,3 +37,9 @@ A continuación se presenta el diccionario de datos de las tablas del modelo fí
 | idCargo | INT | - | - | SI | - | SI | SI | - | Identificador primario del cargo |
 | Nombre | VARCHAR | 100 | - | - | - | SI | - | - | Nombre del cargo |
 | Descripcion | VARCHAR | 500 | - | - | - | - | - | - | Descipción del cargo |
+
+### EmpleadoCargo
+| Campo | Tipo de dato | Tamaño | Formato | PK | FK | NN | AI | Default | Descripción |
+| ----- | ------------ | ------ | ------- | --- | --- | --- | --- | ------- | ----------- |
+| idCargo | INT | - | - | - | SI | SI | - | - | Identificador foráneo del cargo |
+| idEmpleado | INT | - | - | - | SI | SI | - | - | Identificador foráneo del empleado |
