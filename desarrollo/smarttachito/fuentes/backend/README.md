@@ -30,7 +30,7 @@ Este repositorio contiene el código fuente de un proyecto Django para un Ecomme
 - tzdata: 2024.1
 
 ## Creación de un entorno virtual y activarlo:
-´´´
+```
 python3 -m venv .venv
 source .venv/bin/activate
-´´´
+```
