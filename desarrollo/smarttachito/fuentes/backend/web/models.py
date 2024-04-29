@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 class Categoria(models.Model):
     nombre = models.CharField("Nombre", max_length=100)
@@ -36,11 +37,11 @@ class TipoDocumento(models.Model):
         verbose_name = "Tipo de documento"
         verbose_name_plural = "Tipos de documento"
 
-class Usuario(models.Model):
-    tipoDocumento = models.ForeignKey(TipoDocumento, on_delete=models.CASCADE, verbose_name="Tipo de documento")
-    nombre = models.CharField("Nombre", max_length=100)
+class Usuario(AbstractBaseUser):
+    #tipoDocumento = models.ForeignKey(TipoDocumento, on_delete=models.CASCADE, verbose_name="Tipo de documento")
+    
     def __str__(self):
-        return self.nombre
+        return self._meta.fields.name
     class Meta:
         verbose_name = "Usuario"
         verbose_name_plural = "Usuarios"
