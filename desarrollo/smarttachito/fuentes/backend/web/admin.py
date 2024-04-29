@@ -10,5 +10,10 @@ class ProductoAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Producto._meta.fields]
     ordering = ('nombre',)
 
+class TipoDocumentoAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in TipoDocumento._meta.fields]
+    ordering = ('nombre',)
+
 admin.site.register(Categoria, CategoriaAdmin)
 admin.site.register(Producto, ProductoAdmin)
+admin.site.register(TipoDocumento, TipoDocumentoAdmin)
