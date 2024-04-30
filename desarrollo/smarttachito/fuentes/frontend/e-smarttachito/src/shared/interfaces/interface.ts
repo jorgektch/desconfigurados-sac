@@ -22,6 +22,6 @@ export interface Productos{
 export interface ProductoCarrito {
     id: String;
     producto: Productos;
-    cantidad: Number;
+    cantidad: number;
     precioSubTotal: number
 }
