@@ -139,12 +139,12 @@ class Residuo(models.Model):
         verbose_name = "Residuo"
         verbose_name_plural = "Residuos"
 
-class ProductoServicio(models.Model):
+class ProductoResiduo(models.Model):
     def __str__(self):
         return self.nombre
     class Meta:
-        verbose_name = "ProductoServicio"
-        verbose_name_plural = "ProductoServicios"
+        verbose_name = "ProductoResiduo"
+        verbose_name_plural = "ProductoResiduos"
 
 class Pais(models.Model):
     nombre = models.CharField("Nombre", max_length=100)
