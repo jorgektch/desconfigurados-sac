@@ -10,5 +10,5 @@ import { AccesoUsuarioComponent } from "../acceso-usuario/acceso-usuario.compone
     imports: [CarritoComponent, AccesoUsuarioComponent]
 })
 export class HeaderComponent {
-
+        
 }
