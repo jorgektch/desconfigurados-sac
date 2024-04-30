@@ -9,11 +9,31 @@
 
 <body>
 
-    <div id="modal-padre" class="modal" *ngIf="modalVisible" [ngStyle]="{'display': modalVisible ? 'block' : 'none'}">
+    <div id="modal-padre" class="modal" *ngIf="modalVisible" [ngStyle]="{'display': modalVisible ? 'block' : 'block'}">
         <header>
             <div (click)="closeModal()" class="close">&times;</div>
-            <h2>MI LISTA DE COMPRAS</h2>
+            <h2 class="titulo-carrito">MI LISTA DE COMPRAS</h2>
         </header>
+
+        <ul class="productos-lista-carrito">
+            <li *ngFor="let producto of productosEnCarrito">
+      
+              <div class="cartilla-producto-carrito">
+                <div class="producto-imagen">
+                  <img [src]="getImagen(producto.imagen)" class="img-producto">
+                </div>
+      
+                <div class="producto-detalles">
+                  <h3 class="nombre">{{ producto.nombre }}</h3>
+                  <p *ngIf="producto.id">{{ producto.id }}</p>
+                  <span class="precio"> S/.{{ producto.precio }}</span>
+                </div>
+                <button><i class="fa-solid fa-cart-plus"></i></button>
+              </div>
+            
+            </li>
+        </ul>
+        
     </div>
     
 </body>

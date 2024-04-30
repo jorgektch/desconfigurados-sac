@@ -35,12 +35,16 @@ export class CarritoComponent implements OnInit{
     }
   }
 
+  //Obtener la imagen compuesta del path y la extension
+  getImagen(img: { path: string; extension: string }): string {
+    return `${img.path}.${img.extension}`;  
+  }
+
   vaciarElCarrito() {
     this.productosEnCarrito = [];
   }
 
   closeModal() {
     this.servicioCarrito.toggleVisualizacionCarrito()
-    console.log(this.modalVisible)
   }
 }
