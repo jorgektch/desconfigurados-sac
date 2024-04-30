@@ -98,7 +98,7 @@ class Usuario(AbstractBaseUser):
         verbose_name_plural = "Usuarios"
 
 class Cliente(models.Model):
-    usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE)
+    user = models.OneToOneField(Usuario, on_delete=models.CASCADE)
     def __str__(self):
         return self.nombre
     class Meta:
