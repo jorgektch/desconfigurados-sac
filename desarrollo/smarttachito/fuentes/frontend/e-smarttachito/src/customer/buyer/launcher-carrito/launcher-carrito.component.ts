@@ -9,7 +9,6 @@ import { CarritoServiceService } from '../../../shared/services/carrito-service.
   styleUrl: './launcher-carrito.component.css'
 })
 export class LauncherCarritoComponent implements OnInit {
-  seVisualiza: boolean = false; // Bandera para controlar la visibilidad del div desplegable
   cantidadProductosCarrito: number = 0;
 
   constructor(private servicioCarrito: CarritoServiceService) {}
@@ -21,6 +20,6 @@ export class LauncherCarritoComponent implements OnInit {
   }
   
   toggleVisualizacionCarrito() {
-    this.seVisualiza = !this.seVisualiza; // Cambia la visibilidad del div del carrito
+    this.servicioCarrito.toggleVisualizacionCarrito();
   }
 }
