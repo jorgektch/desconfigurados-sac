@@ -21,10 +21,10 @@ export class CarritoComponent implements OnInit{
   
   constructor (private servicioCarrito: CarritoServiceService) {}
 
-  private enElCarro(id: string, listaProductos: Productos[]): number{
-    for(let producto of listaProductos) {
-      if (id == producto.id) {
-        return listaProductos.indexOf(producto);
+  private enElCarro(id: string, listaProductosEnCarrito: ProductoCarrito[]): number{
+    for(let producto of listaProductosEnCarrito) {
+      if (id === producto.id) {
+        return listaProductosEnCarrito.indexOf(producto);
       }
     }
     return -1;
@@ -33,18 +33,18 @@ export class CarritoComponent implements OnInit{
   ngOnInit(): void {
     this.servicioCarrito._listaProductosObservable.subscribe(listaProductos => {
 
+      this.productosEnCarrito = [];
+      
       for (let producto of listaProductos) {
-        const index = this.enElCarro(producto.id, listaProductos);
-  
+        const index = this.enElCarro(producto.id, this.productosEnCarrito)
         if (index == -1) {
-          const nuevoProductoCarrito: ProductoCarrito = new ProductoCarrito(
+          let nuevoProductoCarrito: ProductoCarrito = new ProductoCarrito(
             producto.id,
             producto
           )
-  
           this.productosEnCarrito.push(nuevoProductoCarrito);
         } else {
-          this.productosEnCarrito[index].aumentarCantidadProducto()
+          this.productosEnCarrito[index].cantidad++;
         }
       }
 
