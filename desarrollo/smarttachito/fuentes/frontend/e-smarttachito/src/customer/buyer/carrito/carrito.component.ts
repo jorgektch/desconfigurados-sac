@@ -14,13 +14,21 @@ import { CarritoServiceService } from '../../../shared/services/carrito-service.
 export class CarritoComponent implements OnInit{
   productosEnCarrito: Productos[] = []; // Arreglo para almacenar productos en el carrito
   modalVisible: boolean = false;
+
+  precioTotal:number = 0;
   
   constructor (private servicioCarrito: CarritoServiceService) {}
   
   ngOnInit(): void {
-    this.servicioCarrito._listaProductosObservable.subscribe(listaProductos => 
-      this.productosEnCarrito = listaProductos
-    );
+    this.servicioCarrito._listaProductosObservable.subscribe(listaProductos => {
+      this.productosEnCarrito = listaProductos;
+
+      this.precioTotal = 0;
+      //calcular precio total
+      for(let producto of this.productosEnCarrito) {
+        this.precioTotal += producto.precio;
+      }
+    });
 
     // suscribirmos el valor modalVisible a valor de visibilidad que maneja el servicio
     this.servicioCarrito.esVisibleObservable.subscribe(esVisible =>
