@@ -1,6 +1,7 @@
 import { Component, Injectable, SimpleChanges, signal } from '@angular/core';
 import { Productos } from '../../../shared/interfaces/interface'; // Importa la interfaz de productos
 import { NgFor, NgIf, CommonModule } from '@angular/common'; // Importa directivas necesarias
+import { Producto } from '../../vista-catalogo/producto/producto.class';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { NgFor, NgIf, CommonModule } from '@angular/common'; // Importa directiv
 export class CarritoComponent {
   productosEnCarrito: Productos[] = []; // Arreglo para almacenar productos en el carrito
   seVisualiza: boolean = false; // Bandera para controlar la visibilidad del div desplegable
-
+  
   agregarProductoAlCarrito(producto: Productos) {
     this.productosEnCarrito.push(producto);
   }
@@ -31,5 +32,6 @@ export class CarritoComponent {
 
   toggleVisualizacionCarrito() {
     this.seVisualiza = !this.seVisualiza; // Cambia la visibilidad del div del carrito
+
   }
 }
