@@ -121,6 +121,14 @@ class CargoEmpleado(models.Model):
         verbose_name = "CargoEmpleado"
         verbose_name_plural = "CargoEmpleados"
 
+class Empleado(models.Model):
+    usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.nombre
+    class Meta:
+        verbose_name = "Empleado"
+        verbose_name_plural = "Empleados"
+
 class Residuo(models.Model):
     nombre = models.CharField("Nombre", max_length=100)
     descripcion = models.CharField("Descripción", max_length=500)
