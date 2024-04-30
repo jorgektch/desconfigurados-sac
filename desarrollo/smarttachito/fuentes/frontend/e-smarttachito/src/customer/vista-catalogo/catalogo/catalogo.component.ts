@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { Productos } from '../../../shared/interfaces/interface';
 import { Observable } from 'rxjs';
 import { ApiPruebaService } from '../../../shared/services/api-prueba.service';
+import { CarritoServiceService } from '../../../shared/services/carrito-service.service';
 
 @Component({
   selector: 'app-catalogo',
@@ -18,7 +19,7 @@ export class CatalogoComponent implements OnInit {
   public productos$!: Observable<Productos[]>; 
 
   //Inyectar el ApiPrueba Service en el constructor
-  constructor(private service: ApiPruebaService){}
+  constructor(private service: ApiPruebaService, private servicioCarrito: CarritoServiceService ){}
   
   //Siempre al iniciar se va a realizar getApiProductos
   ngOnInit(): void {
@@ -32,6 +33,7 @@ export class CatalogoComponent implements OnInit {
 
   agregarAlCarrito(producto: Productos) {
     // código para agregar producto al carrito
+    this.servicioCarrito.agregarProducto(producto);
   }
 
 }
