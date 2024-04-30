@@ -2,9 +2,9 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 class Categoria(models.Model):
-    nombre = models.CharField("Nombre", max_length=100)
-    descripcion = models.CharField("Descripción", max_length=500)
-    imagen = models.ImageField("Imagen", upload_to="imagen/")
+    nombre = models.CharField("Nombre", max_length = 100)
+    descripcion = models.CharField("Descripción", max_length = 500)
+    imagen = models.ImageField("Imagen", upload_to = "imagen/")
     def __str__(self):
         return self.nombre
     class Meta:
@@ -12,16 +12,16 @@ class Categoria(models.Model):
         verbose_name_plural = "Categorias"
 
 class Producto(models.Model):
-    nombre = models.CharField("Nombre", max_length=100)
-    descripcion_breve = models.CharField("Descripción breve", max_length=100)
-    descripcion_extendida = models.CharField("Descripción extendida", max_length=500)
-    precio = models.DecimalField("Precio", max_digits=10 , decimal_places=2)
-    imagen_principal = models.ImageField("Imagen principal", upload_to="imagen/")
-    imagen_secundaria_1 = models.ImageField("Imagen secundaria 1", upload_to="imagen/")
-    imagen_secundaria_2 = models.ImageField("Imagen secundaria 2", upload_to="imagen/")
-    imagen_secundaria_3 = models.ImageField("Imagen secundaria 3", upload_to="imagen/")
-    imagen_3d = models.ImageField("Imagen 3D", upload_to="imagen/")
-    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, verbose_name="Categoría")
+    nombre = models.CharField("Nombre", max_length = 100)
+    descripcion_breve = models.CharField("Descripción breve", max_length = 100)
+    descripcion_extendida = models.CharField("Descripción extendida", max_length = 500)
+    precio = models.DecimalField("Precio", max_digits=10 , decimal_places = 2)
+    imagen_principal = models.ImageField("Imagen principal", upload_to = "imagen/")
+    imagen_secundaria_1 = models.ImageField("Imagen secundaria 1", upload_to = "imagen/")
+    imagen_secundaria_2 = models.ImageField("Imagen secundaria 2", upload_to = "imagen/")
+    imagen_secundaria_3 = models.ImageField("Imagen secundaria 3", upload_to = "imagen/")
+    imagen_3d = models.ImageField("Imagen 3D", upload_to = "imagen/")
+    categoria = models.ForeignKey(Categoria, on_delete = models.CASCADE, verbose_name = "Categoría")
     def __str__(self):
         return self.nombre
     class Meta:
@@ -29,8 +29,8 @@ class Producto(models.Model):
         verbose_name_plural = "Productos"
 
 class TipoDocumento(models.Model):
-    nombre = models.CharField("Nombre", max_length=100)
-    descripcion = models.CharField("Descripción", max_length=500)
+    nombre = models.CharField("Nombre", max_length = 100)
+    descripcion = models.CharField("Descripción", max_length = 500)
     def __str__(self):
         return self.nombre
     class Meta:
@@ -98,16 +98,18 @@ class Usuario(AbstractBaseUser):
         verbose_name_plural = "Usuarios"
 
 class Cliente(models.Model):
-    usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE)
+    usuario = models.OneToOneField(Usuario, on_delete = models.CASCADE)
+    fecha_regitro = models.DateField(auto_now_add = True)
+
     def __str__(self):
-        return self.nombre
+        return self.usuario
     class Meta:
         verbose_name = "Cliente"
         verbose_name_plural = "Clientes"
 
 class Cargo(models.Model):
-    nombre = models.CharField("Nombre", max_length=100)
-    descripcion = models.CharField("Descripción", max_length=500)
+    nombre = models.CharField("Nombre", max_length = 100)
+    descripcion = models.CharField("Descripción", max_length = 500)
     def __str__(self):
         return self.nombre
     class Meta:
@@ -122,7 +124,7 @@ class CargoEmpleado(models.Model):
         verbose_name_plural = "CargoEmpleados"
 
 class Empleado(models.Model):
-    usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE)
+    usuario = models.OneToOneField(Usuario, on_delete = models.CASCADE)
     def __str__(self):
         return self.nombre
     class Meta:
@@ -130,9 +132,9 @@ class Empleado(models.Model):
         verbose_name_plural = "Empleados"
 
 class Residuo(models.Model):
-    nombre = models.CharField("Nombre", max_length=100)
-    descripcion = models.CharField("Descripción", max_length=500)
-    imagen = models.ImageField("Imagen", upload_to="imagen/")
+    nombre = models.CharField("Nombre", max_length = 100)
+    descripcion = models.CharField("Descripción", max_length = 500)
+    imagen = models.ImageField("Imagen", upload_to = "imagen/")
     def __str__(self):
         return self.nombre
     class Meta:
@@ -147,7 +149,7 @@ class ProductoResiduo(models.Model):
         verbose_name_plural = "ProductoResiduos"
 
 class Pais(models.Model):
-    nombre = models.CharField("Nombre", max_length=100)
+    nombre = models.CharField("Nombre", max_length = 100)
     def __str__(self):
         return self.nombre
     class Meta:
@@ -155,8 +157,8 @@ class Pais(models.Model):
         verbose_name_plural = "Paises"
 
 class Ciudad(models.Model):
-    pais = models.ForeignKey(Pais, on_delete=models.CASCADE, verbose_name="País")
-    nombre = models.CharField("Nombre", max_length=100)
+    pais = models.ForeignKey(Pais, on_delete = models.CASCADE, verbose_name = "País")
+    nombre = models.CharField("Nombre", max_length = 100)
     def __str__(self):
         return self.nombre
     class Meta:
