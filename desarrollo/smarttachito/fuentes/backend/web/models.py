@@ -40,7 +40,7 @@ class TipoDocumento(models.Model):
 class UsuarioManager(BaseUserManager):
     def create_user(self, nombres, username, email, password = None):
         if not email:
-            raise ValueError("El usuario debe tener un correo electrónico")
+            raise ValueError("El usuario debe registrar un correo electrónico")
         
         user = self.model(
             nombres = nombres,
