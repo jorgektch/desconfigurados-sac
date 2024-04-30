@@ -13,12 +13,16 @@ export class ProductoCarrito implements interfazProductoCarrito  {
     }
 
     aumentarCantidadProducto() {
-        this.cantidad++;
-        this.precioSubTotal = this.producto.precio * this.cantidad;
+        if (this.cantidad <= 100) {
+            this.cantidad++;
+            this.precioSubTotal = this.producto.precio * this.cantidad;
+        }
     }
 
     disminuirCantidadProducto() {
-        this.cantidad--;
-        this.precioSubTotal = this.producto.precio * this.cantidad;
+        if (this.cantidad >= 1) {
+            this.cantidad--;
+            this.precioSubTotal = this.producto.precio * this.cantidad;
+        }
     }
 }
