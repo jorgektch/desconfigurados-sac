@@ -50,26 +50,17 @@
     margin: auto;
 }
 
-.btn {
-    position: relative;
-
-    border-radius: 10px;
-    left: 125px;
-    bottom: -100px;
-    width: 50px;
-    height: 50px;
-    background-color: rgb(88, 174, 88);
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease; /* Agrega transición para un cambio suave */
+.btn :hover {
+    color: rgb(152, 211, 152); /* Cambia el color cuando el cursor está encima */
 }
 
-.btn:hover {
-    background-color: rgb(152, 211, 152); /* Cambia el color cuando el cursor está encima */
-}
-
-.btn:active {
+.btn :active {
     transform: scale(1.1); /* Agranda el botón cuando se presiona */
+}
+
+.btn {
+    border: none;
+    font-size: 20px;
 }
 
 .productos-lista {
@@ -141,3 +132,4 @@ li {
     justify-content: center;
     border: solid 1px black;
 }
+
