@@ -20,7 +20,7 @@ export interface Productos{
 }
 
 export interface ProductoCarrito {
-    id: number;
+    id: String;
     producto: Productos;
     cantidad: Number;
     precioSubTotal: number
