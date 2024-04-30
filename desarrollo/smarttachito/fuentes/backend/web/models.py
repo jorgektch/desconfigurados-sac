@@ -168,12 +168,18 @@ class Ciudad(models.Model):
         verbose_name = "Ciudad"
         verbose_name_plural = "Ciudades"
 
-class Direccion(models.Model):
+class Ubicacion(models.Model):
+    ciudad = models.ForeignKey(Ciudad, on_delete = models.CASCADE, verbose_name = "Ciudad")
+    direccion = models.CharField("Dirección", max_length = 1000)
+    referencia = models.CharField("Referencia", max_length = 500)
+    codigo_postal = models.CharField("Código postal", max_length = 20)
+    latitud = DecimalField(max_digits = 9, decimal_places = 6)
+    longitud = DecimalField(max_digits = 9, decimal_places = 6)
     def __str__(self):
         return self.nombre
     class Meta:
-        verbose_name = "Direccion"
-        verbose_name_plural = "Direcciones"
+        verbose_name = "Ubicacion"
+        verbose_name_plural = "Ubicaciones"
 
 class Entrega(models.Model):
     def __str__(self):
