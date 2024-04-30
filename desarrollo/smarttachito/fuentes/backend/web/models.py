@@ -182,6 +182,8 @@ class Ubicacion(models.Model):
         verbose_name_plural = "Ubicaciones"
 
 class Entrega(models.Model):
+    ubicacion = models.ForeignKey(Ubicacion, on_delete = models.CASCADE, verbose_name = "Ubicación")
+    empleado = models.ForeignKey(Empleado, on_delete = models.CASCADE, verbose_name = "Empleado")
     def __str__(self):
         return self.nombre
     class Meta:
