@@ -22,10 +22,6 @@ export class CarritoComponent implements OnInit{
       this.productosEnCarrito = listaProductos
     );
   }
-  
-  agregarProductoAlCarrito(producto: Productos) {
-    this.productosEnCarrito.push(producto);
-  }
 
   eliminarProductoDelCarrito(Producto: Productos) {
     const indexProductoEliminar = this.productosEnCarrito.indexOf(Producto);
