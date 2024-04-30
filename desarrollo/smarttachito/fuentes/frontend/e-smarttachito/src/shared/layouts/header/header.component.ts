@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CarritoComponent } from '../../../customer/buyer/carrito/carrito.component';
+import { LaucherCarritoComponent } from '../../../customer/buyer/launcher-carrito/launcher-carrito.component';
 import { AccesoUsuarioComponent } from "../acceso-usuario/acceso-usuario.component";
 
 @Component({
@@ -7,8 +7,8 @@ import { AccesoUsuarioComponent } from "../acceso-usuario/acceso-usuario.compone
     standalone: true,
     templateUrl: './header.component.html',
     styleUrl: './header.component.css',
-    imports: [CarritoComponent, AccesoUsuarioComponent]
+    imports: [LaucherCarritoComponent, AccesoUsuarioComponent]
 })
 export class HeaderComponent {
-        
+
 }

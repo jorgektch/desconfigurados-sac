@@ -13,7 +13,6 @@ import { CarritoServiceService } from '../../../shared/services/carrito-service.
 })
 export class CarritoComponent implements OnInit{
   productosEnCarrito: Productos[] = []; // Arreglo para almacenar productos en el carrito
-  seVisualiza: boolean = false; // Bandera para controlar la visibilidad del div desplegable
   
   constructor (private servicioCarrito: CarritoServiceService) {}
   
@@ -34,8 +33,4 @@ export class CarritoComponent implements OnInit{
     this.productosEnCarrito = [];
   }
 
-  toggleVisualizacionCarrito() {
-    this.seVisualiza = !this.seVisualiza; // Cambia la visibilidad del div del carrito
-
-  }
 }

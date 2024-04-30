@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LaucherCarritoComponent } from './laucher-carrito.component';
+import { LaucherCarritoComponent } from './launcher-carrito.component';
 
 describe('LaucherCarritoComponent', () => {
   let component: LaucherCarritoComponent;

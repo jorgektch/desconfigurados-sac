@@ -1,0 +1,52 @@
+
+#carrito {
+    display: block;
+    position: relative;
+    top: 30%;
+}
+
+#carrito div {
+    display: inline-flex;
+    margin: 2px;
+} 
+
+.logo-carrito i {
+    font-size: 20px;
+}
+
+#carrito:hover {
+    .logo-carrito i {
+        color: red;
+    }
+}
+
+#cantidad-productos {
+    display: flex;
+    background-color: aqua;
+    border: none;
+    border-radius: 50%;
+    min-width: 15px;
+    aspect-ratio: 1/1;
+    justify-content: center;
+    align-items: center;
+}  
+
+#visualizador-carrito {
+    display: none;
+    position: absolute;
+
+    background-color: #00A5B6;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 2px #2e767e;
+
+    top: 100px;
+    right: 10px;
+    width: 40%;
+    
+    min-width: 450px;
+    min-height: 200px;
+}
+
+#visualizador-carrito {
+    display: inline-flex;
+}
