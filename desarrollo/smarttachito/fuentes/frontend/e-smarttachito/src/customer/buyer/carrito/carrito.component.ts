@@ -13,6 +13,7 @@ import { CarritoServiceService } from '../../../shared/services/carrito-service.
 })
 export class CarritoComponent implements OnInit{
   productosEnCarrito: Productos[] = []; // Arreglo para almacenar productos en el carrito
+  modalVisible: boolean = false
   
   constructor (private servicioCarrito: CarritoServiceService) {}
   
@@ -20,6 +21,11 @@ export class CarritoComponent implements OnInit{
     this.servicioCarrito._listaProductosObservable.subscribe(listaProductos => 
       this.productosEnCarrito = listaProductos
     );
+
+    // suscribirmos el valor modalVisible a valor de visibilidad que maneja el servicio
+    this.servicioCarrito.esVisibleObservable.subscribe(esVisible =>
+      this.modalVisible = esVisible
+    )
   }
 
   eliminarProductoDelCarrito(Producto: Productos) {
