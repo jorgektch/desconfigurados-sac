@@ -129,12 +129,10 @@ class EmpleadoCargo(models.Model):
     empleado = models.ForeignKey(Empleado, on_delete=models.CASCADE)
     cargo = models.ForeignKey(Cargo, on_delete=models.CASCADE)
     def __str__(self):
-        return self.nombre
+        return f"{self.empleado} {self.cargo}"
     class Meta:
         verbose_name = "EmpleadoCargo"
         verbose_name_plural = "EmpleadoCargos"
-
-
 
 class Residuo(models.Model):
     nombre = models.CharField("Nombre", max_length = 100)
