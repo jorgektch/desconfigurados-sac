@@ -52,6 +52,17 @@ class UsuarioManager(BaseUserManager):
         user.save()
         return user
 
+    def create_superuser(self, nombres, username, email, password):
+        user = self.create_user(
+            nombres = nombres,
+            username = username,
+            email = email,
+            password = password
+        )
+        user.usuario_administrador = True
+        user.save()
+        return user
+
 class Usuario(AbstractBaseUser):
     username = models.CharField("Nombre de usuario", max_length = 100, unique = True)
     email = models.EmailField("Correo electrónico", max_length = 254, unique = True)
