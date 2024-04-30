@@ -37,6 +37,8 @@ class TipoDocumento(models.Model):
         verbose_name = "Tipo de documento"
         verbose_name_plural = "Tipos de documento"
 
+class UsuarioManager(BaseUserManager):
+
 class Usuario(AbstractBaseUser):
     username = models.CharField("Nombre de usuario", max_length = 100, unique = True)
     email = models.EmailField("Correo electrónico", max_length = 254, unique = True)
