@@ -19,5 +19,6 @@ export class ProductoCarrito implements interfazProductoCarrito  {
 
     disminuirCantidadProducto() {
         this.cantidad--;
+        this.precioSubTotal = this.producto.precio * this.cantidad;
     }
 }
