@@ -1,5 +1,4 @@
 import { Component, OnInit,} from '@angular/core';
-import { Productos } from '../../../shared/interfaces/interface'; // Importa la interfaz de productos
 import { NgFor, NgIf, CommonModule } from '@angular/common'; // Importa directivas necesarias
 import { CarritoServiceService } from '../../../shared/services/carrito-service.service';
 import { ProductoCarrito } from './productoCarrito.class';
@@ -21,32 +20,10 @@ export class CarritoComponent implements OnInit{
   
   constructor (private servicioCarrito: CarritoServiceService) {}
 
-  private enElCarro(id: string, listaProductosEnCarrito: ProductoCarrito[]): number{
-    for(let producto of listaProductosEnCarrito) {
-      if (id === producto.id) {
-        return listaProductosEnCarrito.indexOf(producto);
-      }
-    }
-    return -1;
-  }
-  
   ngOnInit(): void {
     this.servicioCarrito._listaProductosObservable.subscribe(listaProductos => {
 
-      this.productosEnCarrito = [];
-      
-      for (let producto of listaProductos) {
-        const index = this.enElCarro(producto.id, this.productosEnCarrito)
-        if (index == -1) {
-          let nuevoProductoCarrito: ProductoCarrito = new ProductoCarrito(
-            producto.id,
-            producto
-          )
-          this.productosEnCarrito.push(nuevoProductoCarrito);
-        } else {
-          this.productosEnCarrito[index].cantidad++;
-        }
-      }
+      this.productosEnCarrito = listaProductos;
 
       this.precioTotal = 0;
       //calcular precio total
