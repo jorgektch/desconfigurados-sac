@@ -5,7 +5,7 @@ import { CarritoServiceService } from '../../../shared/services/carrito-service.
 
 
 @Component({
-  selector: 'carrito',
+  selector: 'modal-carrito',
   standalone: true, // Modo independiente para el componente
   templateUrl: './carrito.component.html',
   styleUrls: ['./carrito.component.css'],
@@ -13,7 +13,7 @@ import { CarritoServiceService } from '../../../shared/services/carrito-service.
 })
 export class CarritoComponent implements OnInit{
   productosEnCarrito: Productos[] = []; // Arreglo para almacenar productos en el carrito
-  modalVisible: boolean = false
+  modalVisible: boolean = false;
   
   constructor (private servicioCarrito: CarritoServiceService) {}
   
