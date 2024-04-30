@@ -181,10 +181,21 @@ class Ubicacion(models.Model):
         verbose_name = "Ubicacion"
         verbose_name_plural = "Ubicaciones"
 
-class Entrega(models.Model):
+class EstadoEntrega(models.Model):
+    nombre = models.CharField("Nombre", max_length = 100)
+    descripcion = models.CharField("Descripción", max_length = 500)
+    def __str__(self):
+        return f"{self.nombre}"
+    class Meta:
+        verbose_name = "Estado de la entrega"
+        verbose_name_plural = "Estados de la entrega"
 
-    ubicacion = models.ForeignKey(Ubicacion, on_delete = models.CASCADE, verbose_name = "Ubicación")
-    empleado = models.ForeignKey(Empleado, on_delete = models.CASCADE, verbose_name = "Empleado")
+class Entrega(models.Model):
+    ubicacion = models.ForeignKey(Ubicacion, on_delete = models.CASCADE, verbose_name = "Ubicación de entrega")
+    empleado = models.ForeignKey(Empleado, on_delete = models.CASCADE, verbose_name = "Empleado asignado")
+    fecha_entrega = models.DateField("Fecha de entrega", auto_now_add = True)
+    detalles_entrega = models.CharField("Detalles de la entrega", max_length = 1000)
+    estado_entrega = models.ForeignKey(EstadoEntrega, on_delete = models.CASCADE, verbose_name = "Estado de la entrega")
     def __str__(self):
         return self.nombre
     class Meta:
