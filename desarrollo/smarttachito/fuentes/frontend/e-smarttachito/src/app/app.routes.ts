@@ -11,45 +11,48 @@ import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
     {
-        path:'',
-        component: LandingComponent,
-        title: 'Smart Tachito',
+        path: '',
+        redirectTo: '',
+        pathMatch: 'full'
     },
     {
-        path:'login',
+        path: '',
+        component: LandingComponent,
+        title: 'landing',
+    },
+    {
+        path: 'login',
         component: LoginComponent,
         title: 'login'
     },
     {
-        path:'catalogo',
-        component: CatalogoComponent,
-        title: 'catalogo'
-    },
-    {
-        path:'producto',
-        component: ProductoComponent,
-        title: 'producto'
-    },
-    {
-        path:'registro',
+        path: 'registro',
         component: RegistroComponent,
         title: 'registro'
     },
     {
-        path:'usuario',
-        component: UsuarioComponent,
-        title: 'usuario',
-        canActivate: [AuthGuard],
+        path: 'catalogo',
+        component: CatalogoComponent,
+        title: 'catalogo'
     },
     {
-        path: 'lista-compras',
-        component: ListaComprasComponent,
-        title: 'Lista de Compras',
-        canActivate: [AuthGuard],
-    }
+        path: 'producto',
+        component: ProductoComponent,
+        title: 'producto'
+    },
+    {
+        path: '',
+        children: [
+            {
+                path: 'usuario',
+                component: UsuarioComponent,
+                title: 'usuario'
+            },
+            {
+                path: 'lista-compras',
+                component: ListaComprasComponent,
+                title: 'Lista de Compras'
+            }
+        ]
+    }   
 ];
-@NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
-  })
-  export class AppRoutingModule { }
