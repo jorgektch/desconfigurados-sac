@@ -46,14 +46,14 @@ class Usuario(AbstractBaseUser):
     tipo_documento = models.ForeignKey(TipoDocumento, on_delete=models.CASCADE, verbose_name="Tipo de documento", null=True, blank=True)
     numero_documento = models.CharField("Número de documento", max_length=100, null=True, blank=True)
     telefono = models.CharField("Celular", max_length=20, blank = True, null = True)
-
+    
     usuario_activo = models.BooleanField(default = True)
     usuario_administrador = models.BooleanField(default = False)
     objects = UsuarioManager()
 
     USERNAME_FIELD = "username"
     REQUIRED_FIELDS = ["email", "nombres"]
-
+    
     def __str__(self):
         return f"{self.nombres} {self.apellido_p} {self.apellido_m}"
 
@@ -62,6 +62,14 @@ class Usuario(AbstractBaseUser):
     
     def has_module_perms(self, app_label):
         return True
+
+    @property
+    def is_staff(self):
+        return self.usuario_administrador
+
+    class Meta:
+        verbose_name = "Usuario"
+        verbose_name_plural = "Usuarios"
 
 class Cliente(models.Model):
     def __str__(self):
