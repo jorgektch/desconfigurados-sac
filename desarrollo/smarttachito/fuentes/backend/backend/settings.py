@@ -100,6 +100,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Usuario personalizado
 AUTH_USER_MODEL = "web.Usuario"
 
 # Internationalization

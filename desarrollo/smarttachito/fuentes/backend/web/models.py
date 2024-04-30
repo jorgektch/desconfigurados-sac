@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 class Categoria(models.Model):
     nombre = models.CharField("Nombre", max_length=100)
@@ -13,14 +13,14 @@ class Categoria(models.Model):
 
 class Producto(models.Model):
     nombre = models.CharField("Nombre", max_length=100)
-    descripcionBreve = models.CharField("Descripción breve", max_length=100)
-    descripcionExtendida = models.CharField("Descripción extendida", max_length=500)
+    descripcion_breve = models.CharField("Descripción breve", max_length=100)
+    descripcion_extendida = models.CharField("Descripción extendida", max_length=500)
     precio = models.DecimalField("Precio", max_digits=10 , decimal_places=2)
-    imagenPrincipal = models.ImageField("Imagen principal", upload_to="imagen/")
-    imagenSecundaria1 = models.ImageField("Imagen secundaria 1", upload_to="imagen/")
-    imagenSecundaria2 = models.ImageField("Imagen secundaria 2", upload_to="imagen/")
-    imagenSecundaria3 = models.ImageField("Imagen secundaria 3", upload_to="imagen/")
-    imagen3D = models.ImageField("Imagen 3D", upload_to="imagen/")
+    imagen_principal = models.ImageField("Imagen principal", upload_to="imagen/")
+    imagen_secundaria_1 = models.ImageField("Imagen secundaria 1", upload_to="imagen/")
+    imagen_secundaria_2 = models.ImageField("Imagen secundaria 2", upload_to="imagen/")
+    imagen_secundaria_3 = models.ImageField("Imagen secundaria 3", upload_to="imagen/")
+    imagen_3d = models.ImageField("Imagen 3D", upload_to="imagen/")
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, verbose_name="Categoría")
     def __str__(self):
         return self.nombre
@@ -38,13 +38,14 @@ class TipoDocumento(models.Model):
         verbose_name_plural = "Tipos de documento"
 
 class Usuario(AbstractBaseUser):
-    #tipoDocumento = models.ForeignKey(TipoDocumento, on_delete=models.CASCADE, verbose_name="Tipo de documento")
-    
-    def __str__(self):
-        return self._meta.fields.name
-    class Meta:
-        verbose_name = "Usuario"
-        verbose_name_plural = "Usuarios"
+    username = models.CharField("Nombre de usuario", max_length = 100, unique = True)
+    email = models.EmailField("Correo electrónico", max_length = 254, unique = True)
+    nombres = models.CharField("Nombres", max_length = 200)
+    apellido_p = models.CharField("Nombres", max_length = 200, blank = True, null = True)
+    apellido_m = models.CharField("Nombres", max_length = 200, blank = True, null = True)
+    tipo_documento = models.ForeignKey(TipoDocumento, on_delete=models.CASCADE, verbose_name="Tipo de documento", null=True, blank=True)
+    numero_documento = models.CharField("Número de documento", max_length=100, null=True, blank=True)
+    telefono = models.CharField("Celular", max_length=20, blank = True, null = True)
 
 class Cliente(models.Model):
     def __str__(self):
