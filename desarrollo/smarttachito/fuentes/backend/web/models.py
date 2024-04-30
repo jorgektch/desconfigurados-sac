@@ -51,6 +51,9 @@ class Usuario(AbstractBaseUser):
     usuario_administrador = models.BooleanField(default = False)
     objects = UsuarioManager()
 
+    USERNAME_FIELD = "username"
+    REQUIRED_FIELDS = ["email", "nombres"]
+
 class Cliente(models.Model):
     def __str__(self):
         return self.nombre
