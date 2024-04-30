@@ -1,7 +1,6 @@
 import { Component, Injectable, SimpleChanges, signal } from '@angular/core';
 import { Productos } from '../../../shared/interfaces/interface'; // Importa la interfaz de productos
 import { NgFor, NgIf, CommonModule } from '@angular/common'; // Importa directivas necesarias
-import { Producto } from '../../vista-catalogo/producto/producto.class';
 
 
 @Component({
