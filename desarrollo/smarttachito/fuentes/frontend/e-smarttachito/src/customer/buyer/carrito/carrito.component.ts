@@ -41,6 +41,6 @@ export class CarritoComponent implements OnInit{
 
   closeModal() {
     this.servicioCarrito.toggleVisualizacionCarrito()
+    console.log(this.modalVisible)
   }
-
 }

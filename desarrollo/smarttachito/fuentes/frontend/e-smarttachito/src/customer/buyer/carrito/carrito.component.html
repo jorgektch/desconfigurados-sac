@@ -10,7 +10,10 @@
 <body>
 
     <div id="modal-padre" class="modal" *ngIf="modalVisible" [ngStyle]="{'display': modalVisible ? 'block' : 'none'}">
-        a
+        <header>
+            <div (click)="closeModal()" class="close">&times;</div>
+            <h2>MI LISTA DE COMPRAS</h2>
+        </header>
     </div>
     
 </body>
