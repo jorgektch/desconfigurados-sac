@@ -58,38 +58,4 @@ export class ApiPruebaService {
   delete(path: string):Observable<any>{
     return this.http.delete(path).pipe(catchError(this.formatErrors))
   }
-
-  getApiUsuarios(){
-    return this.http.get(`http://localhost:3000/usuarios`).pipe(
-      map((data: any)=>{
-        const usuarios: Usuarios[] = [];
-        for (const item of data) {
-          const usser: Usuarios = {
-            id: item.id,
-            usuario: item.usario,
-            contrasenia: item.contrasenia
-          };
-          usuarios.push(usser)
-        }
-        return usuarios;
-      })
-    )
-  }
-
-  setApiUsuarios(u: string, c: string){
-    return this.http.get(`http://localhost:3000/usuarios`).pipe(
-      map((data: any)=>{
-        const usuarios: Usuarios[] = [];
-        for (const item of data) {
-          const usser: Usuarios = {
-            //this.id: item.id + 1,
-            usuario: u,
-            contrasenia: c,
-            id: ''
-          };
-          usuarios.push(usser)
-        }
-      })
-    )
-  }
 }

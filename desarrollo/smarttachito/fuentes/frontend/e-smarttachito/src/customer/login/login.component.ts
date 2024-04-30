@@ -2,39 +2,28 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../shared/services/auth.service';
 import { Router, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { LoginSignupService } from '../../shared/services/login-signup.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit{
-  
-  loginForm!: FormGroup;
-  errorMessage: string = '';
+export class LoginComponent{
+  regForm: boolean = false;
+  signUpfrom!: FormGroup;
+  signInfrom!: FormGroup;
+  signUpsubmitted = false;
+  href: string = '';
+  user_data: any;
+  user_dto: any;
+  user_reg_data: any = {};
 
-  constructor(private authService: AuthService, private router: Router, private fb: FormBuilder){}
-  
-  ngOnInit(): void {
-    this.loginForm = this.fb.group({
-      usuario: ['', [Validators.required, Validators.email]],
-      contrasenia: ['', Validators.required]
-    });
-  }
+  constructor(private formBuilder: FormBuilder, private router: Router, loginService: LoginSignupService){ }
 
-  onSubmit(): void{
-    if(this.loginForm.invalid) return;
-    const{usuario, contrasenia} = this.loginForm.value;
-    this.authService.login(usuario, contrasenia)
-    .subscribe({
-      next: () => {
-        this.router.navigate(['usuario']); 
-      },
-      error: (error) => {
-        this.errorMessage = error.message;
-      }
-    });
-  }
+  
+
 }

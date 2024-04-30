@@ -13,8 +13,10 @@
         <h1>Registro</h1>
     </header>
     <main>
+      <div class="col-md-6 offset-md-3" *ngIf="regForm">
         <h2>Formulario de registro de usuarios</h2>
-        <form class="row g-3">
+        <!-- [formGroup]="signUpfrom"  -->
+        <form class="row g-3" (ngSubmit)="onSubmitSignUp()">
             <div class="row g-3">
                 <div class="col">
                   <input type="text" class="form-control" placeholder="First name" aria-label="First name" formControlName="nombre" required>
@@ -59,7 +61,10 @@
             <div class="col-12">
               <button type="submit" class="btn btn-primary" routerLink="/">Sign in</button>
             </div>
+            <p class="sim-pointer">Si ya tienes una cuenta has click <a  routerLink="/login">aquí</a> para ingresar</p>
         </form>
+      </div>
+        
     </main>
     <footer>
 
