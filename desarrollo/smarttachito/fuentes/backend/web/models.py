@@ -47,6 +47,10 @@ class Usuario(AbstractBaseUser):
     numero_documento = models.CharField("Número de documento", max_length=100, null=True, blank=True)
     telefono = models.CharField("Celular", max_length=20, blank = True, null = True)
 
+    usuario_activo = models.BooleanField(default = True)
+    usuario_administrador = models.BooleanField(default = False)
+    objects = UsuarioManager()
+
 class Cliente(models.Model):
     def __str__(self):
         return self.nombre
