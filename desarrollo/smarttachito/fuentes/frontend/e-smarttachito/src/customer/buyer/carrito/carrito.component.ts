@@ -39,4 +39,8 @@ export class CarritoComponent implements OnInit{
     this.productosEnCarrito = [];
   }
 
+  closeModal() {
+    this.servicioCarrito.toggleVisualizacionCarrito()
+  }
+
 }
