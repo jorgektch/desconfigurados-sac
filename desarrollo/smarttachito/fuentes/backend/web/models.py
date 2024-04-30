@@ -61,7 +61,7 @@ class UsuarioManager(BaseUserManager):
         )
         user.usuario_administrador = True
         user.save()
-        return user
+        return userss
 
 class Usuario(AbstractBaseUser):
     username = models.CharField("Nombre de usuario", max_length = 100, unique = True)
@@ -98,6 +98,7 @@ class Usuario(AbstractBaseUser):
         verbose_name_plural = "Usuarios"
 
 class Cliente(models.Model):
+    usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE)
     def __str__(self):
         return self.nombre
     class Meta:
