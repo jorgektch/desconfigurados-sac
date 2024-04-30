@@ -116,20 +116,25 @@ class Cargo(models.Model):
         verbose_name = "Cargo"
         verbose_name_plural = "Cargos"
 
-class CargoEmpleado(models.Model):
-    def __str__(self):
-        return self.nombre
-    class Meta:
-        verbose_name = "CargoEmpleado"
-        verbose_name_plural = "CargoEmpleados"
-
 class Empleado(models.Model):
     usuario = models.OneToOneField(Usuario, on_delete = models.CASCADE)
+    cargos = models.ManyToManyField(Cargo, through='EmpleadoCargo')
     def __str__(self):
         return self.nombre
     class Meta:
         verbose_name = "Empleado"
         verbose_name_plural = "Empleados"
+
+class EmpleadoCargo(models.Model):
+    empleado = models.ForeignKey(Empleado, on_delete=models.CASCADE)
+    cargo = models.ForeignKey(Cargo, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.nombre
+    class Meta:
+        verbose_name = "EmpleadoCargo"
+        verbose_name_plural = "EmpleadoCargos"
+
+
 
 class Residuo(models.Model):
     nombre = models.CharField("Nombre", max_length = 100)
