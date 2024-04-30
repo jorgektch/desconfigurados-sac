@@ -38,6 +38,19 @@ class TipoDocumento(models.Model):
         verbose_name_plural = "Tipos de documento"
 
 class UsuarioManager(BaseUserManager):
+    def create_user(self, nombres, username, email, password = None):
+        if not email:
+            raise ValueError("El usuario debe tener un correo electrónico")
+        
+        user = self.model(
+            nombres = nombres,
+            username = username,
+            email = self.normalize_email(email)
+        )
+
+        user.set_password(password)
+        user.save()
+        return user
 
 class Usuario(AbstractBaseUser):
     username = models.CharField("Nombre de usuario", max_length = 100, unique = True)
