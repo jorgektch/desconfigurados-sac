@@ -18,3 +18,10 @@ export interface Productos{
     };
     precio: number;
 }
+
+export interface ProductoCarrito {
+    id: number;
+    producto: Productos;
+    cantidad: Number;
+    precioSubTotal: number
+}
