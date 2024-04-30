@@ -99,7 +99,7 @@ class Usuario(AbstractBaseUser):
 
 class Cliente(models.Model):
     usuario = models.OneToOneField(Usuario, on_delete = models.CASCADE)
-    fecha_regitro = models.DateField(auto_now_add = True)
+    fecha_registro = models.DateField("Fecha de registro", auto_now_add = True)
 
     def __str__(self):
         return self.usuario
@@ -182,6 +182,7 @@ class Ubicacion(models.Model):
         verbose_name_plural = "Ubicaciones"
 
 class Entrega(models.Model):
+
     ubicacion = models.ForeignKey(Ubicacion, on_delete = models.CASCADE, verbose_name = "Ubicación")
     empleado = models.ForeignKey(Empleado, on_delete = models.CASCADE, verbose_name = "Empleado")
     def __str__(self):
