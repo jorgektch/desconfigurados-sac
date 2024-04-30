@@ -41,7 +41,8 @@ export class CarritoServiceService {
    }
 
    toggleVisualizacionCarrito() {
-    this.esVisible = !this.esVisible;
+    this.esVisible = !this.esVisible
+    this._esVisible.next(this.esVisible)
   }
 
 }
