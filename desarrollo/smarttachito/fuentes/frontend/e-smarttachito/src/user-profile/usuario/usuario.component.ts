@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-usuario',
   standalone: true,
   imports: [RouterModule],
-  templateUrl: 'usuario.component.html',
+  templateUrl: './usuario.component.html',
   styleUrl: './usuario.component.css'
 })
 export class UsuarioComponent {
