@@ -28,7 +28,6 @@
   }
 
   .titulo-carrito {
-    border: solid 1px black;
     text-align: center;
   }
 
@@ -135,4 +134,10 @@ li {
 
 .precio {
     text-align: center;
+}
+
+
+.cuando-no-hay-productos {
+    justify-content: center;
+    border: solid 1px black;
 }

@@ -9,31 +9,42 @@
 
 <body>
 
-    <div id="modal-padre" class="modal" *ngIf="modalVisible" [ngStyle]="{'display': modalVisible ? 'block' : 'block'}">
+    <div id="modal-padre" class="modal" *ngIf="modalVisible" [ngStyle]="{'display': modalVisible ? 'block' : 'none'}">
         <header>
             <div (click)="closeModal()" class="close">&times;</div>
-            <h2 class="titulo-carrito">MI LISTA DE COMPRAS</h2>
+            <h2 class="titulo-carrito" *ngIf="hayProductos" [ngStyle]="{'display': !hayProductos ? 'block' : 'none'}" >MI LISTA DE COMPRAS</h2>
+            <h2 class="titulo-carrito" *ngIf="hayProductos" [ngStyle]="{'display': hayProductos ? 'block' : 'none'}" >CARRO VACÍO</h2>
         </header>
 
-        <ul class="productos-lista-carrito">
-            <li *ngFor="let producto of productosEnCarrito">
-      
-              <div class="cartilla-producto-carrito">
-                <div class="producto-imagen">
-                  <img [src]="getImagen(producto.imagen)" class="img-producto">
-                </div>
-      
-                <div class="producto-detalles">
-                  <h3 class="nombre">{{ producto.nombre }}</h3>
-                  <p *ngIf="producto.id">{{ producto.id }}</p>
-                  <span class="precio"> S/.{{ producto.precio }}</span>
-                </div>
-                <button><i class="fa-solid fa-cart-plus"></i></button>
-              </div>
+        <div class="body-lista-compras-total">
+
+            <div class="total" *ngIf="hayProductos" [ngStyle]="{'display': !hayProductos ? 'block' : 'none'}">
+                <p>Total: {{precioTotal}}</p>
+            </div>
+
+            <div class="cuando-no-hay-productos" *ngIf="hayProductos" [ngStyle]="{'display': hayProductos ? 'block' : 'none'}">
+                <img src=".\..\..\..\assets\img\Recurso 1.png" alt="no hay ningun producto" class="perrito-triste">
+            </div>
             
-            </li>
-        </ul>
-        
+            <ul class="productos-lista-carrito">
+                <li *ngFor="let producto of productosEnCarrito">
+          
+                  <div class="cartilla-producto-carrito">
+                    <div class="producto-imagen">
+                      <img [src]="getImagen(producto.imagen)" class="img-producto">
+                    </div>
+          
+                    <div class="producto-detalles">
+                      <h3 class="nombre">{{ producto.nombre }}</h3>
+                      <p *ngIf="producto.id">{{ producto.id }}</p>
+                      <span class="precio"> S/.{{ producto.precio }}</span>
+                    </div>
+                    <button><i class="fa-solid fa-cart-plus"></i></button>
+                  </div>
+                
+                </li>
+            </ul>
+        </div>
     </div>
     
 </body>

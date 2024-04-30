@@ -14,6 +14,7 @@ import { CarritoServiceService } from '../../../shared/services/carrito-service.
 export class CarritoComponent implements OnInit{
   productosEnCarrito: Productos[] = []; // Arreglo para almacenar productos en el carrito
   modalVisible: boolean = false;
+  hayProductos: boolean = false;
 
   precioTotal:number = 0;
   
@@ -28,6 +29,8 @@ export class CarritoComponent implements OnInit{
       for(let producto of this.productosEnCarrito) {
         this.precioTotal += producto.precio;
       }
+
+      this.hayProductos = this.precioTotal == 0;
     });
 
     // suscribirmos el valor modalVisible a valor de visibilidad que maneja el servicio
