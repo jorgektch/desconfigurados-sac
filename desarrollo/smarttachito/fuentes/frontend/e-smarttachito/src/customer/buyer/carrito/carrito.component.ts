@@ -31,7 +31,7 @@ export class CarritoComponent implements OnInit{
         this.precioTotal += producto.producto.precio * producto.cantidad;
       }
 
-      this.hayProductos = this.productosEnCarrito.length == 0;
+      this.hayProductos = this.productosEnCarrito.length != 0;
     });
 
     // suscribirmos el valor modalVisible a valor de visibilidad que maneja el servicio

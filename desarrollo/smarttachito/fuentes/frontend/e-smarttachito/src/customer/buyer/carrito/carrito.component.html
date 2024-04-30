@@ -10,19 +10,20 @@
 <body>
 
     <div id="modal-padre" class="modal" *ngIf="modalVisible" [ngStyle]="{'display': modalVisible ? 'block' : 'none'}">
-        <header>
+        
+      <header>
             <div (click)="closeModal()" class="close">&times;</div>
-            <h2 class="titulo-carrito" *ngIf="hayProductos" [ngStyle]="{'display': !hayProductos ? 'block' : 'none'}" >MI LISTA DE COMPRAS</h2>
-            <h2 class="titulo-carrito" *ngIf="hayProductos" [ngStyle]="{'display': hayProductos ? 'block' : 'none'}" >CARRO VACÍO</h2>
+            <h2 class="titulo-carrito" *ngIf="hayProductos" [ngStyle]="{'display': hayProductos ? 'block' : 'none'}" >MI LISTA DE COMPRAS</h2>
+            <h2 class="titulo-carrito" *ngIf="!hayProductos" [ngStyle]="{'display': !hayProductos ? 'block' : 'none'}" >CARRO VACÍO</h2>
         </header>
 
         <div class="body-lista-compras-total">
 
-            <div class="total" *ngIf="hayProductos" [ngStyle]="{'display': !hayProductos ? 'block' : 'none'}">
+            <div class="total" *ngIf="hayProductos" [ngStyle]="{'display': hayProductos ? 'block' : 'none'}">
                 <p>Total: {{precioTotal}}</p>
             </div>
 
-            <div class="cuando-no-hay-productos" *ngIf="hayProductos" [ngStyle]="{'display': hayProductos ? 'block' : 'none'}">
+            <div class="cuando-no-hay-productos" *ngIf="!hayProductos" [ngStyle]="{'display': !hayProductos ? 'block' : 'none'}">
                 <img src=".\..\..\..\assets\img\Recurso 1.png" alt="no hay ningun producto" class="perrito-triste">
             </div>
             
@@ -31,20 +32,35 @@
           
                   <div class="cartilla-producto-carrito">
                     <div class="producto-imagen">
-                      <img [src]="getImagen(producto.imagen)" class="img-producto">
+                      <img [src]="getImagen(producto.producto.imagen)" class="img-producto">
                     </div>
           
                     <div class="producto-detalles">
-                      <h3 class="nombre">{{ producto.nombre }}</h3>
-                      <p *ngIf="producto.id">{{ producto.id }}</p>
-                      <span class="precio"> S/.{{ producto.precio }}</span>
+                      <h3 class="nombre">{{ producto.producto.nombre }}</h3>
+                      <p class="id">{{ producto.producto.id }}</p>
+                      <span class="precio unitario:"> S/.{{ producto.producto.precio }}</span>
+                      <span class="precio subtotal:"> S/.{{ producto.precioSubTotal }}</span>
                     </div>
-                    <button><i class="fa-solid fa-cart-plus"></i></button>
+
+                    <div class="modificar-cantidad-producto">
+                      <button class="aumentar" *ngIf="producto.cantidad" [ngStyle]="{'background-color': producto.cantidad < 100? 'white': 'red'}" (click)="producto.aumentarCantidadProducto()">
+                        <i class="fa fa-plus-square" aria-hidden="true"></i>
+                      </button>
+
+                      <p>{{producto.cantidad}}</p>
+                      
+                      <button class="disminuir" *ngIf="producto.cantidad" [ngStyle]="{'background-color': producto.cantidad > 1? 'white': 'red'}" (click)="producto.disminuirCantidadProducto()">
+                        <i class="fa fa-minus-square" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                    
                   </div>
                 
                 </li>
             </ul>
+
         </div>
+
     </div>
     
 </body>
