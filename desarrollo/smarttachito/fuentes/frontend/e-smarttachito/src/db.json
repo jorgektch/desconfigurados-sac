@@ -2,11 +2,15 @@
   "usuarios": [
     {
       "id": "1",
+      "nombre": "Laura",
+      "apellido":"Mendoza",
       "usuario": "Laura@gmail.com",
       "contrasenia": "Laura1"
     },
     {
       "id": "2",
+      "nombre": "Asthri",
+      "apellido":"Pardave",
       "usuario": "Asthri@gmail.com",
       "contrasenia": "Asthri2"
     }
