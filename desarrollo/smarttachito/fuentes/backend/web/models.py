@@ -176,7 +176,7 @@ class Ubicacion(models.Model):
     latitud = DecimalField(max_digits = 9, decimal_places = 6)
     longitud = DecimalField(max_digits = 9, decimal_places = 6)
     def __str__(self):
-        return self.nombre
+        return f"{self.ciudad} {self.direccion}"
     class Meta:
         verbose_name = "Ubicacion"
         verbose_name_plural = "Ubicaciones"
