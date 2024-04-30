@@ -173,8 +173,8 @@ class Ubicacion(models.Model):
     direccion = models.CharField("Dirección", max_length = 1000)
     referencia = models.CharField("Referencia", max_length = 500)
     codigo_postal = models.CharField("Código postal", max_length = 20)
-    latitud = DecimalField(max_digits = 9, decimal_places = 6)
-    longitud = DecimalField(max_digits = 9, decimal_places = 6)
+    latitud = DecimalField("Latitud", max_digits = 9, decimal_places = 6)
+    longitud = DecimalField("Longitud", max_digits = 9, decimal_places = 6)
     def __str__(self):
         return f"{self.ciudad} {self.direccion}"
     class Meta:
