@@ -8,7 +8,7 @@ import { CarritoServiceService } from '../../../shared/services/carrito-service.
   templateUrl: './launcher-carrito.component.html',
   styleUrl: './launcher-carrito.component.css'
 })
-export class LaucherCarritoComponent implements OnInit {
+export class LauncherCarritoComponent implements OnInit {
   seVisualiza: boolean = false; // Bandera para controlar la visibilidad del div desplegable
   cantidadProductosCarrito: number = 0;
 

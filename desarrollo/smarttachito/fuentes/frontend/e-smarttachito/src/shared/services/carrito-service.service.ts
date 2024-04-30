@@ -10,6 +10,9 @@ export class CarritoServiceService {
   // lista de productos del servicio
   private productosCarrito: Productos[] = [];
 
+  // manejar la visibilidad del modal lista carrito
+  private esVisible: boolean = false;
+
   // lista de productos que se emitiran a todos los componentes que se suscriptores
   private _listaProductos: BehaviorSubject<Productos[]>;
 
@@ -28,5 +31,9 @@ export class CarritoServiceService {
     this.productosCarrito.push(producto);
     this._listaProductos.next(this.productosCarrito);
    }
+
+   toggleVisualizacionCarrito() {
+    this.esVisible = !this.esVisible;
+  }
 
 }
