@@ -1,6 +1,7 @@
-import { Component, Injectable, SimpleChanges, signal } from '@angular/core';
+import { Component, Injectable, OnInit, SimpleChanges, signal } from '@angular/core';
 import { Productos } from '../../../shared/interfaces/interface'; // Importa la interfaz de productos
 import { NgFor, NgIf, CommonModule } from '@angular/common'; // Importa directivas necesarias
+import { CarritoServiceService } from '../../../shared/services/carrito-service.service';
 
 
 @Component({
@@ -10,9 +11,17 @@ import { NgFor, NgIf, CommonModule } from '@angular/common'; // Importa directiv
   styleUrls: ['./carrito.component.css'],
   imports: [NgFor, NgIf, CommonModule] // Importa las directivas necesarias
 })
-export class CarritoComponent {
+export class CarritoComponent implements OnInit{
   productosEnCarrito: Productos[] = []; // Arreglo para almacenar productos en el carrito
   seVisualiza: boolean = false; // Bandera para controlar la visibilidad del div desplegable
+  
+  constructor (private servicioCarrito: CarritoServiceService) {}
+  
+  ngOnInit(): void {
+    this.servicioCarrito._listaProductosObservable.subscribe(listaProductos => 
+      this.productosEnCarrito = listaProductos
+    );
+  }
   
   agregarProductoAlCarrito(producto: Productos) {
     this.productosEnCarrito.push(producto);
