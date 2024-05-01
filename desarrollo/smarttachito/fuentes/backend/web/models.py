@@ -173,8 +173,8 @@ class Ubicacion(models.Model):
     direccion = models.CharField("Dirección", max_length = 1000)
     referencia = models.CharField("Referencia", max_length = 500)
     codigo_postal = models.CharField("Código postal", max_length = 20)
-    latitud = DecimalField("Latitud", max_digits = 9, decimal_places = 6)
-    longitud = DecimalField("Longitud", max_digits = 9, decimal_places = 6)
+    latitud = models.DecimalField("Latitud", max_digits = 9, decimal_places = 6)
+    longitud = models.DecimalField("Longitud", max_digits = 9, decimal_places = 6)
     def __str__(self):
         return f"{self.ciudad} {self.direccion}"
     class Meta:
@@ -197,7 +197,7 @@ class Entrega(models.Model):
     detalles_entrega = models.CharField("Detalles de la entrega", max_length = 1000)
     estado_entrega = models.ForeignKey(EstadoEntrega, on_delete = models.CASCADE, verbose_name = "Estado de la entrega")
     def __str__(self):
-        return f"{self.fecha_entrega}"
+        return str(self.fecha_entrega)
     class Meta:
         verbose_name = "Entrega"
         verbose_name_plural = "Entregas"
@@ -206,7 +206,7 @@ class Pago(models.Model):
     fecha_pago = models.DateField("Fecha de pago", auto_now_add = True)
     monto = models.DecimalField("Monto total", max_digits = 16 , decimal_places = 2)
     def __str__(self):
-        return f"{self.fecha_pago}"
+        return str(self.fecha_pago)
     class Meta:
         verbose_name = "Pago"
         verbose_name_plural = "Pagos"
@@ -227,7 +227,7 @@ class Orden(models.Model):
     entrega = models.ForeignKey(Entrega, on_delete = models.CASCADE, blank = True, null = True, verbose_name = "Entrega")
     pago = models.ForeignKey(Pago, on_delete = models.CASCADE, blank = True, null = True, verbose_name = "Pago")
     def __str__(self):
-        return f"{self.fecha_pedido}"
+        return str(self.fecha_pedido)
     class Meta:
         verbose_name = "Orden"
         verbose_name_plural = "Órdenes"
