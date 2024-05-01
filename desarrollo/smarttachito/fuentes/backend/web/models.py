@@ -232,7 +232,8 @@ class Orden(models.Model):
     entrega = models.ForeignKey(Entrega, on_delete = models.CASCADE, blank = True, null = True, verbose_name = "Entrega")
     pago = models.ForeignKey(Pago, on_delete = models.CASCADE, blank = True, null = True, verbose_name = "Pago")
     def __str__(self):
-        return str(self.fecha_pedido)
+        return f"{self.cliente} {self.fecha_orden}"
+        #return str(self.fecha_pedido)
     class Meta:
         verbose_name = "Orden"
         verbose_name_plural = "Órdenes"

@@ -69,6 +69,10 @@ class EstadoOrdenAdmin(admin.ModelAdmin):
     list_display = [field.name for field in EstadoOrden._meta.fields]
     ordering = ('nombre',)
 
+class OrdenAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Orden._meta.fields]
+    ordering = ('cliente', 'fecha_orden',)
+
 admin.site.register(Categoria, CategoriaAdmin)
 admin.site.register(Producto, ProductoAdmin)
 admin.site.register(TipoDocumento, TipoDocumentoAdmin)
@@ -86,3 +90,4 @@ admin.site.register(EstadoEntrega, EstadoEntregaAdmin)
 admin.site.register(Entrega, EntregaAdmin)
 admin.site.register(Pago, PagoAdmin)
 admin.site.register(EstadoOrden, EstadoOrdenAdmin)
+admin.site.register(Orden, OrdenAdmin)
