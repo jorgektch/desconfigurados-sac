@@ -59,4 +59,14 @@ export class CarritoComponent implements OnInit{
   closeModal() {
     this.servicioCarrito.toggleVisualizacionCarrito()
   }
+
+  aumentarProductosCarrito(index: number) {
+    this.servicioCarrito.productosCarrito[index].aumentarCantidadProducto()
+    this.servicioCarrito._listaProductos.next(this.servicioCarrito.productosCarrito)
+  }
+
+  disminuirProductosCarrito(index: number) {
+    this.servicioCarrito.productosCarrito[index].disminuirCantidadProducto()
+    this.servicioCarrito._listaProductos.next(this.servicioCarrito.productosCarrito)
+  }
 }
