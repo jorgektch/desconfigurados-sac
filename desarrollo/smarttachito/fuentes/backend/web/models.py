@@ -103,7 +103,7 @@ class Cliente(models.Model):
     fecha_registro = models.DateField("Fecha de registro", auto_now_add = True)
 
     def __str__(self):
-        return self.usuario
+        return self.usuario.username
     class Meta:
         verbose_name = "Cliente"
         verbose_name_plural = "Clientes"
@@ -127,8 +127,8 @@ class Empleado(models.Model):
         verbose_name_plural = "Empleados"
 
 class EmpleadoCargo(models.Model):
-    empleado = models.ForeignKey(Empleado, on_delete=models.CASCADE)
-    cargo = models.ForeignKey(Cargo, on_delete=models.CASCADE)
+    empleado = models.ForeignKey(Empleado, on_delete=models.CASCADE, verbose_name = "Empleado")
+    cargo = models.ForeignKey(Cargo, on_delete=models.CASCADE, verbose_name = "Cargo")
     def __str__(self):
         return f"{self.empleado} {self.cargo}"
     class Meta:
@@ -146,6 +146,8 @@ class Residuo(models.Model):
         verbose_name_plural = "Residuos"
 
 class ProductoResiduo(models.Model):
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE, verbose_name = "Producto")
+    residuo = models.ForeignKey(Residuo, on_delete=models.CASCADE, verbose_name = "Tipo de residuo")
     def __str__(self):
         return self.nombre
     class Meta:
