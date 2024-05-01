@@ -197,28 +197,45 @@ class Entrega(models.Model):
     detalles_entrega = models.CharField("Detalles de la entrega", max_length = 1000)
     estado_entrega = models.ForeignKey(EstadoEntrega, on_delete = models.CASCADE, verbose_name = "Estado de la entrega")
     def __str__(self):
-        return self.nombre
+        return f"{self.fecha_entrega}"
     class Meta:
         verbose_name = "Entrega"
         verbose_name_plural = "Entregas"
 
 class Pago(models.Model):
+    fecha_pago = models.DateField("Fecha de pago", auto_now_add = True)
+    monto = models.DecimalField("Monto total", max_digits = 16 , decimal_places = 2)
     def __str__(self):
-        return self.nombre
+        return f"{self.fecha_pago}"
     class Meta:
         verbose_name = "Pago"
         verbose_name_plural = "Pagos"
 
-class Pedido(models.Model):
+class EstadoOrden(models.Model):
+    nombre = models.CharField("Nombre", max_length = 100)
+    descripcion = models.CharField("Descripción", max_length = 500)
     def __str__(self):
-        return self.nombre
+        return f"{self.nombre}"
     class Meta:
-        verbose_name = "Pedido"
-        verbose_name_plural = "Pedidos"
+        verbose_name = "Estado de la orden"
+        verbose_name_plural = "Estados de la orden"
 
-class DetallePedido(models.Model):
+class Orden(models.Model):
+    cliente = models.ForeignKey(Cliente, on_delete = models.CASCADE, verbose_name = "Cliente")
+    fecha_orden = models.DateField("Fecha de registro del orden", auto_now_add = True)
+    estado_orden = models.ForeignKey(EstadoOrden, on_delete = models.CASCADE, verbose_name = "Estado de la orden")
+    entrega = models.ForeignKey(Entrega, on_delete = models.CASCADE, blank = True, null = True, verbose_name = "Entrega")
+    pago = models.ForeignKey(Pago, on_delete = models.CASCADE, blank = True, null = True, verbose_name = "Pago")
+    
+    def __str__(self):
+        return f"{self.fecha_pedido}"
+    class Meta:
+        verbose_name = "Orden"
+        verbose_name_plural = "Órdenes"
+
+class DetalleOrden(models.Model):
     def __str__(self):
         return self.nombre
     class Meta:
-        verbose_name = "DetallePedido"
-        verbose_name_plural = "DetallePedidos"
+        verbose_name = "Detalle orden"
+        verbose_name_plural = "Detalles orden"
