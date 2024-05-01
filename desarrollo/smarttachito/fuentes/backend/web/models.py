@@ -99,7 +99,7 @@ class Usuario(AbstractBaseUser):
         verbose_name_plural = "Usuarios"
 
 class Cliente(models.Model):
-    usuario = models.OneToOneField(Usuario, on_delete = models.CASCADE)
+    usuario = models.OneToOneField(Usuario, on_delete = models.CASCADE, verbose_name = "Usuario asociado")
     fecha_registro = models.DateField("Fecha de registro", auto_now_add = True)
 
     def __str__(self):
@@ -118,7 +118,7 @@ class Cargo(models.Model):
         verbose_name_plural = "Cargos"
 
 class Empleado(models.Model):
-    usuario = models.OneToOneField(Usuario, on_delete = models.CASCADE)
+    usuario = models.OneToOneField(Usuario, on_delete = models.CASCADE, verbose_name = "Usuario asociado")
     cargos = models.ManyToManyField(Cargo, through='EmpleadoCargo')
     def __str__(self):
         return self.nombre
