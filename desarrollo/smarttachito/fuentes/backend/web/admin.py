@@ -37,8 +37,8 @@ class ResiduoAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Residuo._meta.fields]
     ordering = ('nombre',)
 
-class ResiduoAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in Residuo._meta.fields]
+class ContenedorAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Contenedor._meta.fields]
     ordering = ('nombre',)
 
 admin.site.register(Categoria, CategoriaAdmin)
@@ -50,4 +50,4 @@ admin.site.register(Cargo, CargoAdmin)
 admin.site.register(Empleado, EmpleadoAdmin)
 admin.site.register(AsignacionCargo, AsignacionCargoAdmin)
 admin.site.register(Residuo, ResiduoAdmin)
-#admin.site.register(Residuo, ResiduoAdmin)
+admin.site.register(Contenedor, ContenedorAdmin)
