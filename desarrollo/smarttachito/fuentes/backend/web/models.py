@@ -200,7 +200,8 @@ class Entrega(models.Model):
     detalles_entrega = models.CharField("Detalles de la entrega", max_length = 1000)
     estado_entrega = models.ForeignKey(EstadoEntrega, on_delete = models.CASCADE, verbose_name = "Estado de la entrega")
     def __str__(self):
-        return str(self.fecha_entrega)
+        return f"{self.ubicacion} {self.empleado} {self.fecha_entrega}"
+        #return str(self.fecha_entrega)
     class Meta:
         verbose_name = "Entrega"
         verbose_name_plural = "Entregas"
@@ -209,7 +210,8 @@ class Pago(models.Model):
     fecha_pago = models.DateField("Fecha de pago", auto_now_add = True)
     monto = models.DecimalField("Monto total", max_digits = 16 , decimal_places = 2)
     def __str__(self):
-        return str(self.fecha_pago)
+        return f"{self.fecha_pago} {self.monto}"
+        #return str(self.fecha_pago)
     class Meta:
         verbose_name = "Pago"
         verbose_name_plural = "Pagos"

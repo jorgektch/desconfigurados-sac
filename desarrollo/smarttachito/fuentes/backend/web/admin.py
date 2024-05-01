@@ -57,6 +57,14 @@ class EstadoEntregaAdmin(admin.ModelAdmin):
     list_display = [field.name for field in EstadoEntrega._meta.fields]
     ordering = ('nombre',)
 
+class EntregaAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Entrega._meta.fields]
+    ordering = ('ubicacion', 'empleado', 'fecha_entrega',)
+
+class PagoAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Pago._meta.fields]
+    ordering = ('fecha_pago', 'monto',)
+
 admin.site.register(Categoria, CategoriaAdmin)
 admin.site.register(Producto, ProductoAdmin)
 admin.site.register(TipoDocumento, TipoDocumentoAdmin)
@@ -71,3 +79,5 @@ admin.site.register(Pais, PaisAdmin)
 admin.site.register(Ciudad, CiudadAdmin)
 admin.site.register(Ubicacion, UbicacionAdmin)
 admin.site.register(EstadoEntrega, EstadoEntregaAdmin)
+admin.site.register(Entrega, EntregaAdmin)
+admin.site.register(Pago, PagoAdmin)
