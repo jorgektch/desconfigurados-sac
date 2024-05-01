@@ -65,6 +65,10 @@ class PagoAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Pago._meta.fields]
     ordering = ('fecha_pago', 'monto',)
 
+class EstadoOrdenAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in EstadoOrden._meta.fields]
+    ordering = ('nombre',)
+
 admin.site.register(Categoria, CategoriaAdmin)
 admin.site.register(Producto, ProductoAdmin)
 admin.site.register(TipoDocumento, TipoDocumentoAdmin)
@@ -81,3 +85,4 @@ admin.site.register(Ubicacion, UbicacionAdmin)
 admin.site.register(EstadoEntrega, EstadoEntregaAdmin)
 admin.site.register(Entrega, EntregaAdmin)
 admin.site.register(Pago, PagoAdmin)
+admin.site.register(EstadoOrden, EstadoOrdenAdmin)
