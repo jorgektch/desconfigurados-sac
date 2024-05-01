@@ -53,6 +53,10 @@ class UbicacionAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Ubicacion._meta.fields]
     ordering = ('ciudad', 'direccion',)
 
+class EstadoEntregaAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in EstadoEntrega._meta.fields]
+    ordering = ('nombre',)
+
 admin.site.register(Categoria, CategoriaAdmin)
 admin.site.register(Producto, ProductoAdmin)
 admin.site.register(TipoDocumento, TipoDocumentoAdmin)
@@ -66,3 +70,4 @@ admin.site.register(Contenedor, ContenedorAdmin)
 admin.site.register(Pais, PaisAdmin)
 admin.site.register(Ciudad, CiudadAdmin)
 admin.site.register(Ubicacion, UbicacionAdmin)
+admin.site.register(EstadoEntrega, EstadoEntregaAdmin)
