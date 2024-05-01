@@ -119,16 +119,17 @@ class Cargo(models.Model):
 
 class Empleado(models.Model):
     usuario = models.OneToOneField(Usuario, on_delete = models.CASCADE, verbose_name = "Usuario asociado")
-    cargos = models.ManyToManyField(Cargo, through='EmpleadoCargo')
+    cargos = models.ManyToManyField(Cargo, through = 'AsignacionCargo')
     def __str__(self):
-        return self.nombre
+        return f"{self.usuario}"
+        #return self.nombre
     class Meta:
         verbose_name = "Empleado"
         verbose_name_plural = "Empleados"
 
 class AsignacionCargo(models.Model):
-    empleado = models.ForeignKey(Empleado, on_delete=models.CASCADE, verbose_name = "Empleado")
-    cargo = models.ForeignKey(Cargo, on_delete=models.CASCADE, verbose_name = "Cargo asignado")
+    empleado = models.ForeignKey(Empleado, on_delete = models.CASCADE, verbose_name = "Empleado")
+    cargo = models.ForeignKey(Cargo, on_delete = models.CASCADE, verbose_name = "Cargo asignado")
     def __str__(self):
         return f"{self.empleado} {self.cargo}"
     class Meta:
@@ -146,8 +147,8 @@ class Residuo(models.Model):
         verbose_name_plural = "Residuos"
 
 class Contenedor(models.Model):
-    producto = models.ForeignKey(Producto, on_delete=models.CASCADE, verbose_name = "Producto")
-    residuo = models.ForeignKey(Residuo, on_delete=models.CASCADE, verbose_name = "Tipo de residuo que puede contener")
+    producto = models.ForeignKey(Producto, on_delete = models.CASCADE, verbose_name = "Producto")
+    residuo = models.ForeignKey(Residuo, on_delete = models.CASCADE, verbose_name = "Tipo de residuo que puede contener")
     def __str__(self):
         return f"{self.producto} {self.residuo}"
     class Meta:
@@ -176,8 +177,8 @@ class Ubicacion(models.Model):
     direccion = models.CharField("Dirección", max_length = 1000)
     referencia = models.CharField("Referencia", max_length = 500)
     codigo_postal = models.CharField("Código postal", max_length = 20)
-    latitud = models.DecimalField("Latitud", max_digits = 9, decimal_places = 6)
-    longitud = models.DecimalField("Longitud", max_digits = 9, decimal_places = 6)
+    latitud = models.DecimalField("Latitud", max_digits = 12, decimal_places = 8)
+    longitud = models.DecimalField("Longitud", max_digits = 12, decimal_places = 8)
     def __str__(self):
         return f"{self.ciudad} {self.direccion}"
     class Meta:
@@ -195,9 +196,9 @@ class EstadoEntrega(models.Model):
 
 class Entrega(models.Model):
     ubicacion = models.ForeignKey(Ubicacion, on_delete = models.CASCADE, verbose_name = "Ubicación de entrega")
-    empleado = models.ForeignKey(Empleado, on_delete = models.CASCADE, verbose_name = "Empleado asignado")
+    empleado = models.ForeignKey(Empleado, on_delete = models.CASCADE,  blank = True, null = True, verbose_name = "Empleado asignado")
     fecha_entrega = models.DateField("Fecha de entrega", auto_now_add = True)
-    detalles_entrega = models.CharField("Detalles de la entrega", max_length = 1000)
+    detalles_entrega = models.CharField("Anotaciones del encargado de la entrega", max_length = 1000, blank = True, null = True)
     estado_entrega = models.ForeignKey(EstadoEntrega, on_delete = models.CASCADE, verbose_name = "Estado de la entrega")
     def __str__(self):
         return f"{self.ubicacion} {self.empleado} {self.fecha_entrega}"
