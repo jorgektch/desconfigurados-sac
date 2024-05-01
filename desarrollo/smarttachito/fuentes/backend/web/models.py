@@ -128,7 +128,7 @@ class Empleado(models.Model):
 
 class AsignacionCargo(models.Model):
     empleado = models.ForeignKey(Empleado, on_delete=models.CASCADE, verbose_name = "Empleado")
-    cargo = models.ForeignKey(Cargo, on_delete=models.CASCADE, verbose_name = "Cargo asignado")
+    cargo = models.ForeignKey(Cargo, on_delete=models.CASCADE, verbose_name = "Cargo")
     def __str__(self):
         return f"{self.empleado} {self.cargo}"
     class Meta:
