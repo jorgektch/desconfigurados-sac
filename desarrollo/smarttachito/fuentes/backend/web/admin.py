@@ -39,6 +39,10 @@ class ResiduoAdmin(admin.ModelAdmin):
 
 class ContenedorAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Contenedor._meta.fields]
+    ordering = ('producto', 'residuo',)
+
+class PaisAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Pais._meta.fields]
     ordering = ('nombre',)
 
 admin.site.register(Categoria, CategoriaAdmin)
@@ -51,3 +55,4 @@ admin.site.register(Empleado, EmpleadoAdmin)
 admin.site.register(AsignacionCargo, AsignacionCargoAdmin)
 admin.site.register(Residuo, ResiduoAdmin)
 admin.site.register(Contenedor, ContenedorAdmin)
+admin.site.register(Pais, PaisAdmin)

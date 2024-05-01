@@ -149,7 +149,7 @@ class Contenedor(models.Model):
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE, verbose_name = "Producto")
     residuo = models.ForeignKey(Residuo, on_delete=models.CASCADE, verbose_name = "Tipo de residuo que puede contener")
     def __str__(self):
-        return self.nombre
+        return f"{self.producto} {self.residuo}"
     class Meta:
         verbose_name = "Contenedor"
         verbose_name_plural = "Contenedores"
