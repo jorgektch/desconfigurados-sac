@@ -43,7 +43,8 @@ export class CarritoComponent implements OnInit{
   eliminarProductoDelCarrito(Producto: ProductoCarrito) {
     const indexProductoEliminar = this.productosEnCarrito.indexOf(Producto);
     if (indexProductoEliminar !== -1) {
-      this.productosEnCarrito.splice(indexProductoEliminar, 1);
+      this.servicioCarrito.productosCarrito.splice(indexProductoEliminar, 1);
+      this.servicioCarrito._listaProductos.next(this.servicioCarrito.productosCarrito)
     }
   }
 
