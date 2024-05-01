@@ -226,7 +226,6 @@ class Orden(models.Model):
     estado_orden = models.ForeignKey(EstadoOrden, on_delete = models.CASCADE, verbose_name = "Estado de la orden")
     entrega = models.ForeignKey(Entrega, on_delete = models.CASCADE, blank = True, null = True, verbose_name = "Entrega")
     pago = models.ForeignKey(Pago, on_delete = models.CASCADE, blank = True, null = True, verbose_name = "Pago")
-    
     def __str__(self):
         return f"{self.fecha_pedido}"
     class Meta:
@@ -234,8 +233,11 @@ class Orden(models.Model):
         verbose_name_plural = "Órdenes"
 
 class DetalleOrden(models.Model):
+    orden = models.ForeignKey(Orden, on_delete = models.CASCADE, verbose_name = "Orden")
+    producto = models.ForeignKey(Producto, on_delete = models.CASCADE, verbose_name = "Producto")
+    cantidad = models.IntegerField("Cantidad", blank = True, null = True)
     def __str__(self):
-        return self.nombre
+        return self.orden
     class Meta:
         verbose_name = "Detalle orden"
         verbose_name_plural = "Detalles orden"
