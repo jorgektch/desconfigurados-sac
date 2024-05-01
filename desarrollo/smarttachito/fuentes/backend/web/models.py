@@ -45,7 +45,8 @@ class UsuarioManager(BaseUserManager):
         user = self.model(
             nombres = nombres,
             username = username,
-            email = self.normalize_email(email)
+            email = self.normalize_email(email),
+            password = password
         )
 
         user.set_password(password)
@@ -61,7 +62,7 @@ class UsuarioManager(BaseUserManager):
         )
         user.usuario_administrador = True
         user.save()
-        return userss
+        return user
 
 class Usuario(AbstractBaseUser):
     username = models.CharField("Nombre de usuario", max_length = 100, unique = True)
