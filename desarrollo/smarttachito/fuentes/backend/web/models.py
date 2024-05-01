@@ -243,7 +243,8 @@ class DetalleOrden(models.Model):
     producto = models.ForeignKey(Producto, on_delete = models.CASCADE, verbose_name = "Producto")
     cantidad = models.IntegerField("Cantidad", blank = True, null = True)
     def __str__(self):
-        return self.orden
+        return f"{self.orden} {self.producto}"
+        #return self.orden
     class Meta:
         verbose_name = "Detalle orden"
         verbose_name_plural = "Detalles orden"
