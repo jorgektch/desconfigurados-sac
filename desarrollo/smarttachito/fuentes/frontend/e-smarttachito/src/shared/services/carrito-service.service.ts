@@ -11,7 +11,7 @@ export class CarritoServiceService {
   // lista de productos del servicio
   productosCarrito: ProductoCarrito[] = [];
   // lista de productos que se emitiran a todos los componentes que se suscriptores
-  private _listaProductos: BehaviorSubject<ProductoCarrito[]>;
+  _listaProductos: BehaviorSubject<ProductoCarrito[]>;
 
   // manejar la visibilidad del modal lista carrito
   private esVisible: boolean = false;
