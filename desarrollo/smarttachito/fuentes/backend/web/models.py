@@ -126,14 +126,14 @@ class Empleado(models.Model):
         verbose_name = "Empleado"
         verbose_name_plural = "Empleados"
 
-class EmpleadoCargo(models.Model):
+class AsignacionCargo(models.Model):
     empleado = models.ForeignKey(Empleado, on_delete=models.CASCADE, verbose_name = "Empleado")
-    cargo = models.ForeignKey(Cargo, on_delete=models.CASCADE, verbose_name = "Cargo")
+    cargo = models.ForeignKey(Cargo, on_delete=models.CASCADE, verbose_name = "Cargo asignado")
     def __str__(self):
         return f"{self.empleado} {self.cargo}"
     class Meta:
-        verbose_name = "EmpleadoCargo"
-        verbose_name_plural = "EmpleadoCargos"
+        verbose_name = "Asignación de cargo"
+        verbose_name_plural = "Asignaciones de cargo"
 
 class Residuo(models.Model):
     nombre = models.CharField("Nombre", max_length = 100)
@@ -147,7 +147,7 @@ class Residuo(models.Model):
 
 class ProductoResiduo(models.Model):
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE, verbose_name = "Producto")
-    residuo = models.ForeignKey(Residuo, on_delete=models.CASCADE, verbose_name = "Tipo de residuo")
+    residuo = models.ForeignKey(Residuo, on_delete=models.CASCADE, verbose_name = "Tipo de residuo que puede contener")
     def __str__(self):
         return self.nombre
     class Meta:

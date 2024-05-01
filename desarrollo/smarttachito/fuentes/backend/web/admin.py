@@ -29,9 +29,13 @@ class EmpleadoAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Empleado._meta.fields]
     ordering = ('usuario',)
 
-class EmpleadoCargoAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in EmpleadoCargo._meta.fields]
+class AsignacionCargoAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in AsignacionCargo._meta.fields]
     ordering = ('empleado', 'cargo',)
+
+class ResiduoAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Residuo._meta.fields]
+    ordering = ('nombre',)
 
 class ResiduoAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Residuo._meta.fields]
@@ -44,5 +48,6 @@ admin.site.register(Usuario, UsuarioAdmin)
 admin.site.register(Cliente, ClienteAdmin)
 admin.site.register(Cargo, CargoAdmin)
 admin.site.register(Empleado, EmpleadoAdmin)
-admin.site.register(EmpleadoCargo, EmpleadoCargoAdmin)
+admin.site.register(AsignacionCargo, AsignacionCargoAdmin)
 admin.site.register(Residuo, ResiduoAdmin)
+#admin.site.register(Residuo, ResiduoAdmin)
