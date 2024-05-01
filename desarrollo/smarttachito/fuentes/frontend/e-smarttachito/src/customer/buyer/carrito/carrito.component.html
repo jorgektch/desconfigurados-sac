@@ -43,13 +43,13 @@
                     </div>
 
                     <div class="modificar-cantidad-producto">
-                      <button id="aumentar" class="btn" *ngIf="producto.cantidad" [ngStyle]="{'color': producto.cantidad < 100? 'black': 'red'}" (click)="producto.aumentarCantidadProducto()">
+                      <button id="aumentar" class="btn" *ngIf="producto.cantidad" [ngStyle]="{'color': producto.cantidad < 100? 'black': 'red'}" (click)="aumentarProductosCarrito(productosEnCarrito.indexOf(producto))">
                         <i class="fa fa-plus-square" aria-hidden="true"></i>
                       </button>
 
                       <p>{{producto.cantidad}}</p>
                       
-                      <button id="disminuir" class="btn" *ngIf="producto.cantidad" [ngStyle]="{'color': producto.cantidad > 1? 'black': 'red'}" (click)="producto.disminuirCantidadProducto()">
+                      <button id="disminuir" class="btn" *ngIf="producto.cantidad" [ngStyle]="{'color': producto.cantidad > 1? 'black': 'red'}" (click)="disminuirProductosCarrito(productosEnCarrito.indexOf(producto))">
                         <i class="fa fa-minus-square" aria-hidden="true"></i>
                       </button>
                     </div>
