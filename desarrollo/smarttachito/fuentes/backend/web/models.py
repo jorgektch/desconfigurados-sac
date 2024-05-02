@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import Group
+from django.contrib.auth.hashers import make_password
 
 class Categoria(models.Model):
     nombre = models.CharField("Nombre", max_length = 100)
@@ -8,8 +10,8 @@ class Categoria(models.Model):
     def __str__(self):
         return self.nombre
     class Meta:
-        verbose_name = "Categoria"
-        verbose_name_plural = "Categorias"
+        verbose_name = "Categoria de productos"
+        verbose_name_plural = "Categorias de productos"
 
 class Producto(models.Model):
     nombre = models.CharField("Nombre", max_length = 100)
@@ -17,11 +19,12 @@ class Producto(models.Model):
     descripcion_extendida = models.CharField("Descripción extendida", max_length = 500)
     precio = models.DecimalField("Precio", max_digits=10 , decimal_places = 2)
     imagen_principal = models.ImageField("Imagen principal", upload_to = "imagen/")
-    imagen_secundaria_1 = models.ImageField("Imagen secundaria 1", upload_to = "imagen/")
-    imagen_secundaria_2 = models.ImageField("Imagen secundaria 2", upload_to = "imagen/")
-    imagen_secundaria_3 = models.ImageField("Imagen secundaria 3", upload_to = "imagen/")
-    imagen_3d = models.ImageField("Imagen 3D", upload_to = "imagen/")
+    imagen_secundaria_1 = models.ImageField("Imagen secundaria 1", upload_to = "imagen/", blank = True, null = True)
+    imagen_secundaria_2 = models.ImageField("Imagen secundaria 2", upload_to = "imagen/", blank = True, null = True)
+    imagen_secundaria_3 = models.ImageField("Imagen secundaria 3", upload_to = "imagen/", blank = True, null = True)
+    imagen_360 = models.ImageField("Imagen 360", upload_to = "imagen/", blank = True, null = True)
     categoria = models.ForeignKey(Categoria, on_delete = models.CASCADE, verbose_name = "Categoría")
+    stock = models.IntegerField("Stock", blank = True, null = True)
     def __str__(self):
         return self.nombre
     class Meta:
@@ -46,7 +49,7 @@ class UsuarioManager(BaseUserManager):
             nombres = nombres,
             username = username,
             email = self.normalize_email(email),
-            password = password
+            password = make_password(password, salt=None, hasher='default')
         )
 
         user.set_password(password)
@@ -72,7 +75,7 @@ class Usuario(AbstractBaseUser):
     apellido_m = models.CharField("Apellido materno", max_length = 200, blank = True, null = True)
     tipo_documento = models.ForeignKey(TipoDocumento, on_delete = models.CASCADE, verbose_name = "Tipo de documento", null = True, blank = True)
     numero_documento = models.CharField("Número de documento", max_length=100, null=True, blank=True)
-    telefono = models.CharField("Celular", max_length = 20, blank = True, null = True)
+    celular = models.CharField("Celular", max_length = 20, blank = True, null = True)
     
     usuario_activo = models.BooleanField(default = True)
     usuario_administrador = models.BooleanField(default = False)
@@ -94,6 +97,11 @@ class Usuario(AbstractBaseUser):
     def is_staff(self):
         return self.usuario_administrador
 
+    def save(self, *args, **kwargs):
+        if self.password and not self.password.startswith(('pbkdf2_sha256$', 'bcrypt$', 'argon2')):
+            self.password = make_password(self.password)
+        super().save(*args, **kwargs)
+
     class Meta:
         verbose_name = "Usuario"
         verbose_name_plural = "Usuarios"
@@ -101,13 +109,13 @@ class Usuario(AbstractBaseUser):
 class Cliente(models.Model):
     usuario = models.OneToOneField(Usuario, on_delete = models.CASCADE, verbose_name = "Usuario asociado")
     fecha_registro = models.DateField("Fecha de registro", auto_now_add = True)
-
     def __str__(self):
         return self.usuario.username
     class Meta:
         verbose_name = "Cliente"
         verbose_name_plural = "Clientes"
 
+"""
 class Cargo(models.Model):
     nombre = models.CharField("Nombre", max_length = 100)
     descripcion = models.CharField("Descripción", max_length = 500)
@@ -116,26 +124,28 @@ class Cargo(models.Model):
     class Meta:
         verbose_name = "Cargo"
         verbose_name_plural = "Cargos"
-
+"""
 class Empleado(models.Model):
     usuario = models.OneToOneField(Usuario, on_delete = models.CASCADE, verbose_name = "Usuario asociado")
-    cargos = models.ManyToManyField(Cargo, through = 'AsignacionCargo')
+    cargos = models.ManyToManyField(Group)
+    #cargos = models.ManyToManyField(Cargo, through = 'AsignacionCargo')
     def __str__(self):
         return f"{self.usuario}"
         #return self.nombre
     class Meta:
         verbose_name = "Empleado"
         verbose_name_plural = "Empleados"
-
+"""
 class AsignacionCargo(models.Model):
     empleado = models.ForeignKey(Empleado, on_delete = models.CASCADE, verbose_name = "Empleado")
     cargo = models.ForeignKey(Cargo, on_delete = models.CASCADE, verbose_name = "Cargo asignado")
+    fecha_asignacion = models.DateField("Fecha de asignación", auto_now_add = True)
     def __str__(self):
         return f"{self.empleado} {self.cargo}"
     class Meta:
         verbose_name = "Asignación de cargo"
         verbose_name_plural = "Asignaciones de cargo"
-
+"""
 class Residuo(models.Model):
     nombre = models.CharField("Nombre", max_length = 100)
     descripcion = models.CharField("Descripción", max_length = 500)
@@ -197,19 +207,19 @@ class EstadoEntrega(models.Model):
 class Entrega(models.Model):
     ubicacion = models.ForeignKey(Ubicacion, on_delete = models.CASCADE, verbose_name = "Ubicación de entrega")
     empleado = models.ForeignKey(Empleado, on_delete = models.CASCADE,  blank = True, null = True, verbose_name = "Empleado asignado")
-    fecha_entrega = models.DateField("Fecha de entrega", auto_now_add = True)
+    fechahora_entrega = models.DateTimeField("Fecha y hora de entrega", auto_now_add = True)
     detalles_entrega = models.CharField("Anotaciones del encargado de la entrega", max_length = 1000, blank = True, null = True)
     estado_entrega = models.ForeignKey(EstadoEntrega, on_delete = models.CASCADE, verbose_name = "Estado de la entrega")
     def __str__(self):
-        return f"{self.ubicacion} {self.empleado} {self.fecha_entrega}"
+        return f"{self.ubicacion} {self.empleado} {self.fechahora_entrega}"
         #return str(self.fecha_entrega)
     class Meta:
         verbose_name = "Entrega"
         verbose_name_plural = "Entregas"
 
 class Pago(models.Model):
-    fecha_pago = models.DateField("Fecha de pago", auto_now_add = True)
     monto = models.DecimalField("Monto total", max_digits = 16 , decimal_places = 2)
+    fechahora_pago = models.DateTimeField("Fecha y hora de pago", auto_now_add = True)
     def __str__(self):
         return f"{self.fecha_pago} {self.monto}"
         #return str(self.fecha_pago)
@@ -228,12 +238,12 @@ class EstadoOrden(models.Model):
 
 class Orden(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete = models.CASCADE, verbose_name = "Cliente")
-    fecha_orden = models.DateField("Fecha de registro del orden", auto_now_add = True)
+    fechahora_orden = models.DateTimeField("Fecha y hora de registro del orden", auto_now_add = True)
     estado_orden = models.ForeignKey(EstadoOrden, on_delete = models.CASCADE, verbose_name = "Estado de la orden")
     entrega = models.ForeignKey(Entrega, on_delete = models.CASCADE, blank = True, null = True, verbose_name = "Entrega")
     pago = models.ForeignKey(Pago, on_delete = models.CASCADE, blank = True, null = True, verbose_name = "Pago")
     def __str__(self):
-        return f"{self.cliente} {self.fecha_orden}"
+        return f"{self.cliente} {self.fechahora_orden}"
         #return str(self.fecha_pedido)
     class Meta:
         verbose_name = "Orden"
@@ -242,7 +252,7 @@ class Orden(models.Model):
 class DetalleOrden(models.Model):
     orden = models.ForeignKey(Orden, on_delete = models.CASCADE, verbose_name = "Orden")
     producto = models.ForeignKey(Producto, on_delete = models.CASCADE, verbose_name = "Producto")
-    cantidad = models.IntegerField("Cantidad", blank = True, null = True)
+    cantidad = models.IntegerField("Cantidad")
     def __str__(self):
         return f"{self.orden} {self.producto}"
         #return self.orden

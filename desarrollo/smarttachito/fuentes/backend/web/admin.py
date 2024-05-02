@@ -20,19 +20,19 @@ class UsuarioAdmin(admin.ModelAdmin):
 class ClienteAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Cliente._meta.fields]
     ordering = ('usuario',)
-
+"""
 class CargoAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Cargo._meta.fields]
     ordering = ('nombre',)
-
+"""
 class EmpleadoAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Empleado._meta.fields]
     ordering = ('usuario',)
-
+"""
 class AsignacionCargoAdmin(admin.ModelAdmin):
     list_display = [field.name for field in AsignacionCargo._meta.fields]
     ordering = ('empleado', 'cargo',)
-
+"""
 class ResiduoAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Residuo._meta.fields]
     ordering = ('nombre',)
@@ -59,11 +59,11 @@ class EstadoEntregaAdmin(admin.ModelAdmin):
 
 class EntregaAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Entrega._meta.fields]
-    ordering = ('ubicacion', 'empleado', 'fecha_entrega',)
+    ordering = ('ubicacion', 'empleado', 'fechahora_entrega',)
 
 class PagoAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Pago._meta.fields]
-    ordering = ('fecha_pago', 'monto',)
+    ordering = ('fechahora_pago', 'monto',)
 
 class EstadoOrdenAdmin(admin.ModelAdmin):
     list_display = [field.name for field in EstadoOrden._meta.fields]
@@ -71,7 +71,7 @@ class EstadoOrdenAdmin(admin.ModelAdmin):
 
 class OrdenAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Orden._meta.fields]
-    ordering = ('cliente', 'fecha_orden',)
+    ordering = ('cliente', 'fechahora_orden',)
 
 class DetalleOrdenAdmin(admin.ModelAdmin):
     list_display = [field.name for field in DetalleOrden._meta.fields]
@@ -82,9 +82,9 @@ admin.site.register(Producto, ProductoAdmin)
 admin.site.register(TipoDocumento, TipoDocumentoAdmin)
 admin.site.register(Usuario, UsuarioAdmin)
 admin.site.register(Cliente, ClienteAdmin)
-admin.site.register(Cargo, CargoAdmin)
+#admin.site.register(Cargo, CargoAdmin)
 admin.site.register(Empleado, EmpleadoAdmin)
-admin.site.register(AsignacionCargo, AsignacionCargoAdmin)
+#admin.site.register(AsignacionCargo, AsignacionCargoAdmin)
 admin.site.register(Residuo, ResiduoAdmin)
 admin.site.register(Contenedor, ContenedorAdmin)
 admin.site.register(Pais, PaisAdmin)
