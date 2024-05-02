@@ -8,6 +8,7 @@ import { RegistroComponent } from '../customer/registro/registro.component';
 import { UsuarioComponent } from '../user-profile/usuario/usuario.component';
 import { AuthGuard } from '../auth.guard';
 import { NgModule } from '@angular/core';
+import { ComprarComponent } from '../customer/buyer/comprar/comprar.component';
 
 export const routes: Routes = [
     {
@@ -34,6 +35,11 @@ export const routes: Routes = [
         path: 'catalogo',
         component: CatalogoComponent,
         title: 'catalogo'
+    },
+    {
+        path: 'comprar',
+        component: ComprarComponent,
+        title: 'comprar'
     },
     {
         path: 'producto',
