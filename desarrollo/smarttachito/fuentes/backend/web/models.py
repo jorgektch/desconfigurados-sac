@@ -97,7 +97,7 @@ class Usuario(AbstractBaseUser):
     def is_staff(self):
         return self.usuario_administrador
 
-    def save(self, *args, **kwargs):
+    def save(self, *args, **kwargs): # Hasheo de contraseñas
         if self.password and not self.password.startswith(('pbkdf2_sha256$', 'bcrypt$', 'argon2')):
             self.password = make_password(self.password)
         super().save(*args, **kwargs)
@@ -115,16 +115,6 @@ class Cliente(models.Model):
         verbose_name = "Cliente"
         verbose_name_plural = "Clientes"
 
-"""
-class Cargo(models.Model):
-    nombre = models.CharField("Nombre", max_length = 100)
-    descripcion = models.CharField("Descripción", max_length = 500)
-    def __str__(self):
-        return self.nombre
-    class Meta:
-        verbose_name = "Cargo"
-        verbose_name_plural = "Cargos"
-"""
 class Empleado(models.Model):
     usuario = models.OneToOneField(Usuario, on_delete = models.CASCADE, verbose_name = "Usuario asociado")
     cargos = models.ManyToManyField(Group)
@@ -135,17 +125,7 @@ class Empleado(models.Model):
     class Meta:
         verbose_name = "Empleado"
         verbose_name_plural = "Empleados"
-"""
-class AsignacionCargo(models.Model):
-    empleado = models.ForeignKey(Empleado, on_delete = models.CASCADE, verbose_name = "Empleado")
-    cargo = models.ForeignKey(Cargo, on_delete = models.CASCADE, verbose_name = "Cargo asignado")
-    fecha_asignacion = models.DateField("Fecha de asignación", auto_now_add = True)
-    def __str__(self):
-        return f"{self.empleado} {self.cargo}"
-    class Meta:
-        verbose_name = "Asignación de cargo"
-        verbose_name_plural = "Asignaciones de cargo"
-"""
+
 class Residuo(models.Model):
     nombre = models.CharField("Nombre", max_length = 100)
     descripcion = models.CharField("Descripción", max_length = 500)
