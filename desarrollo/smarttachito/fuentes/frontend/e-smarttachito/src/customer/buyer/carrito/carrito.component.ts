@@ -2,6 +2,7 @@ import { Component, OnInit,} from '@angular/core';
 import { NgFor, NgIf, CommonModule } from '@angular/common'; // Importa directivas necesarias
 import { CarritoServiceService } from '../../../shared/services/carrito-service.service';
 import { ProductoCarrito } from './productoCarrito.class';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { ProductoCarrito } from './productoCarrito.class';
   standalone: true, // Modo independiente para el componente
   templateUrl: './carrito.component.html',
   styleUrls: ['./carrito.component.css'],
-  imports: [NgFor, NgIf, CommonModule] // Importa las directivas necesarias
+  imports: [NgFor, NgIf, CommonModule, RouterModule] // Importa las directivas necesarias
 })
 export class CarritoComponent implements OnInit{
   productosEnCarrito: ProductoCarrito[] = []; // Arreglo para almacenar productos en el carrito

@@ -62,7 +62,7 @@
                 </li>
             </ul>
 
-            <button class="boton-comprar" *ngIf="hayProductos" [ngStyle]="{'display': hayProductos ? 'block' : 'none'}">
+            <button class="boton-comprar" *ngIf="hayProductos" [routerLink]="['/comprar']" routerLinkActive="router-link-active" [ngStyle]="{'display': hayProductos ? 'block' : 'none'}">
               COMPRAR
             </button>
 
