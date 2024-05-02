@@ -11,7 +11,7 @@
 
     <div id="modal-padre" class="modal" *ngIf="modalVisible" [ngStyle]="{'display': modalVisible ? 'block' : 'none'}">
         
-      <header>
+        <header>
             <div (click)="closeModal()" class="close">&times;</div>
             <h2 class="titulo-carrito" *ngIf="hayProductos" [ngStyle]="{'display': hayProductos ? 'block' : 'none'}" >MI LISTA DE COMPRAS</h2>
             <h2 class="titulo-carrito" *ngIf="!hayProductos" [ngStyle]="{'display': !hayProductos ? 'block' : 'none'}" >CARRO VACÍO</h2>
