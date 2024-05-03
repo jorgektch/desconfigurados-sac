@@ -6,6 +6,7 @@ import { ListaComprasComponent } from '../user-profile/lista-compras/lista-compr
 import { ProductoComponent } from '../customer/vista-catalogo/producto/producto.component';
 import { RegistroComponent } from '../customer/registro/registro.component';
 import { UsuarioComponent } from '../user-profile/usuario/usuario.component';
+import { ComprarComponent } from '../customer/buyer/comprar/comprar.component';
 import { AuthGuardService } from '../shared/services/auth-guard.service';
 
 export const routes: Routes = [
@@ -33,6 +34,11 @@ export const routes: Routes = [
         path: 'catalogo',
         component: CatalogoComponent,
         title: 'catalogo'
+    },
+    {
+        path: 'comprar',
+        component: ComprarComponent,
+        title: 'comprar'
     },
     {
         path: 'producto',

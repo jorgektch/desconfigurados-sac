@@ -1,23 +1,28 @@
 from django.contrib import admin
 from .models import *
 
-class CategoriaAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in Categoria._meta.fields]
-    ordering = ('nombre',)
-
-class ProductoAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in Producto._meta.fields]
-    ordering = ('nombre',)
-
 class TipoDocumentoAdmin(admin.ModelAdmin):
     list_display = [field.name for field in TipoDocumento._meta.fields]
     ordering = ('nombre',)
 
-class UsuarioAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in Usuario._meta.fields]
-    ordering = ('username',)
+class PaisAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Pais._meta.fields]
+    ordering = ('nombre',)
 
-admin.site.register(Categoria, CategoriaAdmin)
-admin.site.register(Producto, ProductoAdmin)
+class CiudadAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Ciudad._meta.fields]
+    ordering = ('nombre',)
+
+class EstadoEntregaAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in EstadoEntrega._meta.fields]
+    ordering = ('nombre',)
+
+class EstadoOrdenAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in EstadoOrden._meta.fields]
+    ordering = ('nombre',)
+
 admin.site.register(TipoDocumento, TipoDocumentoAdmin)
-admin.site.register(Usuario, UsuarioAdmin)
+admin.site.register(Pais, PaisAdmin)
+admin.site.register(Ciudad, CiudadAdmin)
+admin.site.register(EstadoEntrega, EstadoEntregaAdmin)
+admin.site.register(EstadoOrden, EstadoOrdenAdmin)

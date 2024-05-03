@@ -2,6 +2,7 @@ import { Component, OnInit,} from '@angular/core';
 import { NgFor, NgIf, CommonModule } from '@angular/common'; // Importa directivas necesarias
 import { CarritoServiceService } from '../../../shared/services/carrito-service.service';
 import { ProductoCarrito } from './productoCarrito.class';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { ProductoCarrito } from './productoCarrito.class';
   standalone: true, // Modo independiente para el componente
   templateUrl: './carrito.component.html',
   styleUrls: ['./carrito.component.css'],
-  imports: [NgFor, NgIf, CommonModule] // Importa las directivas necesarias
+  imports: [NgFor, NgIf, CommonModule, RouterModule] // Importa las directivas necesarias
 })
 export class CarritoComponent implements OnInit{
   productosEnCarrito: ProductoCarrito[] = []; // Arreglo para almacenar productos en el carrito
@@ -43,7 +44,8 @@ export class CarritoComponent implements OnInit{
   eliminarProductoDelCarrito(Producto: ProductoCarrito) {
     const indexProductoEliminar = this.productosEnCarrito.indexOf(Producto);
     if (indexProductoEliminar !== -1) {
-      this.productosEnCarrito.splice(indexProductoEliminar, 1);
+      this.servicioCarrito.productosCarrito.splice(indexProductoEliminar, 1);
+      this.servicioCarrito._listaProductos.next(this.servicioCarrito.productosCarrito)
     }
   }
 
@@ -58,5 +60,15 @@ export class CarritoComponent implements OnInit{
 
   closeModal() {
     this.servicioCarrito.toggleVisualizacionCarrito()
+  }
+
+  aumentarProductosCarrito(index: number) {
+    this.servicioCarrito.productosCarrito[index].aumentarCantidadProducto()
+    this.servicioCarrito._listaProductos.next(this.servicioCarrito.productosCarrito)
+  }
+
+  disminuirProductosCarrito(index: number) {
+    this.servicioCarrito.productosCarrito[index].disminuirCantidadProducto()
+    this.servicioCarrito._listaProductos.next(this.servicioCarrito.productosCarrito)
   }
 }

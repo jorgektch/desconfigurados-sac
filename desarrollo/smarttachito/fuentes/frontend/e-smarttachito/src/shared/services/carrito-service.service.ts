@@ -9,9 +9,9 @@ import { ProductoCarrito } from '../../customer/buyer/carrito/productoCarrito.cl
 export class CarritoServiceService {
 
   // lista de productos del servicio
-  private productosCarrito: ProductoCarrito[] = [];
+  productosCarrito: ProductoCarrito[] = [];
   // lista de productos que se emitiran a todos los componentes que se suscriptores
-  private _listaProductos: BehaviorSubject<ProductoCarrito[]>;
+  _listaProductos: BehaviorSubject<ProductoCarrito[]>;
 
   // manejar la visibilidad del modal lista carrito
   private esVisible: boolean = false;
@@ -55,7 +55,7 @@ export class CarritoServiceService {
       )
       this.productosCarrito.push(nuevoProductoCarrito);
     } else {
-      this.productosCarrito[index].cantidad++;
+      this.productosCarrito[index].aumentarCantidadProducto();
     }
 
     this._listaProductos.next(this.productosCarrito);

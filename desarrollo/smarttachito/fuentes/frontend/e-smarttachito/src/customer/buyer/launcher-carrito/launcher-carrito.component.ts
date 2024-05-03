@@ -15,8 +15,12 @@ export class LauncherCarritoComponent implements OnInit {
   
   ngOnInit(): void {
     // suscribimos el valor cantidadProductosCarrito a la longitud actual del carrito
-    this.servicioCarrito._listaProductosObservable.subscribe(listaProductosCarrito => 
-      this.cantidadProductosCarrito = listaProductosCarrito.length
+    this.servicioCarrito._listaProductosObservable.subscribe(listaProductosCarrito => {
+      this.cantidadProductosCarrito = 0;
+      for (let productoCarrito of listaProductosCarrito) {
+        this.cantidadProductosCarrito += productoCarrito.cantidad;
+      }
+    }
     );
   }
   

@@ -19,8 +19,12 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 
+admin.site.site_header = 'Ecommerce Smart Tachito'
+admin.site.site_title = "Ecommerce Smart Tachito"
+admin.site.index_title = "Panel de Control"
+
 urlpatterns = [
-    path("admin/", admin.site.urls)
+    path("", admin.site.urls)
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
