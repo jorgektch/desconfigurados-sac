@@ -15,3 +15,7 @@ Angular CLI: 17.3.5
 - Comando para instalar: npm install json-server
 - Crear el json con los datos para probar: type nul > db.json
 - Comando para levantar la db y poder usar los endpoints: npx json-server db.json
+
+## Para el acceso a clientes
+- E-mail: Asthri@gmail.com
+- Password: Asthri2
