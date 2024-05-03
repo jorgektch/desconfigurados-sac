@@ -14,7 +14,7 @@ export class LoginSignupService {
   constructor(private http: HttpClient, private api: ApiPruebaService) { }
 
   authLogin(usuario: any, contrasenia: any):Observable<any>{
-    return this.api.get(this.login_url+'/usuarios?email='+usuario+'&contrasenia='+contrasenia)
+    return this.api.get(this.login_url+'/usuarios?usuario='+usuario+'&contrasenia='+contrasenia)
   }
 
   userRegister(user_dto:any): Observable<any>{

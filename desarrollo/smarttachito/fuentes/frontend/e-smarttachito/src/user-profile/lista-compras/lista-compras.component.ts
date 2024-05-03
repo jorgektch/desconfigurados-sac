@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-compras',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './lista-compras.component.css'
 })
 export class ListaComprasComponent {
-
+  constructor(private router:Router){}
 }

@@ -6,8 +6,7 @@ import { ListaComprasComponent } from '../user-profile/lista-compras/lista-compr
 import { ProductoComponent } from '../customer/vista-catalogo/producto/producto.component';
 import { RegistroComponent } from '../customer/registro/registro.component';
 import { UsuarioComponent } from '../user-profile/usuario/usuario.component';
-import { AuthGuard } from '../auth.guard';
-import { NgModule } from '@angular/core';
+import { AuthGuardService } from '../shared/services/auth-guard.service';
 
 export const routes: Routes = [
     {
@@ -42,6 +41,7 @@ export const routes: Routes = [
     },
     {
         path: '',
+        canActivate: [AuthGuardService],
         children: [
             {
                 path: 'usuario',

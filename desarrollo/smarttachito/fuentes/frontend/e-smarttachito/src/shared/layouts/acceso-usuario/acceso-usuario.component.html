@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-
     <div>
-        <button onclick="document.getElementById('id01').style.display='block'"> <i class="fa-solid fa-user"></i> </button>
+        <button onclick="document.getElementById('id01').style.display='block'"> <i class="fa-solid fa-user"></i>
+        </button>
         <div id="id01" class="modal">
             <div class="modal-content">
                 <header>
                     <span onclick="document.getElementById('id01').style.display='none'" class="close">&times;</span>
                     <h2>Acceso de usuarios</h2>
                 </header>
-                <div>
-                    <button [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</button>
-                    <p></p>
-                    <button [routerLink]="['/registro']" routerLinkActive="router-link-active" >Registro</button>
-                </div>
+                <ul class="navbar-nav ml-auto" *ngIf="!logged_in">
+                    <li class="nav-item">
+                        <button class="nav-link" routerLink="/login">Login</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" routerLink="/registro">Registro</button>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto" *ngIf="logged_in">
+                    <li class="nav-item">
+                        <button class="nav-link" routerLink="/usuario">Mi Perfil</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" (click)="logout()">Cerrar sesión</button>
+                    </li>
+                </ul>
                 <footer>
                     <p>Gracias por elegirnos</p>
                 </footer>
@@ -29,5 +38,4 @@
         </div>
     </div>
 </body>
-
 </html>

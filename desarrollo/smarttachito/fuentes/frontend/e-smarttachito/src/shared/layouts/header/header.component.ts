@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LauncherCarritoComponent } from '../../../customer/buyer/launcher-carrito/launcher-carrito.component';
 import { AccesoUsuarioComponent } from "../acceso-usuario/acceso-usuario.component";
 import { CarritoComponent } from '../../../customer/buyer/carrito/carrito.component';
@@ -10,6 +10,7 @@ import { CarritoComponent } from '../../../customer/buyer/carrito/carrito.compon
     styleUrl: './header.component.css',
     imports: [LauncherCarritoComponent, AccesoUsuarioComponent, CarritoComponent]
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+    ngOnInit(): void {}
 
 }

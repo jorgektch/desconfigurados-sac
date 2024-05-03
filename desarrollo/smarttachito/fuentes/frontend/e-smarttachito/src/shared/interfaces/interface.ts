@@ -4,7 +4,10 @@ export interface Interface {
 }
 
 export interface Usuarios{
+    role: string;
     id:string;
+    nombre: string;
+    apellido: string;
     usuario: string;
     contrasenia: string;
 }

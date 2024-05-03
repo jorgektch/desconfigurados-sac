@@ -1,6 +1,7 @@
 {
   "usuarios": [
     {
+      "role": "admin",
       "id": "1",
       "nombre": "Laura",
       "apellido":"Mendoza",
@@ -8,6 +9,7 @@
       "contrasenia": "Laura1"
     },
     {
+      "role": "cliente",
       "id": "2",
       "nombre": "Asthri",
       "apellido":"Pardave",

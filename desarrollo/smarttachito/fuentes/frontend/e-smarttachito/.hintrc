@@ -23,6 +23,13 @@
           "-webkit-overflow-scrolling"
         ]
       }
-    ]
+    ],
+    "axe/forms": [
+      "default",
+      {
+        "label": "off"
+      }
+    ],
+    "button-type": "off"
   }
 }
