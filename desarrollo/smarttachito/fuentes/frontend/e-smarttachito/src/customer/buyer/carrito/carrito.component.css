@@ -1,35 +1,6 @@
-.modal {
-    display: block;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 60px;
-  }
-
-  .close {
-    position: absolute;
-    right: 25px;
-    top: 0;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
-  }
-
-  .close:hover,
-  .close:focus {
-    color: red;
-    cursor: pointer;
-  }
-
   .titulo-carrito {
     text-align: center;
-    color: white;
+    color: black;
   }
 
 
@@ -123,4 +94,23 @@ li {
 
 * {
     border: solid 1px black;
+}
+
+.modificar-cantidad-producto {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-modificar-cantidad-producto {
+    display: inline;
+}
+
+.cantidad-productos-tipo {
+    display: inline;
+}
+
+.btn-eliminar-producto-carrito {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
 }

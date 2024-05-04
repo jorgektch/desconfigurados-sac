@@ -32,23 +32,23 @@
                   <div class="producto-detalles">
                     <h3 class="nombre">{{ producto.producto.nombre }}</h3>
                     <p class="id">{{ producto.producto.id }}</p>
-                    <span class="precio unitario:"> S/.{{ producto.producto.precio }}</span>
-                    <span class="precio subtotal:"> S/.{{ producto.precioSubTotal }}</span>
+                    <p class="precio unitario">precio unitario: S/.{{ producto.producto.precio }}</p>
+                    <p class="precio subtotal">precio subtotal: S/.{{ producto.precioSubTotal }}</p>
                   </div>
 
                   <div class="modificar-cantidad-producto">
-                    <button id="aumentar" class="btn" *ngIf="producto.cantidad" [ngStyle]="{'color': producto.cantidad < 100? 'black': 'red'}" (click)="aumentarProductosCarrito(productosEnCarrito.indexOf(producto))">
+                    <button id="aumentar" class="btn-modificar-cantidad-producto" *ngIf="producto.cantidad" [ngStyle]="{'color': producto.cantidad < 100? 'black': 'red'}" (click)="aumentarProductosCarrito(productosEnCarrito.indexOf(producto))">
                       <i class="fa fa-plus-square" aria-hidden="true"></i>
                     </button>
 
-                    <p>{{producto.cantidad}}</p>
+                    <p class="cantidad-producto-tipo">{{producto.cantidad}}</p>
                     
-                    <button id="disminuir" class="btn" *ngIf="producto.cantidad" [ngStyle]="{'color': producto.cantidad > 1? 'black': 'red'}" (click)="disminuirProductosCarrito(productosEnCarrito.indexOf(producto))">
+                    <button id="disminuir" class="btn-modificar-cantidad-producto" *ngIf="producto.cantidad" [ngStyle]="{'color': producto.cantidad > 1? 'black': 'red'}" (click)="disminuirProductosCarrito(productosEnCarrito.indexOf(producto))">
                       <i class="fa fa-minus-square" aria-hidden="true"></i>
                     </button>
                   </div>
 
-                  <div class="eliminar-producto-carrito" class="btn" (click)="eliminarProductoDelCarrito(producto)">
+                  <div class="eliminar-producto-carrito" class="btn-eliminar-producto-carrito" (click)="eliminarProductoDelCarrito(producto)">
                     <i class="fa-solid fa-trash"></i>
                   </div>
                   
