@@ -11,29 +11,19 @@ export class CarritoServiceService {
   // lista de productos del servicio
   productosCarrito: ProductoCarrito[] = [];
   // lista de productos que se emitiran a todos los componentes que se suscriptores
-  _listaProductos: BehaviorSubject<ProductoCarrito[]>;
-
-  // manejar la visibilidad del modal lista carrito
-  private esVisible: boolean = false;
-  private _esVisible: BehaviorSubject<boolean>;
+  _listaProductos: BehaviorSubject<ProductoCarrito[]>; 
 
 
   constructor() {
     // inicializamos con una lista vacia
     this._listaProductos = new BehaviorSubject<ProductoCarrito[]>([]);
-
-    // inicializamos con un valor falso
-    this._esVisible = new BehaviorSubject<boolean>(false);
+ 
    }
 
    // funcionalidad para retornar como observable a nuestra lista de productos
    get _listaProductosObservable() {
     return this._listaProductos.asObservable();
-   }
-
-   get esVisibleObservable() {
-    return this._esVisible.asObservable();
-   }
+   } 
 
    private enElCarro(id: string, listaProductosEnCarrito: ProductoCarrito[]): number{
     for(let producto of listaProductosEnCarrito) {
@@ -59,11 +49,6 @@ export class CarritoServiceService {
     }
 
     this._listaProductos.next(this.productosCarrito);
-   }
-
-   toggleVisualizacionCarrito() {
-    this.esVisible = !this.esVisible
-    this._esVisible.next(this.esVisible)
-  }
+   } 
 
 }

@@ -14,7 +14,6 @@ import { RouterModule } from '@angular/router';
 })
 export class CarritoComponent implements OnInit{
   productosEnCarrito: ProductoCarrito[] = []; // Arreglo para almacenar productos en el carrito
-  modalVisible: boolean = false;
   hayProductos: boolean = false;
 
   precioTotal:number = 0;
@@ -34,11 +33,6 @@ export class CarritoComponent implements OnInit{
 
       this.hayProductos = this.productosEnCarrito.length != 0;
     });
-
-    // suscribirmos el valor modalVisible a valor de visibilidad que maneja el servicio
-    this.servicioCarrito.esVisibleObservable.subscribe(esVisible =>
-      this.modalVisible = esVisible
-    )
   }
 
   eliminarProductoDelCarrito(Producto: ProductoCarrito) {
@@ -56,11 +50,7 @@ export class CarritoComponent implements OnInit{
 
   vaciarElCarrito() {
     this.productosEnCarrito = [];
-  }
-
-  closeModal() {
-    this.servicioCarrito.toggleVisualizacionCarrito()
-  }
+  } 
 
   aumentarProductosCarrito(index: number) {
     this.servicioCarrito.productosCarrito[index].aumentarCantidadProducto()
