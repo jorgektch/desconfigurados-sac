@@ -17,6 +17,10 @@ export class CarritoComponent implements OnInit{
   hayProductos: boolean = false;
 
   precioTotal:number = 0;
+  precioConIGV: number = 0;
+  precioEnvio: number = 0;
+  precioDescuentoEnvio: number = 0;
+  IGV: number = 0;
   
   constructor (private servicioCarrito: CarritoServiceService) {}
 
