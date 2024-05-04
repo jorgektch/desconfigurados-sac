@@ -8,6 +8,7 @@ import { RegistroComponent } from '../customer/registro/registro.component';
 import { UsuarioComponent } from '../user-profile/usuario/usuario.component';
 import { ComprarComponent } from '../customer/buyer/comprar/comprar.component';
 import { AuthGuardService } from '../shared/services/auth-guard.service';
+import { CarritoComponent } from '../customer/buyer/carrito/carrito.component';
 
 export const routes: Routes = [
     {
@@ -34,6 +35,11 @@ export const routes: Routes = [
         path: 'catalogo',
         component: CatalogoComponent,
         title: 'catalogo'
+    },
+    {
+        path: 'carrito',
+        component: CarritoComponent,
+        title: 'Carrito de Compras'
     },
     {
         path: 'comprar',

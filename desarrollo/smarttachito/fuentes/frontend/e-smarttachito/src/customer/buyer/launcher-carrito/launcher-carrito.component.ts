@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CarritoServiceService } from '../../../shared/services/carrito-service.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-laucher-carrito',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './launcher-carrito.component.html',
   styleUrl: './launcher-carrito.component.css'
 })
@@ -24,7 +25,4 @@ export class LauncherCarritoComponent implements OnInit {
     );
   }
   
-  toggleVisualizacionCarrito() {
-    this.servicioCarrito.toggleVisualizacionCarrito();
-  }
 }
