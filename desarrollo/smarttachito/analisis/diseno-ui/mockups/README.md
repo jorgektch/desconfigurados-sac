@@ -6,3 +6,5 @@
 
 # Mockup del catalogo de producto
 ![sign](./catalogo.png)
+
+![sign](./Detalle_de_producto.png)
