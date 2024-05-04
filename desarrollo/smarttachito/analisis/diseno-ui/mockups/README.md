@@ -5,6 +5,7 @@
 ![sign](./sign.png)
 
 # Mockup del catalogo de producto
-![sign](./catalogo.png)
+![catalogo](./catalogo.png)
 
-![sign](./Detalle_de_producto.png)
+# Mockup de detalle del producto
+![detalle del producto](./Detalle-de-producto.png)
