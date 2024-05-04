@@ -5,4 +5,5 @@
 ![sign](./sign.png)
 
 # Mockup del catalogo de producto
-![sign](./catalogo.png)
+![catalogo](./catalogo.png)
+
