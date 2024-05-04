@@ -3,3 +3,6 @@
 
 #Mockup de sign
 ![sign](./sign.png)
+
+# Mockup del catalogo de producto
+![sign](./catalogo.png)
