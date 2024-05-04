@@ -1,6 +1,6 @@
 import { Component, OnInit,} from '@angular/core';
 import { NgFor, NgIf, CommonModule } from '@angular/common'; // Importa directivas necesarias
-import { CarritoServiceService } from '../../../shared/services/carrito-service.service';
+import { CarritoServiceService } from '../../../../shared/services/carrito-service.service';
 import { ProductoCarrito } from './productoCarrito.class';
 import { RouterModule } from '@angular/router';
 

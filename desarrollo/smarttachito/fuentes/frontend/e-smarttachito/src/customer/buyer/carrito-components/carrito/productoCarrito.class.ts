@@ -1,4 +1,4 @@
-import { Productos, ProductoCarrito as interfazProductoCarrito } from "../../../shared/interfaces/interface";
+import { Productos, ProductoCarrito as interfazProductoCarrito } from "../../../../shared/interfaces/interface";
 
 export class ProductoCarrito implements interfazProductoCarrito  {
     id: String;

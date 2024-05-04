@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CarritoServiceService } from '../../../shared/services/carrito-service.service';
+import { CarritoServiceService } from '../../../../shared/services/carrito-service.service';
 import { RouterModule } from '@angular/router';
 
 @Component({
