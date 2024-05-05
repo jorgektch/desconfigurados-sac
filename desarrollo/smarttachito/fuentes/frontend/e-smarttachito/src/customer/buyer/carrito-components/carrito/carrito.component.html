@@ -2,77 +2,79 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de compras</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de compras</title>
 </head>
 
 <body>
-        
-      <header>
-          <h2 class="titulo-carrito">CARRITO DE COMPRAS</h2>
-          <h3 class="titulo-carrito" *ngIf="!hayProductos" [ngStyle]="{'display': !hayProductos ? 'block' : 'none'}" >CARRO VACÍO</h3>
-      </header>
 
-      <div class="body-lista-compras-total">
+  <header>
+    <h2 class="titulo-carrito">CARRITO DE COMPRAS</h2>
+    <h3 class="titulo-carrito" *ngIf="!hayProductos" [ngStyle]="{'display': !hayProductos ? 'block' : 'none'}">CARRO VACÍO</h3>
+  </header>
 
+  <div class="imagen-carrito-vacio" *ngIf="!hayProductos" [ngStyle]="{'display': !hayProductos ? 'block' : 'none'}">
+    <img src=".\..\..\..\assets\img\Recurso 1.png" alt="no hay ningun producto" class="perrito-triste">
+  </div>
 
-          <div class="cuando-no-hay-productos" *ngIf="!hayProductos" [ngStyle]="{'display': !hayProductos ? 'block' : 'none'}">
-              <img src=".\..\..\..\assets\img\Recurso 1.png" alt="no hay ningun producto" class="perrito-triste">
+  <div class="lista-compras-total">
+
+    <ul class="productos-lista-carrito">
+      <li *ngFor="let producto of productosEnCarrito">
+
+        <div class="cartilla-producto-carrito">
+          <div class="producto-imagen">
+            <img [src]="getImagen(producto.producto.imagen)" class="img-producto">
           </div>
-          
-          <ul class="productos-lista-carrito">
-              <li *ngFor="let producto of productosEnCarrito">
-        
-                <div class="cartilla-producto-carrito">
-                  <div class="producto-imagen">
-                    <img [src]="getImagen(producto.producto.imagen)" class="img-producto">
-                  </div>
-        
-                  <div class="producto-detalles">
-                    <h3 class="nombre">{{ producto.producto.nombre }}</h3>
-                    <p class="id">{{ producto.producto.id }}</p>
-                    <p class="precio unitario">precio unitario: S/.{{ producto.producto.precio }}</p>
-                    <p class="precio subtotal">precio subtotal: S/.{{ producto.precioSubTotal }}</p>
-                  </div>
 
-                  <div class="modificar-cantidad-producto">
-                    <button id="aumentar" class="btn-modificar-cantidad-producto" *ngIf="producto.cantidad" [ngStyle]="{'color': producto.cantidad < 100? 'black': 'red'}" (click)="aumentarProductosCarrito(productosEnCarrito.indexOf(producto))">
-                      <i class="fa fa-plus-square" aria-hidden="true"></i>
-                    </button>
+          <div class="producto-detalles">
+            <h3 class="nombre">{{ producto.producto.nombre }}</h3>
+            <p class="id">{{ producto.producto.id }}</p>
+            <p class="precio unitario">precio unitario: S/.{{ producto.producto.precio }}</p>
+            <p class="precio subtotal">precio subtotal: S/.{{ producto.precioSubTotal }}</p>
+          </div>
 
-                    <p class="cantidad-producto-tipo">{{producto.cantidad}}</p>
-                    
-                    <button id="disminuir" class="btn-modificar-cantidad-producto" *ngIf="producto.cantidad" [ngStyle]="{'color': producto.cantidad > 1? 'black': 'red'}" (click)="disminuirProductosCarrito(productosEnCarrito.indexOf(producto))">
-                      <i class="fa fa-minus-square" aria-hidden="true"></i>
-                    </button>
-                  </div>
+          <div class="modificadores-producto">
+            <div class="modificar-cantidad-producto">
+              <button id="aumentar" class="btn-modificar-cantidad-producto" *ngIf="producto.cantidad" [ngStyle]="{'color': producto.cantidad < 100? 'black': 'red'}">
+                <i class="fa fa-plus-square" aria-hidden="true" (click)="aumentarProductosCarrito(productosEnCarrito.indexOf(producto))"></i>
+              </button>
 
-                  <div class="eliminar-producto-carrito" class="btn-eliminar-producto-carrito" (click)="eliminarProductoDelCarrito(producto)">
-                    <i class="fa-solid fa-trash"></i>
-                  </div>
-                  
-                </div>
-              </li>
-          </ul>
+              <p class="cantidad-producto-tipo">{{producto.cantidad}}</p>
 
-      </div>
+              <button id="disminuir" class="btn-modificar-cantidad-producto" *ngIf="producto.cantidad" [ngStyle]="{'color': producto.cantidad > 1? 'black': 'red'}">
+                <i class="fa fa-minus-square" aria-hidden="true" (click)="disminuirProductosCarrito(productosEnCarrito.indexOf(producto))"></i>
+              </button>
+            </div>
 
-      <div class="contabilidad-total">
+            <div class="eliminar-producto-carrito btn-eliminar-producto-carrito">
+              <i class="fa-solid fa-trash"  (click)="eliminarProductoDelCarrito(producto)"></i>
+            </div>
+          </div>
 
-        <div class="resumen">
-          <p>Precio con IGV: {{precioConIGV}}</p>
-          <p>Envío: {{precioEnvio}}</p>
-          <p>Descuento de envío: {{precioDescuentoEnvio}}</p>
-          <p>IGV (18%): {{IGV}}</p>
-          <p>Total: {{precioTotal}}</p>
         </div>
 
-        <button class="boton-comprar" *ngIf="hayProductos" [routerLink]="['/comprar']" routerLinkActive="router-link-active" [ngStyle]="{'display': hayProductos ? 'block' : 'none'}">
-          COMPRAR
-        </button>
-      </div>
+      </li>
+    </ul>
 
+  </div>
 </body>
+
+<div class="footer-carrito-resume">
+
+  <div class="resumen">
+    <p>Precio con IGV: {{precioConIGV}}</p>
+    <p>Envío: {{precioEnvio}}</p>
+    <p>Descuento de envío: {{precioDescuentoEnvio}}</p>
+    <p>IGV (18%): {{IGV}}</p>
+    <p>Total: {{precioTotal}}</p>
+  </div>
+
+  <button class="boton-comprar" [routerLink]="['/comprar']" routerLinkActive="router-link-active">
+    COMPRAR
+  </button>
+
+</div>
 
 </html>
