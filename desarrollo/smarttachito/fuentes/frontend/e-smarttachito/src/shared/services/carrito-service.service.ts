@@ -57,6 +57,9 @@ export class CarritoServiceService {
     }
 
     this.ultimosProductoAgregado.push(producto);
+    if(this.ultimosProductoAgregado.length > 3) {
+      this.ultimosProductoAgregado.shift();
+    }
     this._ultimosProductoAgregado.next(this.ultimosProductoAgregado);
 
     this._listaProductos.next(this.productosCarrito);
