@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LauncherCarritoComponent } from '../../../customer/buyer/launcher-carrito/launcher-carrito.component';
+import { LauncherCarritoComponent } from '../../../customer/buyer/carrito-components/launcher-carrito/launcher-carrito.component';
 import { AccesoUsuarioComponent } from "../acceso-usuario/acceso-usuario.component";
-import { CarritoComponent } from '../../../customer/buyer/carrito/carrito.component';
+import { CarritoComponent } from '../../../customer/buyer/carrito-components/carrito/carrito.component';
 
 @Component({
     selector: 'app-header',
