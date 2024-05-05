@@ -1,4 +1,5 @@
 <div class="row prod-items prod-items-2">
+    {% for producto in productos %}  <!-- Recorremos los productos de la lista -->
     <article class="cf-sm-6 cf-md-6 cf-lg-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 sectgl-item">
         <div class="sectgl prod-i">
             <div class="prod-i-top">
@@ -22,4 +23,6 @@
             </div>
         </div>
     </article>
+    <!--almacenamos lo que viene del diccionario dentro una variable llamada producto-->
+    {% endfor %}
 </div>
