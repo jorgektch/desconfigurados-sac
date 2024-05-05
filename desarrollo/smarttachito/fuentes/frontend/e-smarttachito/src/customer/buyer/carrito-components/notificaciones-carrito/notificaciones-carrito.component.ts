@@ -17,7 +17,7 @@ export class NotificacionesCarritoComponent implements OnInit {
   constructor(private carritoservice: CarritoServiceService) {}
 
   ngOnInit(): void {
-    this.carritoservice._ultimosProductoAgregadoObservable.subscribe(listaUltimosAgregados => {
+    this.carritoservice._ultimosProductosAgregadosNotificacionObservable.subscribe(listaUltimosAgregados => {
       this.productosAgregadosRecientemente = listaUltimosAgregados;
     });
   }

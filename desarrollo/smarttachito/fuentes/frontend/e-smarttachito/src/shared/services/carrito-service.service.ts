@@ -11,17 +11,17 @@ export class CarritoServiceService {
   // lista de productos del servicio
   productosCarrito: ProductoCarrito[] = [];
   // lista de productos del servicio
-  ultimosProductoAgregado: Productos[] = [];
+  ultimosProductosAgregadosNotificacion : Productos[] = [];
   // lista de productos que se emitiran a todos los componentes que se suscriptores
   _listaProductos: BehaviorSubject<ProductoCarrito[]>; 
   // ultimo producto agregado
-  _ultimosProductoAgregado: BehaviorSubject<Productos[]>;
+  _ultimosProductosAgregadosNotificacion: BehaviorSubject<Productos[]>;
 
 
   constructor() {
     // inicializamos con una lista vacia
     this._listaProductos = new BehaviorSubject<ProductoCarrito[]>([]);
-    this._ultimosProductoAgregado = new BehaviorSubject<Productos[]>([]); 
+    this._ultimosProductosAgregadosNotificacion = new BehaviorSubject<Productos[]>([]); 
    }
 
    // funcionalidad para retornar como observable a nuestra lista de productos
@@ -29,8 +29,9 @@ export class CarritoServiceService {
     return this._listaProductos.asObservable();
    }
 
-   get _ultimosProductoAgregadoObservable() {
-    return this._ultimosProductoAgregado.asObservable();
+   // funcionalidad para retornar como observable a nuestra lista de productos agregados ultimamente
+   get _ultimosProductosAgregadosNotificacionObservable() {
+    return this._ultimosProductosAgregadosNotificacion.asObservable();
    }
 
    private enElCarro(id: string, listaProductosEnCarrito: ProductoCarrito[]): number{
@@ -56,11 +57,11 @@ export class CarritoServiceService {
       this.productosCarrito[index].aumentarCantidadProducto();
     }
 
-    this.ultimosProductoAgregado.push(producto);
-    if(this.ultimosProductoAgregado.length > 3) {
-      this.ultimosProductoAgregado.shift();
+    this.ultimosProductosAgregadosNotificacion.push(producto);
+    if(this.ultimosProductosAgregadosNotificacion.length > 3) {
+      this.ultimosProductosAgregadosNotificacion.shift();
     }
-    this._ultimosProductoAgregado.next(this.ultimosProductoAgregado);
+    this._ultimosProductosAgregadosNotificacion.next(this.ultimosProductosAgregadosNotificacion);
 
     this._listaProductos.next(this.productosCarrito);
    }
