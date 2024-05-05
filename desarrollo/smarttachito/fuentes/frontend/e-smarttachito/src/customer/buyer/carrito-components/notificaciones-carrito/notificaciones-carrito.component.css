@@ -1,0 +1,22 @@
+.productoCartNotificacion {
+    display: flex;
+    position: relative;
+    padding: 3px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: rgb(61, 160, 171);
+    text-decoration-style: none;
+    margin: 0;
+    list-style-type: none;
+}
+
+.img-producto {
+    position: inherit;
+    width: 50%;
+    height: auto;
+    margin: 5px;
+}
+
+* {
+    border: solid 1px black;
+}

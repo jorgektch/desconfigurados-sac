@@ -1,1 +1,11 @@
-<p>notificaciones-carrito works!</p>
+<div class="modulo-notificacion-carrito">
+    <ul *ngFor="let producto of productosAgregadosRecientemente">
+        <li class="productoCartNotificacion">
+            <img [src]="getImagen(producto.imagen)" class="img-producto">
+            <div class="descripcion">
+                <p class="nombre">{{producto.nombre}}</p>
+                <p class="precio-producto">S/.{{producto.precio}}</p>
+            </div>
+        </li>
+    </ul>
+</div>

@@ -41,3 +41,14 @@ img {
     display: flex;
     padding: 4px;
 }
+
+app-notificaciones-carrito {
+    position: fixed;
+    width: 20%;
+    height: fit-content;
+    max-height: 80%;
+    right: 10px;
+    top: 100px;
+    z-index: 1000;
+    overflow: hidden;
+}
