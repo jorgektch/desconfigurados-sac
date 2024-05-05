@@ -58,11 +58,31 @@ export class CarritoServiceService {
     }
 
     this.ultimosProductosAgregadosNotificacion.push(producto);
+    this.removerNotificacionByColapso()
+    this.programarRemoverNotificacionDelay(2000, producto);
+    this._listaProductos.next(this.productosCarrito);
+   }
+
+  // para programar la eliminación automática de la notificación
+  // dado un tiempo en específico.
+  programarRemoverNotificacionDelay = (delay: number, producto: Productos) => {
+    setTimeout(() => {
+      console.log("lengthListUltimosProductosAgregadosNotificacion:", this.ultimosProductosAgregadosNotificacion.length)
+      try {
+        this.ultimosProductosAgregadosNotificacion.splice(
+          this.ultimosProductosAgregadosNotificacion.indexOf(producto), 
+          1
+        );
+      } catch(e) {
+        console.error(e);
+      }
+    }, delay);
+  };
+
+  removerNotificacionByColapso = () => {
     if(this.ultimosProductosAgregadosNotificacion.length > 3) {
       this.ultimosProductosAgregadosNotificacion.shift();
     }
     this._ultimosProductosAgregadosNotificacion.next(this.ultimosProductosAgregadosNotificacion);
-
-    this._listaProductos.next(this.productosCarrito);
-   }
+  }
 }
