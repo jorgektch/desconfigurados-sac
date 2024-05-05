@@ -67,7 +67,6 @@ export class CarritoServiceService {
   // dado un tiempo en específico.
   programarRemoverNotificacionDelay = (delay: number, producto: Productos) => {
     setTimeout(() => {
-      console.log("lengthListUltimosProductosAgregadosNotificacion:", this.ultimosProductosAgregadosNotificacion.length)
       try {
         this.ultimosProductosAgregadosNotificacion.splice(
           this.ultimosProductosAgregadosNotificacion.indexOf(producto), 

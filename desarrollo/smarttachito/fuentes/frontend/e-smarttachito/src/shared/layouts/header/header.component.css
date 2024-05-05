@@ -45,6 +45,7 @@ img {
 app-notificaciones-carrito {
     position: fixed;
     width: 20%;
+    min-width: 250px;
     height: fit-content;
     max-height: 80%;
     right: 10px;
