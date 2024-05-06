@@ -19,11 +19,43 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 
+from rest_framework import routers
+from configuracion import views
+from inventario import views
+from reparto import views
+from ventas import views
+
 admin.site.site_header = 'Ecommerce Smart Tachito'
 admin.site.site_title = "Ecommerce Smart Tachito"
 admin.site.index_title = "Panel de Control"
 
+router = routers.DefaultRouter()
+# Configuracion
+router.register(r'tiposdocumento', views.TipoDocumentoViewSet)
+router.register(r'paises', views.PaisViewSet)
+router.register(r'ciudades', views.CiudadViewSet)
+router.register(r'estadosentrega', views.EstadoEntregaViewSet)
+router.register(r'estadosorden', views.EstadoOrdenViewSet)
+# Inventario
+router.register(r'categorias', views.CategoriaViewSet)
+router.register(r'productos', views.ProductoViewSet)
+router.register(r'residuos', views.ResiduoViewSet)
+router.register(r'contenedores', views.ContenedorViewSet)
+# Reparto
+router.register(r'ubicaciones', views.UbicacionViewSet)
+router.register(r'entregas', views.EntregaViewSet)
+# Ventas
+router.register(r'clientes', views.ClienteViewSet)
+router.register(r'pagos', views.PagoViewSet)
+router.register(r'ordenes', views.OrdenViewSet)
+router.register(r'detallesorden', views.DetalleOrdenViewSet)
+
+#router.register(r'usertypes', views.UserTypeViewSet)
+#router.register(r'users', views.UserViewSet)
+
 urlpatterns = [
+    path('api/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path("", admin.site.urls)
 ]
 
