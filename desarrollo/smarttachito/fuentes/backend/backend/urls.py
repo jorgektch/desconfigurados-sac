@@ -21,10 +21,10 @@ from django.conf.urls.static import static
 
 from rest_framework import routers
 
-from configuracion import views
+from configuracion import views as views_configuracion
 from inventario import views
-from reparto import views
-from ventas import views
+#from reparto import views
+#from ventas import views
 
 admin.site.site_header = 'Ecommerce Smart Tachito'
 admin.site.site_title = "Ecommerce Smart Tachito"
@@ -32,11 +32,11 @@ admin.site.index_title = "Panel de Control"
 
 router = routers.DefaultRouter()
 # Configuracion
-router.register(r'tiposdocumento', views.TipoDocumentoViewSet)
-router.register(r'paises', views.PaisViewSet)
-router.register(r'ciudades', views.CiudadViewSet)
-router.register(r'estadosentrega', views.EstadoEntregaViewSet)
-router.register(r'estadosorden', views.EstadoOrdenViewSet)
+router.register(r'tiposdocumento', views_configuracion.TipoDocumentoViewSet)
+router.register(r'paises', views_configuracion.PaisViewSet)
+router.register(r'ciudades', views_configuracion.CiudadViewSet)
+router.register(r'estadosentrega', views_configuracion.EstadoEntregaViewSet)
+router.register(r'estadosorden', views_configuracion.EstadoOrdenViewSet)
 # Inventario
 router.register(r'categorias', views.CategoriaViewSet)
 router.register(r'productos', views.ProductoViewSet)
