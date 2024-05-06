@@ -12,7 +12,7 @@ class TipoDocumentoViewSet(viewsets.ModelViewSet):
     queryset = TipoDocumento.objects.all()
     serializer_class = TipoDocumentoSerializer
     permission_classes = [AllowAny]  # Cambiamos IsAuthenticated por AllowAny
-    filterset_fields = ['nombre'] # New API filter
+    filterset_fields = ['nombre'] # Nuevo API filter
 
 class PaisViewSet(viewsets.ModelViewSet):
     """
@@ -21,7 +21,7 @@ class PaisViewSet(viewsets.ModelViewSet):
     queryset = Pais.objects.all()
     serializer_class = PaisSerializer
     permission_classes = [AllowAny]  # Cambiamos IsAuthenticated por AllowAny
-    filterset_fields = ['nombre'] # New API filter
+    filterset_fields = ['nombre'] # Nuevo API filter
 
 class CiudadViewSet(viewsets.ModelViewSet):
     """
@@ -30,7 +30,7 @@ class CiudadViewSet(viewsets.ModelViewSet):
     queryset = Ciudad.objects.all()
     serializer_class = CiudadSerializer
     permission_classes = [AllowAny]  # Cambiamos IsAuthenticated por AllowAny
-    filterset_fields = ['nombre'] # New API filter
+    filterset_fields = ['nombre'] # Nuevo API filter
 
 class EstadoEntregaViewSet(viewsets.ModelViewSet):
     """
@@ -39,7 +39,7 @@ class EstadoEntregaViewSet(viewsets.ModelViewSet):
     queryset = EstadoEntrega.objects.all()
     serializer_class = EstadoEntregaSerializer
     permission_classes = [AllowAny]  # Cambiamos IsAuthenticated por AllowAny
-    filterset_fields = ['nombre'] # New API filter
+    filterset_fields = ['nombre'] # Nuevo API filter
 
 class EstadoOrdenViewSet(viewsets.ModelViewSet):
     """
@@ -48,4 +48,4 @@ class EstadoOrdenViewSet(viewsets.ModelViewSet):
     queryset = EstadoOrden.objects.all()
     serializer_class = EstadoOrdenSerializer
     permission_classes = [AllowAny]  # Cambiamos IsAuthenticated por AllowAny
-    filterset_fields = ['nombre'] # New API filter
+    filterset_fields = ['nombre'] # Nuevo API filter
