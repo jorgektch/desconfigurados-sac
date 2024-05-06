@@ -37,14 +37,14 @@
 
           <div class="modificadores-producto">
             <div class="modificar-cantidad-producto">
-              <button id="aumentar" class="btn-modificar-cantidad-producto" *ngIf="producto.cantidad" [ngStyle]="{'color': producto.cantidad < 100? 'black': 'red'}">
-                <i class="fa fa-plus-square" aria-hidden="true" (click)="aumentarProductosCarrito(productosEnCarrito.indexOf(producto))"></i>
-              </button>
-
-              <p class="cantidad-producto-tipo">{{producto.cantidad}}</p>
-
               <button id="disminuir" class="btn-modificar-cantidad-producto" *ngIf="producto.cantidad" [ngStyle]="{'color': producto.cantidad > 1? 'black': 'red'}">
                 <i class="fa fa-minus-square" aria-hidden="true" (click)="disminuirProductosCarrito(productosEnCarrito.indexOf(producto))"></i>
+              </button>
+              
+              <p class="cantidad-producto-tipo">{{producto.cantidad}}</p>
+
+              <button id="aumentar" class="btn-modificar-cantidad-producto" *ngIf="producto.cantidad" [ngStyle]="{'color': producto.cantidad < 100? 'black': 'red'}">
+                <i class="fa fa-plus-square" aria-hidden="true" (click)="aumentarProductosCarrito(productosEnCarrito.indexOf(producto))"></i>
               </button>
             </div>
 
@@ -64,14 +64,14 @@
 <div class="footer-carrito-resume">
 
   <div class="resumen">
-    <p>Precio con IGV: {{precioConIGV}}</p>
-    <p>Envío: {{precioEnvio}}</p>
-    <p>Descuento de envío: {{precioDescuentoEnvio}}</p>
-    <p>IGV (18%): {{IGV}}</p>
-    <p>Total: {{precioTotal}}</p>
+    <p>Precio con IGV: S/.{{precioConIGV}}</p>
+    <p>Envío: S/.{{precioEnvio}}</p>
+    <p>Descuento de envío: S/.{{precioDescuentoEnvio}}</p>
+    <p>IGV (18%): S/.{{IGV}}</p>
+    <p>Total: S/.{{precioTotal}}</p>
   </div>
 
-  <button class="boton-comprar" [routerLink]="['/comprar']" routerLinkActive="router-link-active">
+  <button class="boton-comprar" [routerLink]="hayProductos ? ['/comprar'] : null" routerLinkActive="router-link-active">
     COMPRAR
   </button>
 

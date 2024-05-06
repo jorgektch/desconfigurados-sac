@@ -14,6 +14,7 @@ class Ubicacion(models.Model):
     class Meta:
         verbose_name = "Ubicacion"
         verbose_name_plural = "Ubicaciones"
+        db_table = "Ubicacion"
 
 class Entrega(models.Model):
     ubicacion = models.ForeignKey(Ubicacion, on_delete = models.CASCADE, blank = True, null = True, verbose_name = "Orden")
@@ -23,8 +24,8 @@ class Entrega(models.Model):
     estado_entrega = models.ForeignKey(EstadoEntrega, on_delete = models.CASCADE, verbose_name = "Estado de la entrega")
     def __str__(self):
         return f"{self.ubicacion} {self.empleado} {self.fechahora_entrega}"
-        #return str(self.fecha_entrega)
     class Meta:
         verbose_name = "Entrega"
         verbose_name_plural = "Entregas"
+        db_table = "Entrega"
 

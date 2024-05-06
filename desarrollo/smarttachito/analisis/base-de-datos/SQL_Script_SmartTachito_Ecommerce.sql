@@ -35,14 +35,14 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb2`.`Producto` (
   `IDProducto` INT NOT NULL AUTO_INCREMENT,
   `Nombre` VARCHAR(100) NOT NULL,
-  `Descripcion` VARCHAR(500) NULL,
-  `DescripcionCorta` VARCHAR(100) NULL,
+  `Descripcion` VARCHAR(500) NULL, -- descripcion_extendida
+  `DescripcionCorta` VARCHAR(100) NULL, -- descripcion_breve
   `Precio` DOUBLE NULL,
-  `Imagen1` VARCHAR(500) NULL,
-  `Imagen2` VARCHAR(500) NULL,
-  `Imagen3` VARCHAR(500) NULL,
-  `Imagen4` VARCHAR(500) NULL,
-  `Imagen3d` VARCHAR(500) NULL,
+  `Imagen1` VARCHAR(500) NULL, -- imagen_principal
+  `Imagen2` VARCHAR(500) NULL, -- imagen_secundaria_1
+  `Imagen3` VARCHAR(500) NULL, -- imagen_secundaria_2
+  `Imagen4` VARCHAR(500) NULL, -- imagen_secundaria_3
+  `Imagen3d` VARCHAR(500) NULL, -- imagen_3d
   `IDCategoria` INT NOT NULL,
   PRIMARY KEY (`IDProducto`, `IDCategoria`),
   INDEX `fk_1_idx` (`IDCategoria` ASC) VISIBLE,
@@ -104,7 +104,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb2`.`Empleado` (
   `IDEmpleado` INT NOT NULL AUTO_INCREMENT,
-  `FechaContrato` DATE NOT NULL,
+  `FechaContrato` DATE NOT NULL, --- Sacarlo hacia EmpleadoCargo - AsognacioCargo
   `idUsuario` INT NOT NULL,
   PRIMARY KEY (`IDEmpleado`, `idUsuario`),
   INDEX `fk_Empleado_Usuario1_idx` (`idUsuario` ASC) VISIBLE,
@@ -151,7 +151,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb2`.`ProductoResiduo`
+-- Table `mydb2`.`ProductoResiduo` -- Contenedor
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb2`.`ProductoResiduo` (
   `idProducto` INT NOT NULL,
@@ -200,7 +200,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb2`.`Direccion`
+-- Table `mydb2`.`Direccion` --- Ubicacion
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb2`.`Direccion` (
   `idDireccion` INT NOT NULL,
