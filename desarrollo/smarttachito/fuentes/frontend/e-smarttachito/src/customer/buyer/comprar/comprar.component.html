@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprar.Smarttachito</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compra en línea</title>
 </head>
 <body>
-
-    aquí va el form para comprar
-    
+  <div class="container">
+    <form action="procesar_compra.php" method="POST">
+      <h2>Información de contacto</h2>
+      <input type="text" name="nombre" placeholder="Nombre completo" required>
+      <input type="email" name="email" placeholder="Correo electrónico" required>
+      <input type="tel" name="telefono" placeholder="Teléfono" required>
+      <h2>Dirección de envío</h2>
+      <input type="text" name="direccion" placeholder="Dirección" required>
+      <input type="text" name="ciudad" placeholder="Ciudad" required>
+      <input type="text" name="codigo_postal" placeholder="Código postal" required>
+      <input type="text" name="pais" placeholder="País" required>
+      <h2>Información de pago</h2>
+      <input type="text" name="numero_tarjeta" placeholder="Número de tarjeta" required>
+      <input type="text" name="fecha_vencimiento" placeholder="Fecha de vencimiento" required>
+      <input type="text" name="cvv" placeholder="CVV" required>
+      <button type="submit">Realizar compra</button>
+    </form>
+  </div>
 </body>
 </html>
