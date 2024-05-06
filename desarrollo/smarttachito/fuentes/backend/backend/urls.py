@@ -55,9 +55,9 @@ router.register(r'detallesorden', views_ventas.DetalleOrdenViewSet)
 #router.register(r'users', views.UserViewSet)
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path("", admin.site.urls)
+    path("admin", admin.site.urls)
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
