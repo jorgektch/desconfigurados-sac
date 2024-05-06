@@ -4,23 +4,16 @@
       <h2 class="titulo">Catálogo de Productos</h2>
     </div>
 
-    <ul class="productos-lista">
-      <li *ngFor="let producto of productos$ | async">
-
-        <div class="cartilla-producto">
-          <div class="producto-imagen">
-            <img [src]="getImagen(producto.imagen)" class="img-producto">
-          </div>
-
-          <div class="producto-detalles">
-            <h3 class="nombre">{{ producto.nombre }}</h3>
-            <p *ngIf="producto.id">{{ producto.id }}</p>
-            <span class="precio"> S/.{{ producto.precio }}</span>
-          </div>
-          <button (click)="agregarAlCarrito(producto)" class="btn"><i class="fa-solid fa-cart-plus"></i></button>
-        </div>
-      
-      </li>
-    </ul>
+    <section>
+      <form action="">
+          <input type="text" placeholder="Search" #filter>
+          <button class="primary" type="button" (click)="filterResults(filter.value)">Buscar</button>
+      </form>
+  </section>
+  <section>
+      <ul class="productos-lista">
+          <app-productos-filtrados *ngFor="let productos of filtered" [producto]="productos"></app-productos-filtrados>
+        </ul>
+  </section>
     
 </section>

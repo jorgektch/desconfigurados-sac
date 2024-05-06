@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="cartilla-producto">
+            <div class="producto-imagen">
+              <img [src]="getImagen(producto.imagen)" class="img-producto">
+            </div>
+  
+            <div class="producto-detalles">
+              <h3 class="nombre">{{ producto.nombre }}</h3>
+              <p *ngIf="producto.id">{{ producto.id }}</p>
+              <span class="precio"> S/.{{ producto.precio }}</span>
+            </div>
+            <button (click)="agregarAlCarrito(producto)" class="btn"><i class="fa-solid fa-cart-plus"></i></button>
+          </div>
+    </section>
+</body>
+</html>
