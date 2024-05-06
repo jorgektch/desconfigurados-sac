@@ -11,6 +11,7 @@ class Cliente(models.Model):
     class Meta:
         verbose_name = "Cliente"
         verbose_name_plural = "Clientes"
+        db_table = "Cliente"
 
 class Pago(models.Model):
     monto = models.DecimalField("Monto total", max_digits = 16 , decimal_places = 2)
@@ -21,6 +22,7 @@ class Pago(models.Model):
     class Meta:
         verbose_name = "Pago"
         verbose_name_plural = "Pagos"
+        db_table = "Pago"
 
 class Orden(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete = models.CASCADE, verbose_name = "Cliente")
@@ -30,10 +32,10 @@ class Orden(models.Model):
     estado_orden = models.ForeignKey(EstadoOrden, on_delete = models.CASCADE, verbose_name = "Estado de la orden")
     def __str__(self):
         return f"{self.cliente} {self.fechahora_orden}"
-        #return str(self.fecha_pedido)
     class Meta:
         verbose_name = "Orden"
         verbose_name_plural = "Órdenes"
+        db_table = "Orden"
 
 class DetalleOrden(models.Model):
     orden = models.ForeignKey(Orden, on_delete = models.CASCADE, verbose_name = "Orden")
@@ -45,3 +47,4 @@ class DetalleOrden(models.Model):
     class Meta:
         verbose_name = "Detalle orden"
         verbose_name_plural = "Detalles orden"
+        db_table = "DetalleOrden"

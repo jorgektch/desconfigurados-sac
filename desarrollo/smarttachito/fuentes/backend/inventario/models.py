@@ -9,6 +9,7 @@ class Categoria(models.Model):
     class Meta:
         verbose_name = "Categoria de productos"
         verbose_name_plural = "Categorias de productos"
+        db_table = "Categoria"
 
 class Producto(models.Model):
     nombre = models.CharField("Nombre", max_length = 100)
@@ -27,6 +28,7 @@ class Producto(models.Model):
     class Meta:
         verbose_name = "Producto"
         verbose_name_plural = "Productos"
+        db_table = "Producto"
 
 class Residuo(models.Model):
     nombre = models.CharField("Nombre", max_length = 100)
@@ -37,6 +39,7 @@ class Residuo(models.Model):
     class Meta:
         verbose_name = "Residuo"
         verbose_name_plural = "Residuos"
+        db_table = "Residuo"
 
 class Contenedor(models.Model):
     producto = models.ForeignKey(Producto, on_delete = models.CASCADE, verbose_name = "Producto")
@@ -46,3 +49,4 @@ class Contenedor(models.Model):
     class Meta:
         verbose_name = "Contenedor"
         verbose_name_plural = "Contenedores"
+        db_table = "Contenedor"
