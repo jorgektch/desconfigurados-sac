@@ -22,9 +22,9 @@ from django.conf.urls.static import static
 from rest_framework import routers
 
 from configuracion import views as views_configuracion
-from inventario import views
-#from reparto import views
-#from ventas import views
+from inventario import views as views_inventario
+from reparto import views as views_reparto
+from ventas import views as views_ventas
 
 admin.site.site_header = 'Ecommerce Smart Tachito'
 admin.site.site_title = "Ecommerce Smart Tachito"
@@ -38,18 +38,18 @@ router.register(r'ciudades', views_configuracion.CiudadViewSet)
 router.register(r'estadosentrega', views_configuracion.EstadoEntregaViewSet)
 router.register(r'estadosorden', views_configuracion.EstadoOrdenViewSet)
 # Inventario
-router.register(r'categorias', views.CategoriaViewSet)
-router.register(r'productos', views.ProductoViewSet)
-router.register(r'residuos', views.ResiduoViewSet)
-router.register(r'contenedores', views.ContenedorViewSet)
+router.register(r'categorias', views_inventario.CategoriaViewSet)
+router.register(r'productos', views_inventario.ProductoViewSet)
+router.register(r'residuos', views_inventario.ResiduoViewSet)
+router.register(r'contenedores', views_inventario.ContenedorViewSet)
 # Reparto
-router.register(r'ubicaciones', views.UbicacionViewSet)
-router.register(r'entregas', views.EntregaViewSet)
+router.register(r'ubicaciones', views_reparto.UbicacionViewSet)
+router.register(r'entregas', views_reparto.EntregaViewSet)
 # Ventas
-router.register(r'clientes', views.ClienteViewSet)
-router.register(r'pagos', views.PagoViewSet)
-router.register(r'ordenes', views.OrdenViewSet)
-router.register(r'detallesorden', views.DetalleOrdenViewSet)
+router.register(r'clientes', views_ventas.ClienteViewSet)
+router.register(r'pagos', views_ventas.PagoViewSet)
+router.register(r'ordenes', views_ventas.OrdenViewSet)
+router.register(r'detallesorden', views_ventas.DetalleOrdenViewSet)
 
 #router.register(r'usertypes', views.UserTypeViewSet)
 #router.register(r'users', views.UserViewSet)
