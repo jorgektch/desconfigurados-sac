@@ -25,6 +25,7 @@ from configuracion import views as views_configuracion
 from inventario import views as views_inventario
 from reparto import views as views_reparto
 from ventas import views as views_ventas
+from web import views as views_web
 
 admin.site.site_header = 'Ecommerce Smart Tachito'
 admin.site.site_title = "Ecommerce Smart Tachito"
@@ -46,10 +47,12 @@ router.register(r'contenedores', views_inventario.ContenedorViewSet)
 router.register(r'ubicaciones', views_reparto.UbicacionViewSet)
 router.register(r'entregas', views_reparto.EntregaViewSet)
 # Ventas
-router.register(r'clientes', views_ventas.ClienteViewSet)
 router.register(r'pagos', views_ventas.PagoViewSet)
 router.register(r'ordenes', views_ventas.OrdenViewSet)
 router.register(r'detallesorden', views_ventas.DetalleOrdenViewSet)
+# Web
+router.register(r'usuarios', views_web.UsuarioViewSet)
+router.register(r'grupos', views_web.GroupViewSet)
 
 #router.register(r'usertypes', views.UserTypeViewSet)
 #router.register(r'users', views.UserViewSet)

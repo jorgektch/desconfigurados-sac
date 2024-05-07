@@ -7,45 +7,47 @@ from rest_framework.permissions import AllowAny
 
 class TipoDocumentoViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows Universities to be viewed or edited.
+    API Endpoint para CRUD de TipoDocumento.
     """
     queryset = TipoDocumento.objects.all()
     serializer_class = TipoDocumentoSerializer
     permission_classes = [AllowAny]  # Cambiamos IsAuthenticated por AllowAny
-    filterset_fields = ['nombre'] # Nuevo API filter
+    #filterset_fields = ['nombre'] # Nuevo API filter
+    filterset_fields = '__all__'
 
 class PaisViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows Universities to be viewed or edited.
+    API Endpoint para CRUD de Pais.
     """
     queryset = Pais.objects.all()
     serializer_class = PaisSerializer
-    permission_classes = [AllowAny]  # Cambiamos IsAuthenticated por AllowAny
-    filterset_fields = ['nombre'] # Nuevo API filter
+    permission_classes = [permissions.IsAuthenticated]
+    #filterset_fields = ['nombre'] # Nuevo API filter
+    filterset_fields = '__all__'
 
 class CiudadViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows Universities to be viewed or edited.
+    API Endpoint para CRUD de Ciudad.
     """
     queryset = Ciudad.objects.all()
     serializer_class = CiudadSerializer
-    permission_classes = [AllowAny]  # Cambiamos IsAuthenticated por AllowAny
+    permission_classes = [permissions.IsAuthenticated]
     filterset_fields = ['nombre'] # Nuevo API filter
 
 class EstadoEntregaViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows Universities to be viewed or edited.
+    API Endpoint para CRUD de EstadoEntrega.
     """
     queryset = EstadoEntrega.objects.all()
     serializer_class = EstadoEntregaSerializer
-    permission_classes = [AllowAny]  # Cambiamos IsAuthenticated por AllowAny
+    permission_classes = [permissions.IsAuthenticated]
     filterset_fields = ['nombre'] # Nuevo API filter
 
 class EstadoOrdenViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows Universities to be viewed or edited.
+    API Endpoint para CRUD de EstadoOrden.
     """
     queryset = EstadoOrden.objects.all()
     serializer_class = EstadoOrdenSerializer
-    permission_classes = [AllowAny]  # Cambiamos IsAuthenticated por AllowAny
+    permission_classes = [permissions.IsAuthenticated]
     filterset_fields = ['nombre'] # Nuevo API filter

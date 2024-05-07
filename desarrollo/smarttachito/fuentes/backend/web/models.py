@@ -81,6 +81,17 @@ class Usuario(AbstractBaseUser):
         verbose_name = "Usuario"
         verbose_name_plural = "Usuarios"
 
+class PermissionManager(models.Manager):
+   use_in_migrations = True
+   def get_by_natural_key(self, codename, app_label, model):
+        return self.get(
+           codename = codename,
+           content_type = ContentType.objects.db_manager(self.db).get_by_natural_key(
+               app_label, model
+           ),
+        )
+
+"""
 class Empleado(models.Model):
     usuario = models.OneToOneField(Usuario, on_delete = models.CASCADE, verbose_name = "Usuario asociado")
     cargos = models.ManyToManyField(Group)
@@ -91,4 +102,5 @@ class Empleado(models.Model):
     class Meta:
         verbose_name = "Empleado"
         verbose_name_plural = "Empleados"
-        db_table = "Empleado"
+"""
+

@@ -25,7 +25,7 @@ class ProductoViewSet(viewsets.ModelViewSet):
 
 class ResiduoViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows Universities to be viewed or edited.
+    API Endpoint para CRUD de Residuo.
     """
     queryset = Residuo.objects.all()
     serializer_class = ResiduoSerializer
@@ -34,7 +34,7 @@ class ResiduoViewSet(viewsets.ModelViewSet):
 
 class ContenedorViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows Universities to be viewed or edited.
+    API Endpoint para CRUD de Contenedor.
     """
     queryset = Contenedor.objects.all()
     serializer_class = ContenedorSerializer
