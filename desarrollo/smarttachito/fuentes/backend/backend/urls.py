@@ -52,7 +52,7 @@ router.register(r'ordenes', views_ventas.OrdenViewSet)
 router.register(r'detallesorden', views_ventas.DetalleOrdenViewSet)
 # Web
 router.register(r'usuarios', views_web.UsuarioViewSet)
-router.register(r'grupos', views_web.GroupViewSet)
+router.register(r'roles', views_web.GroupViewSet)
 
 #router.register(r'usertypes', views.UserTypeViewSet)
 #router.register(r'users', views.UserViewSet)

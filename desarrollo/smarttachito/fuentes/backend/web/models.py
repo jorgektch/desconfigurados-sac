@@ -80,6 +80,7 @@ class Usuario(AbstractBaseUser):
     class Meta:
         verbose_name = "Usuario"
         verbose_name_plural = "Usuarios"
+        
 
 """
 class PermissionManager(models.Manager):
