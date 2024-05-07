@@ -81,6 +81,7 @@ class Usuario(AbstractBaseUser):
         verbose_name = "Usuario"
         verbose_name_plural = "Usuarios"
 
+"""
 class PermissionManager(models.Manager):
    use_in_migrations = True
    def get_by_natural_key(self, codename, app_label, model):
@@ -90,6 +91,7 @@ class PermissionManager(models.Manager):
                app_label, model
            ),
         )
+"""
 
 """
 class Empleado(models.Model):

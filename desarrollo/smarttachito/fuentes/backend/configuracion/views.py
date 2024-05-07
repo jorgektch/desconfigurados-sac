@@ -11,7 +11,7 @@ class TipoDocumentoViewSet(viewsets.ModelViewSet):
     """
     queryset = TipoDocumento.objects.all()
     serializer_class = TipoDocumentoSerializer
-    permission_classes = [AllowAny]  # Cambiamos IsAuthenticated por AllowAny
+    permission_classes = [permissions.IsAuthenticated]
     #filterset_fields = ['nombre'] # Nuevo API filter
     filterset_fields = '__all__'
 
