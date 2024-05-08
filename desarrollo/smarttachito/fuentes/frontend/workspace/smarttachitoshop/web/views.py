@@ -31,3 +31,18 @@ def productosPorCategoria(request,categoria_id):
 
     return render(request, 'index.html',context)    # Mostrar para comprobar las plantillas
 
+def productosPorNombre(request):
+    #vendra de un formulario
+    """ vista para filtrar productos por nombre """
+    nombre = request.POST['nombre'] # Obtener el nombre del producto a buscar capturo
+    listaProductos = Producto.objects.filter(nombre__contains=nombre) # Me trae todos los productos que contengan el nombre
+    
+    listaCategorias = Categoria.objects.all() # Obtener todas las categorias de la base de datos
+
+    context={  
+        'productos':listaProductos, #enviando un diccionario con primarea clave productos cuyo valor tiene un listado que vien dela DB
+        'categorias':listaCategorias #enviando un diccionario con primarea clave categorias cuyo valor tiene un listado que vien dela DB
+    }
+
+    return render(request, 'index.html',context)    # Mostrar para comprobar las plantillas
+
