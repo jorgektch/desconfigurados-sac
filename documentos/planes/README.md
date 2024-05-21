@@ -51,3 +51,23 @@ El SCMP tiene como objetivos:
 
 ### Diagrama de arquitectura y herramienta elegida 
 Para la gestión de la configuración del software en el proyecto actual, se ha seleccionado Git como la herramienta principal. La arquitectura del sistema se basará en un repositorio centralizado en GitHub, que permitirá un control de versiones efectivo y una colaboración eficiente entre los miembros del equipo de desarrollo.
+
+## Actividades de la SCM
+### Identificación
+#### Clasificación de los Ítems de la Configuración (CI)
+Proyecto: Smart Tachito E-commerce
+| Tipo </br> (E: evolución </br> F: fuente </br> S: soporte) | Nombre del Ítem (CI) | Extensión | Proyecto |
+| ---------------------------------------------------------- | -------------------- | --------- | -------- |
+| E | Project Charter | .docx | STE |
+| S | Visual Studio Code | .exe | STE |
+| E | Doc. de Arquitectura | .docx | STE |
+| F | Archivos de modelado de Django | .py | STE |
+| F | Archivo de serializador de modelos | .py | STE |
+| E | Archivo de la base de datos sqlite | .sqlite3 | STE |
+| F | Hojas de estilos de los componentes | .css | STE |
+| F | Estructura de componentes | .html | STE |
+| F | Funcionalidades de los componentes | .ts | STE |
+| S | Librerías de Python | .py | STE |
+| S | Dependencias de Node | .js | STE |
+| E | Archivo de especificación de requisitos del backend | .txt | STE |
+
