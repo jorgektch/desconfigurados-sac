@@ -28,3 +28,13 @@ El SCMP tiene como objetivos:
 - Controlar los cambios realizados en el software para asegurar la consistencia e integridad del producto.
 - Facilitar la colaboración entre los miembros del equipo de desarrollo y garantizar la reproducibilidad de versiones específicas del software.
 - Cumplir con los estándares de calidad y seguridad del software.
+
+## Gestión de la SCM 
+### Definición de roles
+
+| Nombre del rol | Persona asignada | Responsabilidades | Nivel de autoridad |
+| -------------- | ---------------- | ----------------- | ------------------ |
+| Project Manager | JJQV | Supervisar el funcionamiento de la Gestión de la Configuración. | Toda autoridad sobre el proyecto y sus funciones. |
+| Gestor de configuración | JLLTR | Ejecutar todas las tareas de la Gestión de la Configuración. | Autoridad para operar las funciones de Gestión de la Configuración. | 
+| Inspector de aseguramiento de calidad | HSAM | Auditar la Gestión de la Configuración. | Auditar la Gestión de la Configuración según indique el project manager. | 
+| Miembros del equipo de proyecto | Varios | Consultar la información de la Gestión de la Configuración según sus niveles de autoridad. | Depende de cada miembro, se especifica para cada artefacto y cada CI (ítem de configuración). | 
