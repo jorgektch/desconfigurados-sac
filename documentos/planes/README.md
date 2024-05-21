@@ -38,3 +38,13 @@ El SCMP tiene como objetivos:
 | Gestor de configuración | JLLTR | Ejecutar todas las tareas de la Gestión de la Configuración. | Autoridad para operar las funciones de Gestión de la Configuración. | 
 | Inspector de aseguramiento de calidad | HSAM | Auditar la Gestión de la Configuración. | Auditar la Gestión de la Configuración según indique el project manager. | 
 | Miembros del equipo de proyecto | Varios | Consultar la información de la Gestión de la Configuración según sus niveles de autoridad. | Depende de cada miembro, se especifica para cada artefacto y cada CI (ítem de configuración). | 
+
+### Herramientas (Benchmarking) 
+| Herramienta | Fuente | Características |
+| ----------- | ------ | --------------- |
+| Git | Open Source | Git es un sistema de control de versiones distribuido que permite a los equipos de desarrollo colaborar de manera eficiente en proyectos de software. Es conocido por su velocidad, eficiencia y flexibilidad. Utiliza ramas para el desarrollo paralelo y permite fusionar cambios de forma sencilla. |
+| Mercurial | Open Source | Mercurial es otro sistema de control de versiones distribuido, similar a Git. Permite a los desarrolladores trabajar de forma colaborativa en proyectos de software y cuenta con una interfaz fácil de usar. Sin embargo, ha perdido algo de popularidad en comparación con Git en los últimos años. |
+| Apache Subversion | Open Source | Apache Subversion (SVN) es un sistema de control de versiones centralizado que ha sido ampliamente utilizado en proyectos de software durante muchos años. A diferencia de Git y Mercurial, SVN utiliza un modelo centralizado para gestionar el código fuente. |
+| Plastic SCM | Propietario | Plastic SCM es una herramienta de control de versiones que combina características de sistemas distribuidos y centralizados. Ofrece una variedad de características avanzadas, como la gestión de ramas y la integración continua, y se adapta bien a proyectos de cualquier tamaño. |
+| Monotone | Open Source | Monotone es un sistema de control de versiones distribuido que se enfoca en la integridad y la seguridad de los datos. Utiliza criptografía para garantizar la autenticidad y la integridad de los cambios. Sin embargo, puede ser menos intuitivo de usar en comparación con otras herramientas más populares como Git y Mercurial. |
+| CVS server | Open Source | CVS (Concurrent Versions System) es uno de los sistemas de control de versiones más antiguos y fue ampliamente utilizado en la década de 1990 y principios de la década de 2000. Aunque ha sido superado por herramientas más modernas como Git y SVN, todavía se utiliza en algunos proyectos heredados. |
