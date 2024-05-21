@@ -1,5 +1,5 @@
 # Modelo Físico
-![Modelo Fisico](./ModeloFisico.png)
+![Modelo Fisico](./STE-MF.png)
 
 ## Diccionario de datos
 A continuación se presenta el diccionario de datos de las tablas del modelo físico de la BBDD
