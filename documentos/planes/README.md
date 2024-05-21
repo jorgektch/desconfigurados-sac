@@ -111,3 +111,6 @@ Ejemplo:
 Para identificar el documento de arquitectura, y en caso hubiera un documento de análisis del proyecto STE que pertenezcan a la rama “Arquitectura diagramas”, tenemos los siguientes: 
 </br>STE-R-AD-DOC-ARQ.docx
 </br>STE-R-AD-DOC-ANA.docx
+
+#### Diseño de repositorio
+![Estructura del repositorio](./EstructuraRepositorio.png)
