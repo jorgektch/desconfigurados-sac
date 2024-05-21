@@ -13,3 +13,11 @@ Nuestra experiencia se refleja en los diversos proyectos que hemos realizado has
 | Campusmap | Sistema de mapeo de la facultad de Ingeniería de Sistemas e Informática para facilitar la búsqueda de salones a los estudiantes y docentes. |
 | Teslab | Analizador sintáctico multipropósito para facilitar la resolución de problemas de matemática o matemática discreta a través de lenguaje natural. |
 | Smart Tachito E-commerce | Plataforma de e-commerce o tienda virtual para la venta de los productos de Smart Tachito. |
+
+### Problemática
+Aunque en Los Desconfigurados SAC hemos demostrado nuestro valor en la gestión de configuración de software y en la reducción de las cargas tecnológicas para empresas y particulares, enfrentamos varios desafíos que requieren una atención estratégica.
+
+Una de las principales problemáticas es la resistencia al cambio por parte de algunos clientes. Muchas empresas y particulares pueden estar acostumbrados a sus procesos y sistemas existentes, y pueden mostrar reticencia a adoptar nuevas soluciones de gestión de configuración de software. Convencer a los clientes de los beneficios de nuestra tecnología requiere de un enfoque y comunicación cuidadoso y persuasivo.
+
+Otro desafío que enfrentamos es la rápida evolución del panorama tecnológico. Con constantes actualizaciones de software, nuevos estándares y metodologías emergentes, mantenernos al día con los últimos avances y adaptar nuestras soluciones para satisfacer las necesidades cambiantes del mercado es crucial. Esto puede requerir inversiones significativas en investigación y desarrollo, así como una capacidad ágil para ajustar nuestras estrategias según sea necesario.
+
