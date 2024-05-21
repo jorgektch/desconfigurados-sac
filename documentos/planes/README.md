@@ -21,3 +21,10 @@ Una de las principales problemáticas es la resistencia al cambio por parte de a
 
 Otro desafío que enfrentamos es la rápida evolución del panorama tecnológico. Con constantes actualizaciones de software, nuevos estándares y metodologías emergentes, mantenernos al día con los últimos avances y adaptar nuestras soluciones para satisfacer las necesidades cambiantes del mercado es crucial. Esto puede requerir inversiones significativas en investigación y desarrollo, así como una capacidad ágil para ajustar nuestras estrategias según sea necesario.
 
+### Objetivo
+El SCMP tiene como objetivos:
+
+- Establecer un proceso estructurado para identificar, controlar y gestionar la configuración del software.
+- Controlar los cambios realizados en el software para asegurar la consistencia e integridad del producto.
+- Facilitar la colaboración entre los miembros del equipo de desarrollo y garantizar la reproducibilidad de versiones específicas del software.
+- Cumplir con los estándares de calidad y seguridad del software.
