@@ -30,5 +30,4 @@ export class AccesoUsuarioComponent implements OnInit {
     this.router.navigateByUrl('/');
     location.reload();
   }
-
 }

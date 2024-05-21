@@ -4,9 +4,10 @@ from .models import *
 class UbicacionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Ubicacion
-        fields = ['ciudad', 'direccion', 'referencia', 'codigo_postal', 'latitud', 'longitud']
+        fields = '__all__'
 
 class EntregaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Entrega
-        fields = ['ubicacion', 'empleado', 'fechahora_entrega', 'detalles_entrega', 'estado_entrega']
+        fields = '__all__'
+        #fields = ['ubicacion', 'empleado', 'fechahora_entrega', 'detalles_entrega', 'estado_entrega']

@@ -4,15 +4,6 @@ from web.models import *
 from inventario.models import *
 from reparto.models import *
 
-class Cliente(models.Model):
-    usuario = models.OneToOneField(Usuario, on_delete = models.CASCADE, verbose_name = "Usuario asociado")
-    def __str__(self):
-        return self.usuario.username
-    class Meta:
-        verbose_name = "Cliente"
-        verbose_name_plural = "Clientes"
-        db_table = "Cliente"
-
 class Pago(models.Model):
     monto = models.DecimalField("Monto total", max_digits = 16 , decimal_places = 2)
     fechahora_pago = models.DateTimeField("Fecha y hora de pago", auto_now_add = True)
@@ -25,7 +16,7 @@ class Pago(models.Model):
         db_table = "Pago"
 
 class Orden(models.Model):
-    cliente = models.ForeignKey(Cliente, on_delete = models.CASCADE, verbose_name = "Cliente")
+    cliente = models.ForeignKey(Usuario, on_delete = models.CASCADE, verbose_name = "Cliente")
     fechahora_orden = models.DateTimeField("Fecha y hora de registro del orden", auto_now_add = True)
     pago = models.ForeignKey(Pago, on_delete = models.CASCADE, blank = True, null = True, verbose_name = "Pago")
     entrega = models.ForeignKey(Entrega, on_delete = models.CASCADE, blank = True, null = True, verbose_name = "Entrega")

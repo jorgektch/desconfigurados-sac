@@ -5,7 +5,7 @@ import { Productos } from '../../../shared/interfaces/interface';
 import { Observable } from 'rxjs';
 import { ApiPruebaService } from '../../../shared/services/api-prueba.service';
 import { CarritoServiceService } from '../../../shared/services/carrito-service.service';
-import { ProductosFiltradosComponent } from "../../productos-filtrados/productos-filtrados.component";
+import { ProductosFiltradosComponent } from "../../buyer/productos-filtrados/productos-filtrados.component";
 
 @Component({
     selector: 'app-catalogo',

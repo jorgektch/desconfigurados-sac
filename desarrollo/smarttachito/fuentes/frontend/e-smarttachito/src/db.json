@@ -5,6 +5,7 @@
       "id": "1",
       "nombre": "Laura",
       "apellido":"Mendoza",
+      "genero": "Femenino",
       "usuario": "Laura@gmail.com",
       "contrasenia": "Laura1"
     },
@@ -13,8 +14,27 @@
       "id": "2",
       "nombre": "Asthri",
       "apellido":"Pardave",
+      "genero": "Femenino",
       "usuario": "Asthri@gmail.com",
       "contrasenia": "Asthri2"
+    },
+    {
+      "role": "admin",
+      "id": "3",
+      "nombre": "Jorge",
+      "apellido":"Quispe",
+      "genero": "Masculino",
+      "usuario": "Jorge@gmail.com",
+      "contrasenia": "Jorge3"
+    },
+    {
+      "role": "cliente",
+      "id": "4",
+      "nombre": "Luis",
+      "apellido":"La Torre",
+      "genero": "Masculino",
+      "usuario": "Luis@gmail.com",
+      "contrasenia": "Luis4"
     }
   ],
   "productos": [

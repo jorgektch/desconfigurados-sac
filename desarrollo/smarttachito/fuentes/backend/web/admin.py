@@ -1,28 +1,14 @@
 from django.contrib import admin
 from .models import *
 
-class TipoDocumentoAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in TipoDocumento._meta.fields]
-    ordering = ('nombre',)
+# Cambiar de ubicación el model Group en el admin Django
+from django.contrib.auth.models import Group
+Group._meta.app_label = 'web'
+Group._meta.verbose_name = "Rol"
+Group._meta.verbose_name_plural = "Roles"
 
-class PaisAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in Pais._meta.fields]
-    ordering = ('nombre',)
+class UsuarioAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Usuario._meta.fields]
+    ordering = ('username',)
 
-class CiudadAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in Ciudad._meta.fields]
-    ordering = ('nombre',)
-
-class EstadoEntregaAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in EstadoEntrega._meta.fields]
-    ordering = ('nombre',)
-
-class EstadoOrdenAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in EstadoOrden._meta.fields]
-    ordering = ('nombre',)
-
-admin.site.register(TipoDocumento, TipoDocumentoAdmin)
-admin.site.register(Pais, PaisAdmin)
-admin.site.register(Ciudad, CiudadAdmin)
-admin.site.register(EstadoEntrega, EstadoEntregaAdmin)
-admin.site.register(EstadoOrden, EstadoOrdenAdmin)
+admin.site.register(Usuario, UsuarioAdmin)

@@ -4,24 +4,24 @@ from .models import *
 class TipoDocumentoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = TipoDocumento
-        fields = ['nombre', 'descripcion']
+        fields = '__all__'
 
 class PaisSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Pais
-        fields = ['nombre']
+        fields = '__all__'
 
 class CiudadSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Ciudad
-        fields = ['pais', 'nombre']
+        fields = '__all__'
 
 class EstadoEntregaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = EstadoEntrega
-        fields = ['nombre', 'descripcion']
+        fields = '__all__'
 
 class EstadoOrdenSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = EstadoOrden
-        fields = ['nombre', 'descripcion']
+        fields = '__all__'

@@ -2,14 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ApiPruebaService } from './api-prueba.service';
 import { Observable } from 'rxjs';
+import { Usuarios } from '../interfaces/interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginSignupService {
 
-  public login_url = "http://localhost:3000";
-  public reg_url = "http://localhost:3000";
+  public login_url = "https://desconfigurados-sacdeployment.onrender.com";
+  public reg_url = "https://desconfigurados-sacdeployment.onrender.com";
 
   constructor(private http: HttpClient, private api: ApiPruebaService) { }
 
@@ -17,7 +18,10 @@ export class LoginSignupService {
     return this.api.get(this.login_url+'/usuarios?usuario='+usuario+'&contrasenia='+contrasenia)
   }
 
-  userRegister(user_dto:any): Observable<any>{
+  // registroUsuario(user: Usuarios): Observable<any> {
+  //   return this.http.post(this.reg_url+'/usuarios', user);
+  // }
+  registroUsuario(user_dto: any): Observable<any>{
     return this.api.post(this.reg_url+'/usuarios', user_dto)
   }
 }

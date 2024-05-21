@@ -18,7 +18,7 @@ class Ubicacion(models.Model):
 
 class Entrega(models.Model):
     ubicacion = models.ForeignKey(Ubicacion, on_delete = models.CASCADE, blank = True, null = True, verbose_name = "Orden")
-    empleado = models.ForeignKey(Empleado, on_delete = models.CASCADE,  blank = True, null = True, verbose_name = "Empleado asignado")
+    empleado = models.ForeignKey(Usuario, on_delete = models.CASCADE,  blank = True, null = True, verbose_name = "Empleado asignado")
     fechahora_entrega = models.DateTimeField("Fecha y hora de entrega", auto_now_add = True)
     detalles_entrega = models.CharField("Anotaciones del encargado de la entrega", max_length = 1000, blank = True, null = True)
     estado_entrega = models.ForeignKey(EstadoEntrega, on_delete = models.CASCADE, verbose_name = "Estado de la entrega")
