@@ -72,33 +72,42 @@ Proyecto: Smart Tachito E-commerce
 | E | Archivo de especificación de requisitos del backend | .txt | STE |
 
 #### Nomenclatura de los Ítems de la Configuración (CI)
-Regla N°1 = En la mayoría de los casos usaremos la siguiente nomenclatura
+##### Regla N°1 
+En la mayoría de los casos usaremos la siguiente nomenclatura
 
 "Acrónimo del proyecto" + "-" + "Acrónimo de ítem"+ext
 
 Ejemplo:
-Para identificar el documento de arquitectura del proyecto STE, tenemos: STE-DA.docx.
+Para identificar el documento de arquitectura del proyecto STE, tenemos: 
+STE-DA.docx
 
-Regla N°2 = En el caso existan dos o más documentos con el mismo acrónimo de ítem se usará la siguiente nomenclatura
+##### Regla N°2 
+En el caso existan dos o más documentos con el mismo acrónimo de ítem se usará la siguiente nomenclatura
 
 "Acrónimo del proyecto" + "-" + "Tres primeras letras de cada palabra significativa del ítem separadas por guión" + ext
 
 Ejemplo:
-Para identificar el documento de arquitectura, y en caso hubiera un documento de análisis del proyecto STE, tenemos los siguientes: STE-DOC-ARQ.docx.
+Para identificar el documento de arquitectura, y en caso hubiera un documento de análisis del proyecto STE, tenemos los siguientes: 
+STE-DOC-ARQ.docx
 STE-DOC-ANA.docx
 
-Regla N°3 = En el caso de coincidir con el mismo ítem, pero están en diferentes ramas, se usará la siguiente nomenclatura:
+##### Regla N°3 
+En el caso de coincidir con el mismo ítem, pero están en diferentes ramas, se usará la siguiente nomenclatura:
 
 “Acrónimo del proyecto” + ”-” + ”R” + ”-” + ”Acrónimo de la rama” + ”-” + ”Acrónimo del ítem” + ext
 
 Ejemplo:
-Para identificar el documento de arquitectura del proyecto STE en la rama “Arquitectura diagramas”, tenemos: STE-R-AD-DA.docx.
-Y en la rama “Arquitectura especificaciones”, tenemos: STE-R-AE-DA.docx.
+Para identificar el documento de arquitectura del proyecto STE en la rama “Arquitectura diagramas”, tenemos: 
+STE-R-AD-DA.docx
+Y en la rama “Arquitectura especificaciones”, tenemos: 
+STE-R-AE-DA.docx
 
-Regla N°4: En el caso existan dos o más documentos con el mismo acrónimo de ítem y que pertenecen a la misma rama se usará la siguiente nomenclatura:
+##### Regla N°4
+En el caso existan dos o más documentos con el mismo acrónimo de ítem y que pertenecen a la misma rama se usará la siguiente nomenclatura:
 
 "Acrónimo del proyecto" + "-" +”R”+”Acrónimo de la rama”+ "Tres primeras letras de cada palabra significativa del ítem separadas por guión" + ext
 
 Ejemplo:
-Para identificar el documento de arquitectura, y en caso hubiera un documento de análisis del proyecto STE que pertenezcan a la rama “Arquitectura diagramas”, tenemos los siguientes: STE-R-AD-DOC-ARQ.docx.
+Para identificar el documento de arquitectura, y en caso hubiera un documento de análisis del proyecto STE que pertenezcan a la rama “Arquitectura diagramas”, tenemos los siguientes: 
+STE-R-AD-DOC-ARQ.docx
 STE-R-AD-DOC-ANA.docx
