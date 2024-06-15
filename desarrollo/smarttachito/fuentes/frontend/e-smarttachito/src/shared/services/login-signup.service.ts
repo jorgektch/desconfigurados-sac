@@ -18,9 +18,6 @@ export class LoginSignupService {
     return this.api.get(this.login_url+'/usuarios?usuario='+usuario+'&contrasenia='+contrasenia)
   }
 
-  // registroUsuario(user: Usuarios): Observable<any> {
-  //   return this.http.post(this.reg_url+'/usuarios', user);
-  // }
   registroUsuario(user_dto: any): Observable<any>{
     return this.api.post(this.reg_url+'/usuarios', user_dto)
   }

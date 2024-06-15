@@ -1,0 +1,40 @@
+Core
+	guards
+	interceptors
+	models
+		interfaces
+	services
+shared
+	Componentes
+		footer
+		header 
+		navbar...
+	directives
+	pipes 
+e-commerce
+	acceso
+		login y registro
+	compras
+		carrito
+			todos los componentes del carrito
+		catalogo
+			todos los componentes del catalogo
+		checkout
+			todos los componentes del checkout
+	home
+		landing
+		todas las demás pantallas
+
+	usuario
+		perfil
+		historial de compras
+		...
+
+
+
+
+Jhordan: Login, Registro y recuperación de contraseña / Catálogo
+Laura: checkout
+Pedro: Carrito
+
+Pendiente de repartir: landing
