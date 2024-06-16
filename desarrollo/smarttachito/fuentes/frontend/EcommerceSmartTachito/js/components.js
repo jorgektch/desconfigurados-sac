@@ -20,37 +20,3 @@ document.addEventListener("DOMContentLoaded", function () {
     loadComponent("header-placeholder", "../components/header.html");
     loadComponent("footer-placeholder", "../components/footer.html");
 });
-components.js
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     loadHeader();
-//     loadFooter();
-// });
-
-// const loadHeader = async () => {
-//     try {
-//         const response = await fetch('/html/header.html');
-//         if (response.ok) {
-//             const headerContent = await response.text();
-//             document.getElementById('header-placeholder').innerHTML = headerContent;
-//         } else {
-//             console.error('Error al cargar el header');
-//         }
-//     } catch (error) {
-//         console.error('Error:', error);
-//     }
-// };
-
-// const loadFooter = async () => {
-//     try {
-//         const response = await fetch('/html/footer.html');
-//         if (response.ok) {
-//             const footerContent = await response.text();
-//             document.getElementById('footer-placeholder').innerHTML = footerContent;
-//         } else {
-//             console.error('Error al cargar el footer');
-//         }
-//     } catch (error) {
-//         console.error('Error:', error);
-//     }
-// };
