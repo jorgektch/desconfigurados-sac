@@ -1,4 +1,4 @@
-import {loadComponent} from './utils/loadComponent.js'
+import {loadComponent} from './utils/loadComponents.js'
 
 document.addEventListener("DOMContentLoaded", function () {
     // cargar los componentes
