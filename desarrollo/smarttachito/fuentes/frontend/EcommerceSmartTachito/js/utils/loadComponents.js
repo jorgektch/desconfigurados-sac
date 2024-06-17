@@ -1,5 +1,5 @@
 export function loadComponent(elementId, url) {
-    fetch(url)
+    return fetch(url)
         .then(response => {
             if (!response.ok) {
                 throw new Error("Network responde was not ok.");
