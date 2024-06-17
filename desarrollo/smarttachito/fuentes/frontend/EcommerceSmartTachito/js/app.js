@@ -1,17 +1,17 @@
 import { loadComponent } from './utils/loadComponents.js';
 
-document.addEventListener("DOMContentLoader", function () {
+document.addEventListener("DOMContentLoaded", function () {
 	// cargar header y footer
-	loadComponent("header-placeholder", "./html/components/header.html")
-		.then(() => {
+	loadComponent("header-placeholder", "../html/components/header.html")
+        .then(() => {
 			// Configurar navegación después de cargar el header
 			setupNavigation();
 		});
 
-	loadComponent("footer-placeholder", "./html/components/footer.html");
+	loadComponent("footer-placeholder", "../html/components/footer.html");
 
 	// cargar contenido inicial
-	loadMainContent("./html/landing.html");
+	loadComponent('contenido-principal', "../html/landing.html");
 });
 
 function setupNavigation() {
