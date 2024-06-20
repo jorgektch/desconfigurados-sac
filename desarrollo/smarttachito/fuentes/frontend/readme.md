@@ -1,1 +1,1 @@
-Aquí van los archivos del frontend del proyecto
+Fronten del proyecto de Ecommerce de SmartTachito
