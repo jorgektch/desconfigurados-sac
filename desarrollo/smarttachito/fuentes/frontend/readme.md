@@ -1,1 +1,4 @@
-Aquí van los archivos del frontend del proyecto
+Frontend del proyecto de Ecommerce de SmartTachito
+Miembros del equipo de trabajo frontend
+- Laura Cecilia Mendoza Morales
+- Pedro Josué Sota Ríos

@@ -10,6 +10,7 @@ export interface Usuarios{
     apellido: string;
     usuario: string;
     contrasenia: string;
+    genero: string;
 }
 
 export interface Productos{

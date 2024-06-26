@@ -1,0 +1,135 @@
+<header class="header-principal">
+    <!-- lnkado de hojas de estilo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="">
+    <!-- ------------------------- -->
+
+    <div class="header-principal__contenedor-logotipo">
+        <img class="contenedor-logotipo__imagen" src="/assets/logotipo.png">
+    </div>
+
+    <div class="header-principal__opciones-navegacion">
+        <ul class="opciones-navegacion__lista">
+            <il><a class="lista__item" href="landing" data-section="landing-seccion">Inicio</a></il>
+            <il><a class="lista__item" href="catalogo" data-section="catalogo-seccion">Catálogo</a></il>
+            <il><a class="lista__item" href="novedades" data-section="novedades-seccion">Novedades</a></il>
+            <il><a class="lista__item" href="nosotros" data-section="nosotros-seccion">Nosotros</a></il>
+            <il><a class="lista__item" href="contacto" data-section="contacto-seccion">Contacto</a></il>
+        </ul>
+    </div>
+
+    <div class="header-principal__opciones-de-sesion">
+        <button id="button-acceso">Acceso</button>
+        <div id="acceso-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <button class="btn" id="login-button">Iniciar Sesión</button>
+                <button class="btn" id="register-button">Registrarse</button>
+                <button class="btn" id="user-detail-button" style="display: none;">Detalle de Usuario</button>
+                <button class="btn" id="logout-button" style="display: none;">Cerrar sesión</button>
+                <div id="login-modal" class="modal">
+                    <div class="login-container">
+                        <span class="close-login" id="close-login-modal">&times;</span>
+                        <h2>Iniciar Sesión</h2>
+                        <form id="login-form">
+                            <div class="input-group">
+                                <label for="email">Correo</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="password">Contraseña</label>
+                                <input type="password" id="password" name="password" required>
+                            </div>
+                            <button type="submit">Ingresar</button>
+                            <div id="login-message"></div>
+                        </form>
+                    </div>
+                </div>
+                <div id="register-modal" class="modal">
+                    <div class="register-container">
+                        <span class="close-register" id="close-register-modal">&times;</span>
+                        <h2>Registro</h2>
+                        <form id="register-form">
+                            <div class="input-group">
+                                <label for="name">Nombre</label>
+                                <input type="text" id="name" name="name" placeholder="Nombres y apellidos" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="email">Correo</label>
+                                <input type="email" id="email" name="email" placeholder="example@dominio.com" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="password">Contraseña</label>
+                                <input type="password" id="password" name="password"
+                                    placeholder="Mínimo 4 caracteres entre letras y números" required>
+                            </div>
+                            <button type="submit">Registrarse</button>
+                            <div id="register-message"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-principal__carrito-launcher">
+        <a class="header-principal__carrito-launcher--linker" href="/html/carrito.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+    </div>
+    <script src="/js/acceso.js"></script>
+</header>
+
+<script>
+    var modal = document.getElementById("acceso-modal");
+    var btn = document.getElementById("button-acceso");
+    var span = document.getElementsByClassName("close")[0];
+    var loginModal = document.getElementById("login-modal");
+    var loginButton = document.getElementById("login-button");
+    var registerModal = document.getElementById("register-modal");
+    var registerButton = document.getElementById("register-button");
+    var closeLogin = document.getElementsByClassName("close-login")[0];
+    var closeRegister = document.getElementsByClassName("close-register")[0];
+    btn.onclick = function () {
+        modal.style.display = "block";
+        adjustIframeSize();
+    }
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    loginButton.onclick = function () {
+        loginModal.style.display = "block";
+        adjustModalSize();
+    }
+    registerButton.onclick = function () {
+        registerModal.style.display = "block";
+        adjustModalSize();
+    }
+    closeLogin.onclick = function () {
+        loginModal.style.display = "none";
+    }
+    closeRegister.onclick = function () {
+        registerModal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        else if (event.target == loginModal) {
+            loginModal.style.display = "none";
+        }
+        else if (event.target == registerModal) {
+            registerModal.style.display = "none";
+        }
+    }
+    function adjustIframeSize() {
+        iframe.onload = function () {
+            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+        }
+    }
+    function adjustModalSize() {
+        modal.style.height = 'auto';
+        modal.style.overflow = 'visible';
+    }
+</script>

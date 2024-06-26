@@ -1,7 +1,7 @@
 # Modelo Conceptual
-![Modelo Conceptual](./conceptual/ModeloConceptual.jpg)
+![Modelo Conceptual](./conceptual/STE-MC.jpg)
 # Modelo Logico
-![Modelo Conceptual](./logico/ModeloLogico.jpg)
+![Modelo Conceptual](./logico/STE-ML.jpg)
 # Modelo Físico
-![Modelo Conceptual](./fisico/ModeloFisico.png)
+![Modelo Conceptual](./fisico/STE-MF.png)
 

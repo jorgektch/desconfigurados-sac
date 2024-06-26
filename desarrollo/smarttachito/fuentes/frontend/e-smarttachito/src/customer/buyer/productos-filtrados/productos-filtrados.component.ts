@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { Productos } from '../../shared/interfaces/interface';
+import { Productos } from '../../../shared/interfaces/interface';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { HeaderComponent } from "../../shared/layouts/header/header.component";
-import { CarritoServiceService } from '../../shared/services/carrito-service.service';
+import { HeaderComponent } from "../../../shared/layouts/header/header.component";
+import { CarritoServiceService } from '../../../shared/services/carrito-service.service';
 
 @Component({
     selector: 'app-productos-filtrados',

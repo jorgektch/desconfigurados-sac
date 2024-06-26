@@ -1,5 +1,5 @@
 # Modelo Lógico
-![Modelo Conceptual](./ModeloLogico.jpg)
+![Modelo Conceptual](./STE-MC.jpg)
 
 ## Entidades
 

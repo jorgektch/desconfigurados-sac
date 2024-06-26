@@ -1,6 +1,5 @@
-# Diagrams
-## HDL (High Level Diagram)
-<img src="./HLD-architecture.png" alt="HLD">
+## Arquitectura general
+![Arquitectura general](./STE-DGM-ARQ.png)
 
 ## Components Diagrams
 ### Bussiness
