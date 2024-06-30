@@ -133,7 +133,9 @@ DATABASES = {
 1. **Errores 500**: Revisar los logs para detalles. 
 
 2. **Problemas con archivos estáticos**:
- Asegúrate de que la configuración de `STATIC_ROOT` y `STATIC_URL` son correctas. 3. **Errores de conexión a base de datos**: Verificar las variables de entorno. 
+ Asegúrate de que la configuración de `STATIC_ROOT` y `STATIC_URL` son correctas.
+
+3. **Errores de conexión a base de datos**: Verificar las variables de entorno. 
 
 ### Recursos adicionales para soporte en DigitalOcean
  - [Documentación de App Platform]([https://docs.digitalocean.com/products/app-platform/](https://docs.digitalocean.com/products/app-platform/)) - [Soporte en la comunidad de DigitalOcean]([https://www.digitalocean.com/community](https://www.digitalocean.com/community)) 
